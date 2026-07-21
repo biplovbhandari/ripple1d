@@ -12,6 +12,10 @@ from ripple1d.data_model import FlowChangeLocation, NwmReachModel
 from ripple1d.errors import UnitsError
 from ripple1d.ras import RasManager
 
+# Allowed KWSE stage increments (ft). Restricted so that we can be consistent with one-decimal
+# precision, a 0.25 would break one decimal precision rule.
+ALLOWED_DEPTH_INCREMENTS = (0.5, 1, 2, 5, 10)
+
 
 def create_model_run_normal_depth(
     submodel_directory: str,
@@ -224,7 +228,7 @@ def run_incremental_normal_depth(
 def run_known_wse(
     submodel_directory: str,
     plan_suffix: str,
-    min_elevation: float,
+    min_elevation_curve: list,
     max_elevation: float,
     depth_increment=2,
     ras_version: str = "631",
@@ -239,12 +243,13 @@ def run_known_wse(
         The path to the directory containing a sub model geopackage
     plan_suffix : str
         characters to append to the end of the plan name, by default "_kwse"
-    min_elevation : float
-        minimum value for downstream boundary condition
+    min_elevation_curve : list[list[float]]
+        Tailwater min elevation curve as ``[discharge, wse]`` pairs. Each flow's floor
+        elevation is looked up from this curve (see Notes).
     max_elevation : float
-        maximum value for downstream boundary condition
+        Ceiling elevation: the shared upper bound of the downstream boundary
     depth_increment : int, optional
-        depth to increment stages between min and max elevation, by default 2
+        depth to increment stages between the floor and the ceiling, by default 2
     ras_version : str, optional
         which version of HEC-RAS to use, by default "631"
     write_depth_grids : str, optional
@@ -256,23 +261,38 @@ def run_known_wse(
 
     Returns
     -------
-    str
-        string representation of flow file data
+    dict
+        mapping of the kwse plan name to the known water surface elevations used,
+        and the HEC-RAS process id under "pid"
 
     Raises
     ------
     FileNotFoundError
         raised when .conflation.json file not found in submodel_directory
+    ValueError
+        raised when min_elevation_curve or max_elevation is missing
 
     Notes
     -----
-    run_known_wse creates a catalog of stage-discharge rating curves
-    conditioned on downstream water surface elevation. For each depth increment
-    between min_elevation and max_elevation, a unique rating curve is
-    generated. Discharges for the rating curves are selected from the HEC-RAS
-    plan with suffix "_nd" generated with Run_incremental_normal_depth.
+    run_known_wse creates a catalog of stage-discharge rating curves conditioned on
+    downstream water surface elevation. Discharges are selected from the HEC-RAS
+    plan with suffix "_nd" generated with run_incremental_normal_depth. Each
+    discharge is executed over its own range, at depth_increment steps.
+
+    The floor for a discharge is looked up from min_elevation_curve data point:
+    the wse of the greatest tabulated discharge that is lower or equal to the flow.
+    Flows below the lowest tabulated discharge clamp to the lowest floor; flows at
+    or above the highest hold the highest floor.
     """
     logging.info("run_known_wse starting")
+
+    if not min_elevation_curve:
+        raise ValueError("run_known_wse requires a non-empty min_elevation_curve")
+    if max_elevation is None:
+        raise ValueError("run_known_wse requires max_elevation")
+    if depth_increment not in ALLOWED_DEPTH_INCREMENTS:
+        raise ValueError(f"depth_increment must be one of {ALLOWED_DEPTH_INCREMENTS}, got {depth_increment}")
+
     nwm_rm = NwmReachModel(submodel_directory)
 
     if not nwm_rm.file_exists(nwm_rm.conflation_file):
@@ -280,39 +300,33 @@ def run_known_wse(
 
     logging.info(f"Working on known water surface elevation run for nwm_id: {nwm_rm.model_name}")
 
-    start_elevation = np.floor(min_elevation * 2) / 2  # round down to nearest .0 or .5
-    known_water_surface_elevations = np.arange(start_elevation, max_elevation + depth_increment, depth_increment)
-
     # write and compute flow/plans for known water surface elevation runs
     rm = RasManager(nwm_rm.ras_project_file, version=ras_version, terrain_path=nwm_rm.ras_terrain_hdf, crs=nwm_rm.crs)
 
-    # get resulting depths from the second normal depth runs_nd
+    # get the flows from the second normal depth run (_nd), each flow is executed over
+    # its own [floor, ceiling] elevation range
     rm.plan = rm.plans[f"{nwm_rm.model_name}_nd"]
-    ds_flows, ds_depths, _ = get_flow_depth_arrays(
+    ds_xs = rm.geoms[nwm_rm.model_name].rivers[nwm_rm.model_name][nwm_rm.model_name].ds_xs
+    ds_flows, _, _ = get_flow_depth_arrays(
         rm,
         nwm_rm.model_name,
         nwm_rm.model_name,
-        rm.geoms[nwm_rm.model_name].rivers[nwm_rm.model_name][nwm_rm.model_name].ds_xs.river_station_str,
-        rm.geoms[nwm_rm.model_name].rivers[nwm_rm.model_name][nwm_rm.model_name].ds_xs.thalweg,
+        ds_xs.river_station_str,
+        ds_xs.thalweg,
     )
 
-    known_depths = (
-        known_water_surface_elevations
-        - rm.geoms[nwm_rm.model_name].rivers[nwm_rm.model_name][nwm_rm.model_name].ds_xs.thalweg
-    )
-
-    # filter known water surface elevations less than depths resulting from the second normal depth run
-    depths, flows, wses = create_flow_depth_combinations(
-        known_depths,
-        known_water_surface_elevations,
+    depths, flows, wses = create_flow_wse_envelopes(
         ds_flows,
-        ds_depths,
+        min_elevation_curve,
+        max_elevation,
+        depth_increment,
+        ds_xs.thalweg,
     )
 
     if not flows:
         logging.warning(
-            f"No controling known water surface elevations were identified for {nwm_rm.model_name}; i.e., the depth of flooding\
- for the normal depth run for a given flow was alway higher than the known water surface elevations of the downstream reach"
+            f"No known water surface elevations were identified for {nwm_rm.model_name}; "
+            "i.e., every flow's floor elevation was above max_elevation."
         )
         pid = None
     else:
@@ -330,7 +344,7 @@ def run_known_wse(
             run_ras=True,
         )
     logging.info("run_known_wse complete")
-    return {f"{nwm_rm.model_name}_{plan_suffix}": {"kwse": known_water_surface_elevations.tolist()}, "pid": pid}
+    return {f"{nwm_rm.model_name}_{plan_suffix}": {"kwse": sorted(set(wses))}, "pid": pid}
 
 
 def get_flow_depth_arrays(
@@ -382,30 +396,86 @@ def determine_flow_increments(
     return new_flows.astype(int), new_depths, new_wse
 
 
-def create_flow_depth_combinations(
-    ds_depths: list, ds_wses: list, input_flows: np.array, min_depths: pd.Series
-) -> tuple:
-    """
-    Create flow-depth-wse combinations.
+def stepwise_floor_lookup(flow: float, curve: list[list[float]]) -> float:
+    """Return the floor WSE for a flow using previous-value (last-known) lookup.
 
-    Args:
-        ds_depths (list): downstream depths
-        ds_wses (list): downstream water surface elevations
-        input_flows (np.array): Flows to create profiles names from. Combine with incremental depths
-            of the downstream cross section of the reach
-        min_depths (pd.Series): minimum depth to be included. (typically derived from a previous noraml depth run)
+    Parameters
+    ----------
+    flow : float
+        Discharge to look up.
+    curve : list[list[float]]
+        Tailwater lower-bound curve as ``[discharge, wse]`` pairs. The floor is the
+        wse of the greatest tabulated discharge that is <= flow. Flows below the
+        lowest tabulated discharge clamp to the lowest floor; flows at or above the
+        highest discharge hold the highest floor.
 
     Returns
     -------
-        tuple: tuple of depths, flows, and wses
+    float
+        The floor WSE for the flow.
     """
+    sorted_curve = sorted(curve, key=lambda pair: pair[0])
+    floor = sorted_curve[0][1]  # clamp below-range flows to the lowest floor
+    for discharge, wse in sorted_curve:
+        if discharge <= flow:
+            floor = wse
+        else:
+            break
+    return floor
+
+
+def create_flow_wse_envelopes(
+    ds_flows: pd.Series,
+    min_elevation_curve: list,
+    max_elevation: float,
+    depth_increment: float,
+    thalweg: float,
+) -> tuple:
+    """Sweep each flow over its own [floor, ceiling] known-WSE envelope.
+
+    Parameters
+    ----------
+    ds_flows : pd.Series
+        Discharges from the downstream cross section of the normal depth run.
+    min_elevation_curve : list
+        Tailwater lower-bound curve as ``[discharge, wse]`` pairs.
+    max_elevation : float
+        Ceiling elevation shared by every flow.
+    depth_increment : float
+        Elevation step between the floor and the ceiling.
+    thalweg : float
+        Downstream cross-section thalweg, used to convert WSE to depth.
+
+    Returns
+    -------
+    tuple
+        Parallel ``(depths, flows, wses)`` lists, one entry per (flow, wse) profile.
+
+    Notes
+    -----
+    The grid is anchored by 0 (so ``Δz=1`` gives whole feet, ``Δz=0.5`` half feet, ``Δz=2``
+    even feet), and every discharge therefore shares one grid regardless of where its tailwater
+    falls. Both the shared ceiling (``max_elevation``) and each discharge's floor are rounded to
+    the nearest grid line.
+    ``depth_increment`` must be one of ``ALLOWED_DEPTH_INCREMENTS``.
+    """
+    inc = depth_increment
+    if inc not in ALLOWED_DEPTH_INCREMENTS:
+        raise ValueError(f"depth_increment must be one of {ALLOWED_DEPTH_INCREMENTS}, got {inc}")
+
+    def nearest_k(elevation):
+        """Index of the nearest absolute grid line k*inc, rounding halves up."""
+        return int(np.floor(elevation / inc + 0.5))
+
     depths, flows, wses = [], [], []
-    for wse, depth in zip(ds_wses, ds_depths):
-        for profile, flow in input_flows.items():
-            if depth >= min_depths.loc[profile]:
-                depths.append(round(depth, 1))
-                flows.append(int(max([flow, MIN_FLOW])))
-                wses.append(round(wse, 1))
+    ceil_k = nearest_k(max_elevation)  # shared top rung, same for every discharge
+    for flow in ds_flows:
+        floor = stepwise_floor_lookup(flow, min_elevation_curve)
+        for k in range(nearest_k(floor), ceil_k + 1):
+            wse = round(k * inc, 1)
+            depths.append(round(wse - thalweg, 1))
+            flows.append(int(max([flow, MIN_FLOW])))
+            wses.append(wse)
     return (depths, flows, wses)
 
 

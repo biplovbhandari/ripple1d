@@ -249,7 +249,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"submodel_directory\": \"{{submodels_base_directory}}\\\\{{nwm_reach_id}}\",\r\n    \"plan_suffix\": \"ikwse\",\r\n    \"min_elevation\": 163.0,\r\n    \"max_elevation\": 165.0,\r\n    \"depth_increment\": 1.0,\r\n    \"ras_version\": \"631\",\r\n    \"show_ras\":true,\r\n    \"write_depth_grids\":false\r\n}",
+							"raw": "{\r\n    \"submodel_directory\": \"{{submodels_base_directory}}\\\\{{nwm_reach_id}}\",\r\n    \"plan_suffix\": \"ikwse\",\r\n    \"min_elevation_curve\": [[100, 163.0], [200, 164.0]],\r\n    \"max_elevation\": 165.0,\r\n    \"depth_increment\": 1.0,\r\n    \"ras_version\": \"631\",\r\n    \"show_ras\":true,\r\n    \"write_depth_grids\":false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

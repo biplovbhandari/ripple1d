@@ -60,6 +60,16 @@ Frequently Asked Questions
     The selected slope is clamped to [MIN_ND_SLOPE, MAX_ND_SLOPE] (defined in ripple1d/consts.py)
     to keep the 1D HEC-RAS steady-flow solver numerically stable.
 
+    Subsequent known water surface elevation (KWSE) runs replace the normal depth
+    boundary with a fixed downstream water surface elevation. Each discharge is executed over its own
+    range: from a per-flow floor up to a shared ceiling (``max_elevation``), in
+    ``depth_increment`` steps. The floor comes from ``min_elevation_curve``, a
+    lower-bound curve of ``[discharge, elevation]`` pairs supplied by the caller who should
+    drive it from the downstream reach. For a given discharge, the floor is the
+    elevation of the greatest tabulated discharge less than or equal to that flow;
+    discharges below the lowest tabulated value clamp to the lowest floor, and those
+    above the highest hold the highest floor.
+
 .. dropdown:: Which plan, geometry, and flow files are used?
 
     Source model files are scanned and a "primary" plan file is identified as the
