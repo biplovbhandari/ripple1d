@@ -131,6 +131,17 @@ def test_create_flow_wse_envelopes_single_rung_when_floor_equals_ceiling():
     assert wses == [26.0]
 
 
+def test_create_flow_wse_envelopes_emits_float_wses_for_integer_increment():
+    # ras profile names do str(wse).replace(".", "_"); an int wse would name the library
+    # "z_736" instead of "z_736_0", flows2fim wants z_736_0.
+    ds_flows = pd.Series([150])
+    _, _, wses = create_flow_wse_envelopes(
+        ds_flows, min_elevation_curve=[[100, 735]], max_elevation=738, depth_increment=1, thalweg=0
+    )
+    assert all(isinstance(w, float) for w in wses)
+    assert all("." in str(w) for w in wses)
+
+
 def test_create_flow_wse_envelopes_rejects_disallowed_increment():
     ds_flows = pd.Series([150])
     with pytest.raises(ValueError, match="depth_increment must be one of"):

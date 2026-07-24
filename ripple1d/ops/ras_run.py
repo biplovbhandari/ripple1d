@@ -472,7 +472,9 @@ def create_flow_wse_envelopes(
     for flow in ds_flows:
         floor = stepwise_floor_lookup(flow, min_elevation_curve)
         for k in range(nearest_k(floor), ceil_k + 1):
-            wse = round(k * inc, 1)
+            # keep wse a float: an integer depth_increment makes k*inc an int, which would
+            # name the library "z_736" instead of "z_736_0" (see str(wse) in ras profile names)
+            wse = round(float(k * inc), 1)
             depths.append(round(wse - thalweg, 1))
             flows.append(int(max([flow, MIN_FLOW])))
             wses.append(wse)
