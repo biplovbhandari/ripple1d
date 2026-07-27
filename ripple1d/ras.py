@@ -729,7 +729,7 @@ class RasPlanText(RasTextFile):
         else:
             self.contents.append("Run RASMapper= 0 ")
 
-    def read_rating_curves(self, profile_name_map: dict) -> dict:
+    def read_plan_results(self, profile_name_map: dict) -> dict:
         """
         Read the flow and water surface elevations resulting from the computed plan.
 

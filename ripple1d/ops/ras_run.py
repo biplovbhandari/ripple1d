@@ -24,7 +24,7 @@ def create_model_run_normal_depth(
     ras_version: str = "631",
     show_ras: bool = False,
 ):
-    """Write and compute initial normal depth runs to develop initial rating curves.
+    """Write and compute initial normal depth runs to develop initial scenarios.
 
     Parameters
     ----------
@@ -96,7 +96,7 @@ def create_model_run_normal_depth(
             num_of_discharges_for_initial_normal_depth_runs,
         ).astype(int)
 
-        # # write and compute initial normal depth runs to develop rating curves
+        # # write and compute initial normal depth runs to develop initial scenarios
         fcl = FlowChangeLocation(
             nwm_rm.model_name,
             nwm_rm.model_name,
@@ -130,7 +130,7 @@ def run_incremental_normal_depth(
     write_depth_grids: str = True,
     show_ras: bool = False,
 ):
-    """Write and compute incremental normal depth runs to develop rating curves and depth grids.
+    """Write and compute incremental normal depth runs to develop scenarios and depth grids.
 
     Parameters
     ----------
@@ -235,7 +235,7 @@ def run_known_wse(
     write_depth_grids: str = True,
     show_ras: bool = False,
 ):
-    """Write and compute known water surface elevation runs to develop rating curves and depth grids.
+    """Write and compute known water surface elevation runs to develop scenarios and depth grids.
 
     Parameters
     ----------
@@ -274,7 +274,7 @@ def run_known_wse(
 
     Notes
     -----
-    run_known_wse creates a catalog of stage-discharge rating curves conditioned on
+    run_known_wse creates a catalog of scenarios conditioned on
     downstream water surface elevation. Discharges are selected from the HEC-RAS
     plan with suffix "_nd" generated with run_incremental_normal_depth. Each
     discharge is executed over its own range, at depth_increment steps.
@@ -350,10 +350,10 @@ def run_known_wse(
 def get_flow_depth_arrays(
     rm: RasManager, river: str, reach: str, river_station: str, thalweg: float
 ) -> tuple[pd.Series]:
-    """Create new flow, depth,wse arrays from rating curve-plans results."""
+    """Create new flow, depth,wse arrays from plan results."""
     # read in flow/wse
     profile_name_map = json.loads(rm.plan.flow.description)
-    wses, flows = rm.plan.read_rating_curves(profile_name_map)
+    wses, flows = rm.plan.read_plan_results(profile_name_map)
 
     # get the river_reach_rs for the cross section representing the upstream end of this reach
     river_reach_rs = f"{river} {reach} {str(river_station)}"
@@ -376,7 +376,7 @@ def determine_flow_increments(
     nwm_id: str,
     depth_increment: float = 0.5,
 ) -> tuple[np.array]:
-    """Determine flow increments corresponding to 0.5 ft depth increments using the rating-curve-run results."""
+    """Determine flow increments corresponding to 0.5 ft depth increments using the normal-depth-run results."""
     flows, depths = [], []
     for plan_name in plan_names:
         rm.plan = rm.plans[plan_name]
@@ -495,7 +495,7 @@ def get_kwse_from_ds_model(ds_nwm_id: str, ds_nwm_ras_project_file: str, plan_na
         river_reach_rs = rm.plan.geom.rivers[ds_nwm_id][ds_nwm_id].us_xs.river_reach_rs
         thalweg = rm.plan.geom.rivers[ds_nwm_id][ds_nwm_id].us_xs.thalweg
 
-        wse, _ = rm.plan.read_rating_curves()
+        wse, _ = rm.plan.read_plan_results()
 
         wses.append(wse.loc[river_reach_rs, :])
 
