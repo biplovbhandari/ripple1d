@@ -301,7 +301,7 @@
 					"response": []
 				},
 				{
-					"name": "create_rating_curves_db",
+					"name": "create_scenarios_db",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -315,17 +315,17 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/processes/create_rating_curves_db/execution",
+							"raw": "{{url}}/processes/create_scenarios_db/execution",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"processes",
-								"create_rating_curves_db",
+								"create_scenarios_db",
 								"execution"
 							]
 						},
-						"description": "Create a rating curve db from the results of an existing HEC-RAS model."
+						"description": "Create a scenario db from the results of an existing HEC-RAS model."
 					},
 					"response": []
 				},

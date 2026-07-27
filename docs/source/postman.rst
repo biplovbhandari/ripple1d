@@ -3,6 +3,12 @@ Postman collection
 
 For reference and documentation of the API, please open the postman collection for the version of ripple1d
 
+v0.11.0: This version renames an endpoint. **This is a breaking change; there is no backwards-compatible alias.**
+ - `create_rating_curves_db` is now `create_scenarios_db`. The records it writes are computed model scenarios
+   (a discharge, and for `kwse` plans a downstream stage, with the resulting water surface elevations), not
+   rating curves. The output table is renamed from `rating_curves` to `scenarios` to match, and the result key
+   returned by the endpoint is renamed from `rating_curve_database` to `scenario_database`.
+
 `v.0.10.4: <https://github.com/Dewberry/ripple1d/blob/77987266ec360536d07c6ff1e8546d15a210426e/ripple1d/api/postman_collection.json>`_ This version contains a new optional args for create_fim_lib and conflate_model:
  - `cog` (boolean)  added to  `create_fim_lib`.  This is a boolean indicating if the depth grids should be cloud optimized geotiffs or not.
  - `min_flow_multiplier` (float)  added to  `conflate_model`.  This is the number that will be multiplied by the NWM "high flow threshold" to define the low_flow value in the conflation json.

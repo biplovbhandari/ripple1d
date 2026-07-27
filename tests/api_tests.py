@@ -157,13 +157,13 @@ class TestApi(unittest.TestCase):
         return process, payload, files
 
     @check_process
-    def test_g_create_rating_curves_db_initial(self):
+    def test_g_create_scenarios_db_initial(self):
 
         payload = {
             "submodel_directory": self.SUBMODELS_DIRECTORY,
             "plans": ["ikwse"],
         }
-        process = "create_rating_curves_db"
+        process = "create_scenarios_db"
         files = [self.FIM_LIB_DB]
         return process, payload, files
 
@@ -184,13 +184,13 @@ class TestApi(unittest.TestCase):
         return process, payload, files
 
     @check_process
-    def test_i_create_rating_curves_db(self):
+    def test_i_create_scenarios_db(self):
 
         payload = {
             "submodel_directory": self.SUBMODELS_DIRECTORY,
             "plans": ["nd", "kwse"],
         }
-        process = "create_rating_curves_db"
+        process = "create_scenarios_db"
         files = [self.FIM_LIB_DB]
         return process, payload, files
 
