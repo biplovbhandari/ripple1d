@@ -4,7 +4,7 @@ Technical Summary
 
 
 The following steps outline a typical workflow for setting up a HEC-RAS model
-for use in FIM and SRC production.
+for use in FIM and scenario production.
 
 1 - Model identification and data extraction
 --------------------------------------------
@@ -209,8 +209,8 @@ averaging across all cross-sections.
 * **Thalweg Elevation Difference** Source model invert minus the DEM invert/  Values closer to 0 are better, negative values reflect a higher DEM invert, and positive values reflect a higher source model invert.  Since this metric is not scaled, acceptable ranges will vary from river to river.
 
 
-4 - SRC development and FIM pre-processing
-------------------------------------------
+4 - Scenario development and FIM pre-processing
+-----------------------------------------------
 
 (relevant endpoints:
 :doc:`create_model_run_normal_depth <endpoints/create_model_run_normal_depth>`,
@@ -220,7 +220,7 @@ averaging across all cross-sections.
 
 Once submodel geometry has been set up, you can run various discharges through
 the model and record the results.  Ripple1d has several tools to develop
-SRCs for a NWM reach.
+scenarios for a NWM reach.
 
 * **Initial Normal Depth Run.** Discharges ranging from 0.9 times the reach
   high flow threshold to 1.2 times the reach 1% AEP discharge will be incrementally run
@@ -237,7 +237,7 @@ SRCs for a NWM reach.
 
 * **Known Water Surface Elevation Run.**  An advantage of HEC-RAS over
   lower-complexity FIM methods is its ability to consider downstream hydraulic
-  conditions.  ripple1d pre-processes SRCs for a range of conditions by
+  conditions.  ripple1d pre-processes scenarios for a range of conditions by
   iterating the downstream boundary condition over a range of water surface
   elevations.
 

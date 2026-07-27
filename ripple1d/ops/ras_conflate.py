@@ -134,7 +134,7 @@ def conflate_model(
     #. Generate a map of the conflated reaches and calculate conflation metrics
 
     Additionally, high and low flows are generated for each reach to bound the
-    SRC generated in later steps. The low flow is 0.9 times the high flow
+    scenarios generated in later steps. The low flow is 0.9 times the high flow
     threshold listed for the reach in the NWM network. The high flow is the
     1.2 times the 100 year flow from the NWM network.
     """

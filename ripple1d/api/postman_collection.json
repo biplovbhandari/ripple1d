@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "46d5b2d6-ccc4-4495-9f9e-6b17a5d6f234",
 		"name": "ripple1d",
-		"description": "Collection for processing existing HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and rating curves for use in near-real time flood forecasting on the NOAA National Water Model",
+		"description": "Collection for processing existing HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and scenario databases for use in near-real time flood forecasting on the NOAA National Water Model",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "38126273"
 	},
@@ -209,7 +209,7 @@
 								"execution"
 							]
 						},
-						"description": "Run a range of flows for dormal depth on a HEC-RAS model. The results will be used to inform flows required to develop rating curves at a provided increment."
+						"description": "Run a range of flows for dormal depth on a HEC-RAS model. The results will be used to inform flows required to develop scenarios at a provided increment."
 					},
 					"response": []
 				},

@@ -4,7 +4,7 @@
 [![Release](https://github.com/dewberry/ripple1d/actions/workflows/release.yaml/badge.svg)](https://github.com/dewberry/ripple1d/actions/workflows/release.yaml)
 [![PyPI version](https://badge.fury.io/py/ripple1d.svg)](https://badge.fury.io/py/ripple1d)
 
-Utilities for repurposing HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and rating curves for use in near-real time flood forecasting on the NOAA National Water Model network. Go to [ReadTheDocs](http://ripple1d.readthedocs.io/) for more information on ripple1d.
+Utilities for repurposing HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and scenario databases for use in near-real time flood forecasting on the NOAA National Water Model network. Go to [ReadTheDocs](http://ripple1d.readthedocs.io/) for more information on ripple1d.
 
 ## Contents
 
