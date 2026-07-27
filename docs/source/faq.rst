@@ -5,11 +5,11 @@ Frequently Asked Questions
 .. dropdown:: What is ripple1d?
 
     :code:`ripple1d` is a Python utility that repurposes HEC-RAS models for use in
-    the production of Flood Inundation Maps (FIMs) and synthetic rating curves
-    (SRCs) to support near-real-time flood forecasting within NOAA’s National Water
+    the production of Flood Inundation Maps (FIMs) and scenario databases to
+    support near-real-time flood forecasting within NOAA’s National Water
     Model (NWM).  With the utility, HEC-RAS models can be broken up into
     smaller sub models for each NWM reach within the modeled domain.  Sub models
-    may then be used to develop reach-scale SRCs and FIM.
+    may then be used to develop reach-scale scenarios and FIM.
 
     ripple1d currently includes functions to:
 
@@ -18,11 +18,10 @@ Frequently Asked Questions
     * Associate HEC-RAS model components (e.g. cross sections, structures, etc)
       with NWM reaches;
     * Create NWM reach-specific HEC-RAS models;
-    * Run HEC-RAS models for a range of hydraulic conditions;
-    * Generate reach-scale SRCs;
-    * Map inundation extents and depth grids; and
-    * Incorporate updated topographic data in mapping to reflect current site
-      conditions.
+    * Run HEC-RAS models for a range of hydraulic conditions (scenarios);
+    * Generate reach-scale scenario databases; and
+    * Generate inundation depth grids for these scenarios.
+
 
 .. dropdown:: Why use ripple1d?
 
