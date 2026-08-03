@@ -228,9 +228,9 @@ def run_incremental_normal_depth(
 def run_known_wse(
     submodel_directory: str,
     plan_suffix: str,
-    min_elevation_curve: list,
+    min_elevation_curve: list[list[float]],
     max_elevation: float,
-    depth_increment=2,
+    depth_increment: float,
     ras_version: str = "631",
     write_depth_grids: str = True,
     show_ras: bool = False,
@@ -248,8 +248,9 @@ def run_known_wse(
         elevation is looked up from this curve (see Notes).
     max_elevation : float
         Ceiling elevation: the shared upper bound of the downstream boundary
-    depth_increment : int, optional
-        depth to increment stages between the floor and the ceiling, by default 2
+    depth_increment : float
+        depth to increment stages between the floor and the ceiling, must be one of
+        ALLOWED_DEPTH_INCREMENTS = (0.5, 1, 2, 5, 10)
     ras_version : str, optional
         which version of HEC-RAS to use, by default "631"
     write_depth_grids : str, optional
@@ -283,6 +284,8 @@ def run_known_wse(
     the wse of the greatest tabulated discharge that is lower or equal to the flow.
     Flows below the lowest tabulated discharge clamp to the lowest floor; flows at
     or above the highest hold the highest floor.
+
+
     """
     logging.info("run_known_wse starting")
 
@@ -315,7 +318,7 @@ def run_known_wse(
         ds_xs.thalweg,
     )
 
-    depths, flows, wses = create_flow_wse_envelopes(
+    depths, flows, wses = create_flow_wse_scenarios_matrix(
         ds_flows,
         min_elevation_curve,
         max_elevation,
@@ -424,9 +427,9 @@ def stepwise_floor_lookup(flow: float, curve: list[list[float]]) -> float:
     return floor
 
 
-def create_flow_wse_envelopes(
-    ds_flows: pd.Series,
-    min_elevation_curve: list,
+def create_flow_wse_scenarios_matrix(
+    reach_flows: pd.Series,
+    min_elevation_curve: list[list[float]],
     max_elevation: float,
     depth_increment: float,
     thalweg: float,
@@ -435,16 +438,17 @@ def create_flow_wse_envelopes(
 
     Parameters
     ----------
-    ds_flows : pd.Series
-        Discharges from the downstream cross section of the normal depth run.
-    min_elevation_curve : list
+    reach_flows : pd.Series
+        Discharges from the most downstream cross section from the normal depth runs
+        for current reach.
+    min_elevation_curve : list[list[float]]
         Tailwater lower-bound curve as ``[discharge, wse]`` pairs.
     max_elevation : float
         Ceiling elevation shared by every flow.
     depth_increment : float
         Elevation step between the floor and the ceiling.
     thalweg : float
-        Downstream cross-section thalweg, used to convert WSE to depth.
+        Most downstream cross-section thalweg, used to convert WSE to depth.
 
     Returns
     -------
@@ -457,26 +461,22 @@ def create_flow_wse_envelopes(
     even feet), and every discharge therefore shares one grid regardless of where its tailwater
     falls. Both the shared ceiling (``max_elevation``) and each discharge's floor are rounded to
     the nearest grid line.
-    ``depth_increment`` must be one of ``ALLOWED_DEPTH_INCREMENTS``.
     """
-    inc = depth_increment
-    if inc not in ALLOWED_DEPTH_INCREMENTS:
-        raise ValueError(f"depth_increment must be one of {ALLOWED_DEPTH_INCREMENTS}, got {inc}")
 
     def nearest_k(elevation):
         """Index of the nearest absolute grid line k*inc, rounding halves up."""
-        return int(np.floor(elevation / inc + 0.5))
+        return int(np.floor(elevation / depth_increment + 0.5))
 
     depths, flows, wses = [], [], []
-    ceil_k = nearest_k(max_elevation)  # shared top rung, same for every discharge
-    for flow in ds_flows:
+    ceil_k = nearest_k(max_elevation)  # shared max ceiling, same for every discharge
+    for flow in reach_flows:
         floor = stepwise_floor_lookup(flow, min_elevation_curve)
         for k in range(nearest_k(floor), ceil_k + 1):
             # keep wse a float: an integer depth_increment makes k*inc an int, which would
             # name the library "z_736" instead of "z_736_0" (see str(wse) in ras profile names)
-            wse = round(float(k * inc), 1)
+            wse = round(float(k * depth_increment), 1)
             depths.append(round(wse - thalweg, 1))
-            flows.append(int(max([flow, MIN_FLOW])))
+            flows.append(int(flow))
             wses.append(wse)
     return (depths, flows, wses)
 
