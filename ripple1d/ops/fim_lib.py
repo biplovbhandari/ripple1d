@@ -20,7 +20,7 @@ from ripple1d.utils.dg_utils import (
 )
 from ripple1d.utils.sqlite_utils import (
     create_db_and_table,
-    rating_curves_to_sqlite,
+    scenarios_to_sqlite,
     zero_depth_to_sqlite,
 )
 
@@ -84,12 +84,12 @@ def post_process_depth_grids(
                 dst.update_tags(ns="rio_overview", resampling="nearest")
 
 
-def create_rating_curves_db(
-    submodel_directory: str, plans: list, ras_version: str = "631", table_name: str = "rating_curves"
+def create_scenarios_db(
+    submodel_directory: str, plans: list, ras_version: str = "631", table_name: str = "scenarios"
 ):
-    """Create a new rating curve database for a NWM id.
+    """Create a new scenario database for a NWM id.
 
-    Export stage-discharge rating curves from HEC-RAS to
+    Export computed flow/stage scenarios from HEC-RAS to
     rasters and a sqlite database.
 
     Parameters
@@ -101,15 +101,15 @@ def create_rating_curves_db(
     ras_version : str, optional
         which version of HEC-RAS to use, by default "631"
     table_name : str, optional
-        name for the table holding stage-discharge rating curves in the output
-        database, by default "rating_curves"
+        name for the table holding the computed scenarios in the output
+        database, by default "scenarios"
 
     Returns
     -------
     dict
-        dictionary with paths to output rating curve database
+        dictionary with paths to output scenario database
     """
-    logging.info(f"create_rating_curves_db starting")
+    logging.info(f"create_scenarios_db starting")
 
     nwm_rm = NwmReachModel(submodel_directory, submodel_directory)
 
@@ -132,7 +132,7 @@ def create_rating_curves_db(
             missing_grids = find_missing_grids(rm, f"{nwm_rm.model_name}_{plan}")
 
         if f"kwse" in plan:
-            rating_curves_to_sqlite(
+            scenarios_to_sqlite(
                 rm,
                 f"{nwm_rm.model_name}_{plan}",
                 plan,
@@ -152,8 +152,8 @@ def create_rating_curves_db(
                 table_name,
             )
 
-    logging.info(f"create_rating_curves_db complete")
-    return {"rating_curve_database": nwm_rm.fim_results_database}
+    logging.info(f"create_scenarios_db complete")
+    return {"scenario_database": nwm_rm.fim_results_database}
 
 
 def find_missing_grids(
@@ -195,7 +195,7 @@ def create_fim_lib(
 ):
     """Create a new FIM library for a NWM id.
 
-    Export depth rasters and stage-discharge rating curves from HEC-RAS to
+    Export depth rasters and computed flow/stage scenarios from HEC-RAS to
     rasters and a sqlite database.
 
     Parameters
@@ -223,7 +223,7 @@ def create_fim_lib(
     Returns
     -------
     dict
-        dictionary with paths to output rasters and rating curve database
+        dictionary with paths to output rasters and scenario database
     """
     logging.info(f"create_fim_lib starting")
     nwm_rm = NwmReachModel(submodel_directory, library_directory)

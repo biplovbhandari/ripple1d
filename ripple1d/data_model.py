@@ -287,12 +287,12 @@ class NwmReachModel(RasModelStructure):
         return str(Path(self.library_directory) / f"{self.model_name}.db")
 
     @property
-    def fim_rating_curve(self):
-        """FIM rating curve."""
+    def fim_scenarios(self):
+        """FIM scenarios."""
         with sqlite3.connect(self.fim_results_database) as conn:
             cursor = conn.cursor()
             sql_query = f"""SELECT us_flow, us_wse, ds_wse
-            FROM rating_curves
+            FROM scenarios
             WHERE reach_id={self.model_name}"""
             cursor.execute(sql_query)
 

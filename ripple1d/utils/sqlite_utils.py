@@ -115,7 +115,7 @@ def zero_depth_to_sqlite(
 
     profile_name_map = json.loads(rm.plans[plan_name].flow.description)
     # read in flow/wse
-    wses, flows = rm.plan.read_rating_curves(profile_name_map)
+    wses, flows = rm.plan.read_plan_results(profile_name_map)
 
     # get river-reach-rs
     us_river_reach_rs = rm.plan.geom.rivers[nwm_id][nwm_id].us_xs.river_reach_rs_str
@@ -157,7 +157,7 @@ def check_overtopping(rm: RasManager, wses: pd.DataFrame):
     return wses.gt(gdf["overtop_elevation"].values, axis=0).any().astype(int)
 
 
-def rating_curves_to_sqlite(
+def scenarios_to_sqlite(
     rm: RasManager,
     plan_name: str,
     plan_suffix: str,
@@ -166,7 +166,7 @@ def rating_curves_to_sqlite(
     database_path: str,
     table_name: str,
 ):
-    """Export rating curves to sqlite."""
+    """Export known water surface elevation scenarios to sqlite."""
     # set the plan
     if plan_name not in rm.plans:
         return
@@ -174,7 +174,7 @@ def rating_curves_to_sqlite(
 
     profile_name_map = json.loads(rm.plans[plan_name].flow.description)
     # read in flow/wse
-    wses, flows = rm.plan.read_rating_curves(profile_name_map)
+    wses, flows = rm.plan.read_plan_results(profile_name_map)
     wses_t = wses.T
     wses_t["xs_overtopped"] = check_overtopping(rm, wses)
 

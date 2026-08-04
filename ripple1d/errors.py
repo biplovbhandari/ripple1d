@@ -95,7 +95,7 @@ class DepthGridNotFoundError(Exception):
 
 
 class PlanNameNotFoundError(Exception):
-    """Raised when a plan is not found during post processing depth grids and rating curve dbs."""
+    """Raised when a plan is not found during post processing depth grids and scenario dbs."""
 
 
 class UnknownVerticalUnits(Exception):
