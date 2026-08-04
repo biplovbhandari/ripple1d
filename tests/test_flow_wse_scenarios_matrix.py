@@ -10,7 +10,7 @@ import pytest
 from ripple1d.consts import MIN_FLOW
 from ripple1d.ops.ras_run import (
     ALLOWED_DEPTH_INCREMENTS,
-    create_flow_wse_envelopes,
+    create_flow_wse_scenarios_matrix,
     stepwise_floor_lookup,
 )
 
@@ -42,9 +42,9 @@ def test_stepwise_floor_lookup_sorts_unordered_curve():
     assert stepwise_floor_lookup(50, unordered) == 20
 
 
-def test_create_flow_wse_envelopes_sweeps_each_flow_from_its_floor():
+def test_create_flow_wse_scenarios_matrix_sweeps_each_flow_from_its_floor():
     ds_flows = pd.Series([150, 205])
-    depths, flows, wses = create_flow_wse_envelopes(
+    depths, flows, wses = create_flow_wse_scenarios_matrix(
         ds_flows,
         min_elevation_curve=CURVE,
         max_elevation=30,
@@ -61,12 +61,12 @@ def test_create_flow_wse_envelopes_sweeps_each_flow_from_its_floor():
     assert len(depths) == len(flows) == len(wses)
 
 
-def test_create_flow_wse_envelopes_keeps_all_flows_on_one_absolute_grid():
+def test_create_flow_wse_scenarios_matrix_keeps_all_flows_on_one_absolute_grid():
     # The grid is absolute multiples of depth_increment (whole feet for Δz=1), so two
     # flows with unrelated floors still share one lattice. Each flow's floor is rounded
     # to the nearest grid line: 21.5 rounds up to 22, not onto a private half-foot phase.
     ds_flows = pd.Series([150, 250])
-    _, flows, wses = create_flow_wse_envelopes(
+    _, flows, wses = create_flow_wse_scenarios_matrix(
         ds_flows,
         min_elevation_curve=[[100, 20.0], [200, 21.5]],
         max_elevation=24,
@@ -80,10 +80,10 @@ def test_create_flow_wse_envelopes_keeps_all_flows_on_one_absolute_grid():
     assert wses == [20, 21, 22, 23, 24, 22, 23, 24]
 
 
-def test_create_flow_wse_envelopes_rounds_bounds_to_nearest_grid_line():
+def test_create_flow_wse_scenarios_matrix_rounds_bounds_to_nearest_grid_line():
     # floor 20.3 -> nearest grid line 20; floor 20.6 -> nearest grid line 21 (round half up)
     ds_flows = pd.Series([150, 250])
-    _, flows, wses = create_flow_wse_envelopes(
+    _, flows, wses = create_flow_wse_scenarios_matrix(
         ds_flows,
         min_elevation_curve=[[100, 20.3], [200, 20.6]],
         max_elevation=25,
@@ -97,12 +97,12 @@ def test_create_flow_wse_envelopes_rounds_bounds_to_nearest_grid_line():
     assert first[250] == 21.0
 
 
-def test_create_flow_wse_envelopes_matches_worked_example():
+def test_create_flow_wse_scenarios_matrix_matches_worked_example():
     # d/s WSEL range 224.2 (floor) -> 227.1 (ceiling), swept at each allowed increment.
     ds_flows = pd.Series([150])
 
     def rungs(inc):
-        _, _, wses = create_flow_wse_envelopes(
+        _, _, wses = create_flow_wse_scenarios_matrix(
             ds_flows, min_elevation_curve=[[100, 224.2]], max_elevation=227.1, depth_increment=inc, thalweg=0
         )
         return [round(w, 1) for w in wses]
@@ -112,48 +112,48 @@ def test_create_flow_wse_envelopes_matches_worked_example():
     assert rungs(2) == [224.0, 226.0, 228.0]
 
 
-def test_create_flow_wse_envelopes_grid_is_multiples_of_increment():
+def test_create_flow_wse_scenarios_matrix_grid_is_multiples_of_increment():
     ds_flows = pd.Series([150, 205, 300])
     for inc in ALLOWED_DEPTH_INCREMENTS:
-        _, _, wses = create_flow_wse_envelopes(
+        _, _, wses = create_flow_wse_scenarios_matrix(
             ds_flows, min_elevation_curve=CURVE, max_elevation=60, depth_increment=inc, thalweg=0
         )
         assert wses, f"expected rungs for increment {inc}"
         assert all(abs(w / inc - round(w / inc)) < 1e-6 for w in wses)
 
 
-def test_create_flow_wse_envelopes_single_rung_when_floor_equals_ceiling():
+def test_create_flow_wse_scenarios_matrix_single_rung_when_floor_equals_ceiling():
     # when a flow's floor rounds to the same grid line as the ceiling, it yields one rung
     ds_flows = pd.Series([150])
-    _, _, wses = create_flow_wse_envelopes(
+    _, _, wses = create_flow_wse_scenarios_matrix(
         ds_flows, min_elevation_curve=[[100, 26.0]], max_elevation=26.0, depth_increment=1, thalweg=0
     )
     assert wses == [26.0]
 
 
-def test_create_flow_wse_envelopes_emits_float_wses_for_integer_increment():
+def test_create_flow_wse_scenarios_matrix_emits_float_wses_for_integer_increment():
     # ras profile names do str(wse).replace(".", "_"); an int wse would name the library
     # "z_736" instead of "z_736_0", flows2fim wants z_736_0.
     ds_flows = pd.Series([150])
-    _, _, wses = create_flow_wse_envelopes(
+    _, _, wses = create_flow_wse_scenarios_matrix(
         ds_flows, min_elevation_curve=[[100, 735]], max_elevation=738, depth_increment=1, thalweg=0
     )
     assert all(isinstance(w, float) for w in wses)
     assert all("." in str(w) for w in wses)
 
 
-def test_create_flow_wse_envelopes_rejects_disallowed_increment():
+def test_create_flow_wse_scenarios_matrix_rejects_disallowed_increment():
     ds_flows = pd.Series([150])
     with pytest.raises(ValueError, match="depth_increment must be one of"):
-        create_flow_wse_envelopes(
+        create_flow_wse_scenarios_matrix(
             ds_flows, min_elevation_curve=CURVE, max_elevation=30, depth_increment=0.25, thalweg=0
         )
 
 
-def test_create_flow_wse_envelopes_clamps_flow_to_min_flow():
+def test_create_flow_wse_scenarios_matrix_clamps_flow_to_min_flow():
     # a flow below MIN_FLOW is clamped up to MIN_FLOW in the emitted profiles
     ds_flows = pd.Series([0])
-    _, flows, _ = create_flow_wse_envelopes(
+    _, flows, _ = create_flow_wse_scenarios_matrix(
         ds_flows,
         min_elevation_curve=CURVE,
         max_elevation=22,

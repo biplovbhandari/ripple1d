@@ -57,8 +57,9 @@ def setup_data(request):
 
     request.cls.FIM_LIB_DB = os.path.join(SUBMODELS_DIRECTORY, f"{REACH_ID}.db")
     request.cls.DEPTH_GRIDS_ND = os.path.join(FIM_LIB_DIRECTORY, f"{REACH_ID}\\z_nd")
-    integer, decimal = str(np.floor((MIN_ELEVATION + 41) * 2) / 2).split(".")
-    request.cls.DEPTH_GRIDS_KWSE = os.path.join(FIM_LIB_DIRECTORY, f"{REACH_ID}\\z_{integer}_{decimal}")
+    ceil_k = int(np.floor((MIN_ELEVATION + 41) + 0.5))
+    kwse_dir = str(round(float(ceil_k), 1)).replace(".", "_")
+    request.cls.DEPTH_GRIDS_KWSE = os.path.join(FIM_LIB_DIRECTORY, f"{REACH_ID}\\z_{kwse_dir}")
     request.cls.MODEL_STAC_ITEM = os.path.join(SUBMODELS_DIRECTORY, f"{REACH_ID}.model.stac.json")
     request.cls.FIM_LIB_STAC_ITEM = os.path.join(SUBMODELS_DIRECTORY, f"fims\\{REACH_ID}.fim_lib.stac.json")
     request.cls.min_elevation = MIN_ELEVATION
