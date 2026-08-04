@@ -145,7 +145,7 @@ class TestApi(unittest.TestCase):
         payload = {
             "submodel_directory": self.SUBMODELS_DIRECTORY,
             "plan_suffix": "ikwse",
-            "min_elevation": self.min_elevation + 40,
+            "min_elevation_curve": [[0, self.min_elevation + 40]],
             "max_elevation": self.min_elevation + 41,
             "depth_increment": 1.0,
             "ras_version": "631",
@@ -172,7 +172,7 @@ class TestApi(unittest.TestCase):
         payload = {
             "submodel_directory": self.SUBMODELS_DIRECTORY,
             "plan_suffix": "kwse",
-            "min_elevation": self.min_elevation + 40,
+            "min_elevation_curve": [[0, self.min_elevation + 40]],
             "max_elevation": self.min_elevation + 41,
             "depth_increment": 1.0,
             "ras_version": "631",

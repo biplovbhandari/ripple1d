@@ -28,7 +28,7 @@ def test_kwse_run():
         "plan_suffix": "kwse",
         "show_ras": True,
         "write_depth_grids": False,
-        "min_elevation": 182.2,
+        "min_elevation_curve": [[0, 182.2]],
         "max_elevation": 194.1,
         "depth_increment": 1,
     }
