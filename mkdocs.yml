@@ -1,0 +1,92 @@
+site_name: Ripple1D
+site_description: Python utility that repurposes HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and scenario databases to support near-real-time flood forecasting within NOAA's National Water Model
+repo_url: https://github.com/NGWPC/ripple1d
+repo_name: NGWPC/ripple1d
+edit_uri: edit/main/docs/
+
+extra:
+  version:
+    provider: mike
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.action.edit
+    - content.code.copy
+    - content.tooltips
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Technical Summary: tech-summary.md
+  - FAQ: faq.md
+  - User Guide: user-guide.md
+  - Changelog: changelog.md
+  - API Reference:
+    - Overview: api/index.md
+    - Conflate Model: endpoints/conflate-model.md
+    - Compute Conflation Metrics: endpoints/compute-conflation-metrics.md
+    - Create FIM Library: endpoints/create-fim-lib.md
+    - Create Model Run (Normal Depth): endpoints/create-model-run-normal-depth.md
+    - Create RAS Terrain: endpoints/create-ras-terrain.md
+    - Extract Submodel: endpoints/extract-submodel.md
+    - RAS to GPKG: endpoints/ras-to-gpkg.md
+    - Run Incremental Normal Depth: endpoints/run-incremental-normal-depth.md
+    - Run Known WSE: endpoints/run-known-wse.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["."]
+          options:
+            docstring_style: numpy
+            show_source: false
+            show_root_heading: true
+            heading_level: 2
+            separate_signature: true
+            show_signature_annotations: true
+            signature_crossrefs: true
+            members_order: source
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
