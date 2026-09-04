@@ -39,8 +39,6 @@ def create_model_run_normal_depth(
         which version of HEC-RAS to use, by default "631"
     show_ras : bool, optional
         whether to run HEC-RAS headless or not, by default False
-    task_id : str, optional
-        Task ID to use for logging, by default ""
 
     Returns
     -------
@@ -147,8 +145,6 @@ def run_incremental_normal_depth(
         whether to generate depth rasters after each model run, by default True
     show_ras : bool, optional
         whether to run HEC-RAS headless or not, by default False
-    task_id : str, optional
-        Task ID to use for logging, by default ""
 
     Returns
     -------
@@ -257,8 +253,6 @@ def run_known_wse(
         whether to generate depth rasters after each model run, by default True
     show_ras : bool, optional
         whether to run HEC-RAS headless or not, by default False
-    task_id : str, optional
-        Task ID to use for logging, by default ""
 
     Returns
     -------

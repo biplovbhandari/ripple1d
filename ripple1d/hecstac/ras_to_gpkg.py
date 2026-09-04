@@ -21,8 +21,6 @@ def gpkg_from_ras(source_model_directory: str, crs: str, metadata: dict):
     metadata : dict
         A dictionary of miscellaneous metadata that will be appended to the
         non-spatial metadata table in the final geopackage.
-    task_id : str, optional
-        Task ID to use for logging, by default ""
 
     Raises
     ------
@@ -36,10 +34,10 @@ def gpkg_from_ras(source_model_directory: str, crs: str, metadata: dict):
     directory containing a HEC-RAS project is submitted, ripple1d will scan the
     directory for the following files
 
-    * **Project file (.prj)** ripple1d scans the directory for .prj files and identifies any that are HEC-RAS project files (*Note: if more than one valid project file is identified, one will be arbitrarily selected*).
-    * **Plan file (.p0x)** ripple1d scans the project file for a list of plans and determine whether the plans contain encroachments. Since encroachments are often indicative of a floodway run as opposed to an existing condition run, the first listed plan without any encroachments is selected as the primary plan.
-    * **Flow file (.f0x)** ripple1d checks to see if the flow file listed in the primary plan exists.  If no flow file is specified within the primary plan, or if the specified flow file does not exist, ripple1d will search the directory for any valid steady flow files in the directory and select an arbitrary one.  If no steady flow file is found, geopackage creation will continue with no flow metadata being recorded.
-    * **Geometry file (.g0x)** ripple1d checks to see if the geometry file listed in the primary plan exists.  If no geometry file is specified within the primary plan, or if the specified geometry file does not exist , ripple1d will search the directory for any valid geometry files in the directory and select an arbitrary one.
+    - **Project file (.prj)** ripple1d scans the directory for .prj files and identifies any that are HEC-RAS project files (*Note: if more than one valid project file is identified, one will be arbitrarily selected*).
+    - **Plan file (.p0x)** ripple1d scans the project file for a list of plans and determine whether the plans contain encroachments. Since encroachments are often indicative of a floodway run as opposed to an existing condition run, the first listed plan without any encroachments is selected as the primary plan.
+    - **Flow file (.f0x)** ripple1d checks to see if the flow file listed in the primary plan exists. If no flow file is specified within the primary plan, or if the specified flow file does not exist, ripple1d will search the directory for any valid steady flow files in the directory and select an arbitrary one. If no steady flow file is found, geopackage creation will continue with no flow metadata being recorded.
+    - **Geometry file (.g0x)** ripple1d checks to see if the geometry file listed in the primary plan exists. If no geometry file is specified within the primary plan, or if the specified geometry file does not exist, ripple1d will search the directory for any valid geometry files in the directory and select an arbitrary one.
 
     Once a set of HEC-RAS files are identified, ripple1d will extract
     cross-sectional geometry, reach centerlines, junction points, and structure

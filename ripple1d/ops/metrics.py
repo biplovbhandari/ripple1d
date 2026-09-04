@@ -226,8 +226,6 @@ def compute_conflation_metrics(source_model_directory: str, model_name: str, sou
             must be 'nwm_hydrofabric' (required)
         - **version** (str):
             optional version number to log
-    task_id : str, optional
-        Task ID to use for logging, by default ""
 
     Returns
     -------
@@ -241,30 +239,32 @@ def compute_conflation_metrics(source_model_directory: str, model_name: str, sou
     align.  The metrics are broken down into three categories: xs, lengths, and
     coverage.
 
-    * **xs.**  These metrics quantify the degree of alignment between the NWM
-      reach centerline and the HEC-RAS model.  The metrics below are measured
+    - **xs.** These metrics quantify the degree of alignment between the NWM
+      reach centerline and the HEC-RAS model. The metrics below are measured
       at HEC-RAS cross-section and summary statistics are reported in the
       conflation metrics output.
 
-      * centerline_offset measures the straightline distance between RAS
-        centerline and NWM reach line
-      * thalweg_offset measures the straightline distance between lowest point
-        along each RAS section and NWM reach line
-    * **lengths.** These metrics assess centerline length differences between
+        - centerline_offset measures the straightline distance between RAS
+          centerline and NWM reach line
+        - thalweg_offset measures the straightline distance between lowest point
+          along each RAS section and NWM reach line
+
+    - **lengths.** These metrics assess centerline length differences between
       HEC-RAS and the NWM reaches.
 
-      * ras is the distance along the RAS centerline between upstream and
-        downstream cross-section
-      * network is the distance along the NWM reach between upstream and
-        downstream cross-section
-      * network_to_ras_ratio is the network length divided by ras length
-    * **coverage.** These metrics quantify the portion of the NWM reach between
+        - ras is the distance along the RAS centerline between upstream and
+          downstream cross-section
+        - network is the distance along the NWM reach between upstream and
+          downstream cross-section
+        - network_to_ras_ratio is the network length divided by ras length
+
+    - **coverage.** These metrics quantify the portion of the NWM reach between
       the upstream and downstream cross-section.
 
-      * start is the ratio of NWM reach length that occurs u/s of the upstream
-        cross-section
-      * end is the ratio of NWM reach length that occurs u/s of the downstream
-        cross-section
+        - start is the ratio of NWM reach length that occurs u/s of the upstream
+          cross-section
+        - end is the ratio of NWM reach length that occurs u/s of the downstream
+          cross-section
 
     compute_conflation_metrics also reports overlapped reaches and eclipsed
     reaches.  Overlapped_reaches is a list of reaches that are intersected by

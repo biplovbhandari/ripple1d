@@ -109,8 +109,6 @@ def create_ras_terrain(
         initial value for terrain agreement elevation increments, by default 0.5
     terrain_agreement_ignore_error : bool, optional
         whether to raise or log+ignore any errors encountered in the compute_terrain_agreement_metrics function.
-    task_id : str, optional
-        Task ID to use for logging, by default ""
 
     Returns
     -------
@@ -132,8 +130,7 @@ def create_ras_terrain(
     The create_ras_terrain endpoint downloads a digital elevation model (DEM)
     for the modeled area and exports it to a HEC-RAS terrain file.  DEM data
     may be sourced from any virtual raster source, but the default source is
-    the `USGS 3DEP 1/3 arcsecond dataset
-    <https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5>`_.  By
+    the [USGS 3DEP 1/3 arcsecond dataset](https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5).  By
     default, terrain data is clipped to a 1,000-foot buffer around a concave
     hull of the submodel cross-sections, however, the buffer distance may be
     adjusted.  If resolution data is passed to the endpoint, the terrain raster
