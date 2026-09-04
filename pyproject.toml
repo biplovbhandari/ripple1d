@@ -50,7 +50,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pre-commit", "ruff", "pytest", "pytest-cov", "pytest-json-report"]
-docs = ["sphinx", "numpydoc", "sphinx_rtd_theme", "sphinx_design", "pydata-sphinx-theme", "sphinx-autodoc-typehints", "myst-parser"]
+docs = ["mkdocs>=1.5,<2.0", "mkdocs-material>=9.0", "mkdocstrings[python]>=0.24", "mike>=2.0"]
 
 [project.urls]
 repository = "https://github.com/NGWPC/ripple1d"
@@ -85,7 +85,3 @@ include = ["ripple1d*"]
 [tool.setuptools.dynamic]
 version = {attr = "ripple1d.__version__"}
 
-
-[tool.sphinx]
-project = "ripple1d"
-author = "NGWPC, OWP, Dewberry, Entarian"
