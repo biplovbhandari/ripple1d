@@ -1,16 +1,16 @@
 # ripple1d
-[![CI](https://github.com/dewberry/ripple1d/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/dewberry/ripple1d/actions/workflows/ci.yaml)
-[![Documentation Status](https://readthedocs.org/projects/ripple1d/badge/?version=latest)](https://ripple1d.readthedocs.io/en/latest/?badge=latest)
-[![Release](https://github.com/dewberry/ripple1d/actions/workflows/release.yaml/badge.svg)](https://github.com/dewberry/ripple1d/actions/workflows/release.yaml)
+[![CI](https://github.com/NGWPC/ripple1d/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/NGWPC/ripple1d/actions/workflows/ci.yaml)
+[![Docs](https://img.shields.io/badge/docs-latest-blue)](https://ngwpc.github.io/ripple1d/)
+[![Release](https://github.com/NGWPC/ripple1d/actions/workflows/release.yaml/badge.svg)](https://github.com/NGWPC/ripple1d/actions/workflows/release.yaml)
 [![PyPI version](https://badge.fury.io/py/ripple1d.svg)](https://badge.fury.io/py/ripple1d)
 
-Utilities for repurposing HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and scenario databases for use in near-real time flood forecasting on the NOAA National Water Model network. Go to [ReadTheDocs](http://ripple1d.readthedocs.io/) for more information on ripple1d.
+Utilities for repurposing HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and scenario databases for use in near-real time flood forecasting on the NOAA National Water Model network. See the [documentation](https://ngwpc.github.io/ripple1d/) for more information on ripple1d.
 
 ## Contents
 
- - [api](api/) : Source code for the [Flask](https://flask.palletsprojects.com/en/3.0.x/) API and [Huey](https://huey.readthedocs.io/en/latest/) queueing system for managing parallel compute.
+ - [api](ripple1d/api/): Source code for the [Flask](https://flask.palletsprojects.com/en/3.0.x/) API and [Huey](https://huey.readthedocs.io/en/latest/) queueing system for managing parallel compute.
  - [ripple1d](ripple1d/): Source code for the ripple1d library.
- - [tests](tests/): Unit tests.up
+ - [tests](tests/): Unit tests.
 
 
 ## Requirements
@@ -49,12 +49,10 @@ Verify the installation by importing `ripple1d` in a Python shell:
 1. [Office of Water Prediction (OWP)](https://water.noaa.gov/)
 1. [Dewberry](https://www.dewberry.com/)
 1. [Raytheon](https://www.rtx.com/)
-1. [ Earth Resources Technology, Inc.](https://www.ertcorp.com/)
+1. [Entarian, Inc.](https://entarian.com/)
 1. [ras2fim](https://github.com/NOAA-OWP/ras2fim)
 1. [USACE HEC-RAS](https://www.hec.usace.army.mil/software/hec-ras/)
 1. NOAA National Water Model [(NWM)](https://water.noaa.gov/about/nwm)
-
-
 
 
 **Special Thanks to:** David Bascom (FEMA), Christina Lindemer (FEMA), Dave Rosa (FEMA), Paul Rooney (FEMA),  Julia Signell and Dan Pilone of [Element84](https://www.element84.com/), and the developers of [STAC](https://stacspec.org/en).
