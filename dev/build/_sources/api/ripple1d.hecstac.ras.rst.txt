@@ -1,0 +1,61 @@
+ripple1d.hecstac.ras package
+============================
+
+Submodules
+----------
+
+ripple1d.hecstac.ras.assets module
+----------------------------------
+
+.. automodule:: ripple1d.hecstac.ras.assets
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.ras.consts module
+----------------------------------
+
+.. automodule:: ripple1d.hecstac.ras.consts
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.ras.errors module
+----------------------------------
+
+.. automodule:: ripple1d.hecstac.ras.errors
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.ras.item module
+--------------------------------
+
+.. automodule:: ripple1d.hecstac.ras.item
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.ras.parser module
+----------------------------------
+
+.. automodule:: ripple1d.hecstac.ras.parser
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.ras.utils module
+---------------------------------
+
+.. automodule:: ripple1d.hecstac.ras.utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.hecstac.ras
+   :members:
+   :show-inheritance:
+   :undoc-members:

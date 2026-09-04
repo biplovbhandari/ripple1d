@@ -1,0 +1,69 @@
+ripple1d.ops package
+====================
+
+Submodules
+----------
+
+ripple1d.ops.endpoints module
+-----------------------------
+
+.. automodule:: ripple1d.ops.endpoints
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ops.fim\_lib module
+----------------------------
+
+.. automodule:: ripple1d.ops.fim_lib
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ops.metrics module
+---------------------------
+
+.. automodule:: ripple1d.ops.metrics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ops.ras\_conflate module
+---------------------------------
+
+.. automodule:: ripple1d.ops.ras_conflate
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ops.ras\_run module
+----------------------------
+
+.. automodule:: ripple1d.ops.ras_run
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ops.ras\_terrain module
+--------------------------------
+
+.. automodule:: ripple1d.ops.ras_terrain
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ops.subset\_gpkg module
+--------------------------------
+
+.. automodule:: ripple1d.ops.subset_gpkg
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.ops
+   :members:
+   :show-inheritance:
+   :undoc-members:

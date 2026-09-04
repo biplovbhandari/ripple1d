@@ -1,0 +1,7 @@
+ripple1d
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   ripple1d

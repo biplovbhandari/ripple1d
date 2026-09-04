@@ -1,0 +1,81 @@
+ripple1d package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ripple1d.api
+   ripple1d.conflate
+   ripple1d.hecstac
+   ripple1d.ops
+   ripple1d.utils
+
+Submodules
+----------
+
+ripple1d.consts module
+----------------------
+
+.. automodule:: ripple1d.consts
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.data\_model module
+---------------------------
+
+.. automodule:: ripple1d.data_model
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.errors module
+----------------------
+
+.. automodule:: ripple1d.errors
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ras module
+-------------------
+
+.. automodule:: ripple1d.ras
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.rasmap module
+----------------------
+
+.. automodule:: ripple1d.rasmap
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.ripple1d\_logger module
+--------------------------------
+
+.. automodule:: ripple1d.ripple1d_logger
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.version module
+-----------------------
+
+.. automodule:: ripple1d.version
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d
+   :members:
+   :show-inheritance:
+   :undoc-members:

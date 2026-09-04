@@ -1,0 +1,905 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ripple1d &#8212; ripple1d  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2cc7f54a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/modules';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ripple1d package" href="ripple1d.html" />
+    <link rel="prev" title="API Reference" href="../api_reference.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><a class="navbar-brand logo" href="../index.html">
+    <span class="logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: bold; font-size: 24px; color: var(--pst-color-secondary);">
+        ripple1d
+      </span>
+  </a></div>
+    
+      <div class="navbar-item">0.11.0</div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">ripple1d</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ripple1d.html">ripple1d package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.api.html">ripple1d.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.conflate.html">ripple1d.conflate package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ripple1d.hecstac.html">ripple1d.hecstac package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html">ripple1d.hecstac.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html">ripple1d.hecstac.ras package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.ops.html">ripple1d.ops package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.utils.html">ripple1d.utils package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api_reference.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ripple1d</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ripple1d">
+<h1>ripple1d<a class="headerlink" href="#ripple1d" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple1d.html">ripple1d package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.api.html">ripple1d.api package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api.app">ripple1d.api.app module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api.log">ripple1d.api.log module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api.manager">ripple1d.api.manager module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api.run_api_test">ripple1d.api.run_api_test module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api.tasks">ripple1d.api.tasks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api.utils">ripple1d.api.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.api.html#module-ripple1d.api">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.conflate.html">ripple1d.conflate package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.conflate.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.conflate.html#module-ripple1d.conflate.rasfim">ripple1d.conflate.rasfim module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.conflate.html#module-ripple1d.conflate">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.html">ripple1d.hecstac package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.html#module-ripple1d.hecstac.ras_to_gpkg">ripple1d.hecstac.ras_to_gpkg module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.html#module-ripple1d.hecstac">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.ops.html">ripple1d.ops package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.endpoints">ripple1d.ops.endpoints module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.fim_lib">ripple1d.ops.fim_lib module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.metrics">ripple1d.ops.metrics module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.ras_conflate">ripple1d.ops.ras_conflate module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.ras_run">ripple1d.ops.ras_run module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.ras_terrain">ripple1d.ops.ras_terrain module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops.subset_gpkg">ripple1d.ops.subset_gpkg module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.ops.html#module-ripple1d.ops">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.utils.html">ripple1d.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#module-ripple1d.utils.dg_utils">ripple1d.utils.dg_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#module-ripple1d.utils.gpkg_utils">ripple1d.utils.gpkg_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#module-ripple1d.utils.ripple_utils">ripple1d.utils.ripple_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#module-ripple1d.utils.s3_utils">ripple1d.utils.s3_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#module-ripple1d.utils.sqlite_utils">ripple1d.utils.sqlite_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#ripple1d-utils-stac-utils-module">ripple1d.utils.stac_utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.utils.html#module-ripple1d.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.consts">ripple1d.consts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.data_model">ripple1d.data_model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.FlowChangeLocation"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.FlowChangeLocation.flows"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.flows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.FlowChangeLocation.profile_names"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.profile_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.FlowChangeLocation.reach"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.reach</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.FlowChangeLocation.river"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.river</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.FlowChangeLocation.rs"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.rs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction"><code class="docutils literal notranslate"><span class="pre">Junction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.downstream_reaches"><code class="docutils literal notranslate"><span class="pre">Junction.downstream_reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.downstream_rivers"><code class="docutils literal notranslate"><span class="pre">Junction.downstream_rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.gdf"><code class="docutils literal notranslate"><span class="pre">Junction.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.junction_lengths"><code class="docutils literal notranslate"><span class="pre">Junction.junction_lengths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.point"><code class="docutils literal notranslate"><span class="pre">Junction.point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.split_lines"><code class="docutils literal notranslate"><span class="pre">Junction.split_lines()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.upstream_reaches"><code class="docutils literal notranslate"><span class="pre">Junction.upstream_reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.upstream_rivers"><code class="docutils literal notranslate"><span class="pre">Junction.upstream_rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.x"><code class="docutils literal notranslate"><span class="pre">Junction.x</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Junction.y"><code class="docutils literal notranslate"><span class="pre">Junction.y</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel"><code class="docutils literal notranslate"><span class="pre">NwmReachModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.conflation_file"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.conflation_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.crs"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.crs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.fim_lib_assets"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.fim_lib_assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.fim_lib_stac_json_file"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.fim_lib_stac_json_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.fim_results_database"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.fim_results_database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.fim_results_directory"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.fim_results_directory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.fim_scenarios"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.fim_scenarios</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.flow_extension"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.flow_extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.flow_file"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.flow_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.model_stac_json_file"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.model_stac_json_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.ras_terrain_hdf"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.ras_terrain_hdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.ripple1d_parameters"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.ripple1d_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.terrain_agreement_file"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.terrain_agreement_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.terrain_directory"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.terrain_directory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.units"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.units</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.update_write_ripple1d_parameters"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.update_write_ripple1d_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.upload_files_to_s3"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.upload_files_to_s3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel.upload_fim_lib_assets"><code class="docutils literal notranslate"><span class="pre">NwmReachModel.upload_fim_lib_assets()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure"><code class="docutils literal notranslate"><span class="pre">RasModelStructure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.assets"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.derive_path"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.derive_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.file_exists"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.file_exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.model_name"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.model_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.ras_gpkg_file"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.ras_gpkg_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.ras_junctions"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.ras_junctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.ras_project_file"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.ras_project_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.ras_rivers"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.ras_rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.ras_structures"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.ras_structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.ras_xs"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.ras_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.terrain_assets"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.terrain_assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.thumbnail_png"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.thumbnail_png</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RasModelStructure.xs_concave_hull"><code class="docutils literal notranslate"><span class="pre">RasModelStructure.xs_concave_hull</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach"><code class="docutils literal notranslate"><span class="pre">Reach</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.add_bridge_xs"><code class="docutils literal notranslate"><span class="pre">Reach.add_bridge_xs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.compute_multi_xs_variables"><code class="docutils literal notranslate"><span class="pre">Reach.compute_multi_xs_variables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.coords"><code class="docutils literal notranslate"><span class="pre">Reach.coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.cross_sections"><code class="docutils literal notranslate"><span class="pre">Reach.cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.ds_xs"><code class="docutils literal notranslate"><span class="pre">Reach.ds_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.gdf"><code class="docutils literal notranslate"><span class="pre">Reach.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.geom"><code class="docutils literal notranslate"><span class="pre">Reach.geom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.number_of_coords"><code class="docutils literal notranslate"><span class="pre">Reach.number_of_coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.number_of_cross_sections"><code class="docutils literal notranslate"><span class="pre">Reach.number_of_cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.reach_nodes"><code class="docutils literal notranslate"><span class="pre">Reach.reach_nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.structures"><code class="docutils literal notranslate"><span class="pre">Reach.structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.structures_gdf"><code class="docutils literal notranslate"><span class="pre">Reach.structures_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.us_xs"><code class="docutils literal notranslate"><span class="pre">Reach.us_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Reach.xs_gdf"><code class="docutils literal notranslate"><span class="pre">Reach.xs_gdf</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.assets"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.conflation_file"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.conflation_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.derive_path"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.derive_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.file_exists"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.file_exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.nwm_conflation_parameters"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.nwm_conflation_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.ras_gpkg_file"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.ras_gpkg_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.ras_project_file"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.ras_project_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.source_model_metadata"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.source_model_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.terrain_assets"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.terrain_assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceDirectory.thumbnail_png"><code class="docutils literal notranslate"><span class="pre">RippleSourceDirectory.thumbnail_png</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.assets"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.conflation_file"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.conflation_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.derive_path"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.derive_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.file_exists"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.file_exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.model_name"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.model_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.nwm_conflation_parameters"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.nwm_conflation_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.ras_gpkg_file"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.ras_gpkg_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.terrain_assets"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.terrain_assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.RippleSourceModel.thumbnail_png"><code class="docutils literal notranslate"><span class="pre">RippleSourceModel.thumbnail_png</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure"><code class="docutils literal notranslate"><span class="pre">Structure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.distance"><code class="docutils literal notranslate"><span class="pre">Structure.distance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.distance_to_us_xs"><code class="docutils literal notranslate"><span class="pre">Structure.distance_to_us_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.downstream_river_station"><code class="docutils literal notranslate"><span class="pre">Structure.downstream_river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.gdf"><code class="docutils literal notranslate"><span class="pre">Structure.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.multiple_xs"><code class="docutils literal notranslate"><span class="pre">Structure.multiple_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.number_of_station_elevation_points"><code class="docutils literal notranslate"><span class="pre">Structure.number_of_station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.river_station"><code class="docutils literal notranslate"><span class="pre">Structure.river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.split_structure_header"><code class="docutils literal notranslate"><span class="pre">Structure.split_structure_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.station_elevation_points"><code class="docutils literal notranslate"><span class="pre">Structure.station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.structure_data"><code class="docutils literal notranslate"><span class="pre">Structure.structure_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.tail_water_reach"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_reach</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.tail_water_river"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_river</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.tail_water_river_ds_station"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_river_ds_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.tail_water_river_station"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.tw_distance"><code class="docutils literal notranslate"><span class="pre">Structure.tw_distance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.type"><code class="docutils literal notranslate"><span class="pre">Structure.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.weir_length"><code class="docutils literal notranslate"><span class="pre">Structure.weir_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.Structure.width"><code class="docutils literal notranslate"><span class="pre">Structure.width</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS"><code class="docutils literal notranslate"><span class="pre">XS</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.bank_stations"><code class="docutils literal notranslate"><span class="pre">XS.bank_stations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.banks_encompass_channel"><code class="docutils literal notranslate"><span class="pre">XS.banks_encompass_channel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.centerline_intersection_point"><code class="docutils literal notranslate"><span class="pre">XS.centerline_intersection_point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.centerline_intersection_station"><code class="docutils literal notranslate"><span class="pre">XS.centerline_intersection_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.channel_depth"><code class="docutils literal notranslate"><span class="pre">XS.channel_depth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.channel_obstruction"><code class="docutils literal notranslate"><span class="pre">XS.channel_obstruction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.channel_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.channel_reach_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.channel_width"><code class="docutils literal notranslate"><span class="pre">XS.channel_width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.computed_river_station"><code class="docutils literal notranslate"><span class="pre">XS.computed_river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.contraction_coefficient"><code class="docutils literal notranslate"><span class="pre">XS.contraction_coefficient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.coords"><code class="docutils literal notranslate"><span class="pre">XS.coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.correct_cross_section_direction"><code class="docutils literal notranslate"><span class="pre">XS.correct_cross_section_direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.cross_section_intersects_reach"><code class="docutils literal notranslate"><span class="pre">XS.cross_section_intersects_reach</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.crs_units"><code class="docutils literal notranslate"><span class="pre">XS.crs_units</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.cutline_length"><code class="docutils literal notranslate"><span class="pre">XS.cutline_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.expansion_coefficient"><code class="docutils literal notranslate"><span class="pre">XS.expansion_coefficient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.first_station"><code class="docutils literal notranslate"><span class="pre">XS.first_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.gdf"><code class="docutils literal notranslate"><span class="pre">XS.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.geom"><code class="docutils literal notranslate"><span class="pre">XS.geom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.has_blocks"><code class="docutils literal notranslate"><span class="pre">XS.has_blocks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.has_htab_error"><code class="docutils literal notranslate"><span class="pre">XS.has_htab_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.has_ineffectives"><code class="docutils literal notranslate"><span class="pre">XS.has_ineffectives</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.has_levees"><code class="docutils literal notranslate"><span class="pre">XS.has_levees</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.horizontal_varying_mannings"><code class="docutils literal notranslate"><span class="pre">XS.horizontal_varying_mannings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.htab_increment"><code class="docutils literal notranslate"><span class="pre">XS.htab_increment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.htab_min_elevation"><code class="docutils literal notranslate"><span class="pre">XS.htab_min_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.htab_min_increment"><code class="docutils literal notranslate"><span class="pre">XS.htab_min_increment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.htab_points"><code class="docutils literal notranslate"><span class="pre">XS.htab_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.htab_starting_el"><code class="docutils literal notranslate"><span class="pre">XS.htab_starting_el</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.htab_string"><code class="docutils literal notranslate"><span class="pre">XS.htab_string</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.intersects_reach_once"><code class="docutils literal notranslate"><span class="pre">XS.intersects_reach_once</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.last_station"><code class="docutils literal notranslate"><span class="pre">XS.last_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.left_bank_elevation"><code class="docutils literal notranslate"><span class="pre">XS.left_bank_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.left_bank_station"><code class="docutils literal notranslate"><span class="pre">XS.left_bank_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.left_max_elevation"><code class="docutils literal notranslate"><span class="pre">XS.left_max_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.left_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.left_reach_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.left_reach_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.left_reach_length_ratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.mannings"><code class="docutils literal notranslate"><span class="pre">XS.mannings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.mannings_code"><code class="docutils literal notranslate"><span class="pre">XS.mannings_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.max_n"><code class="docutils literal notranslate"><span class="pre">XS.max_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.min_elevation"><code class="docutils literal notranslate"><span class="pre">XS.min_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.min_elevation_in_channel"><code class="docutils literal notranslate"><span class="pre">XS.min_elevation_in_channel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.min_n"><code class="docutils literal notranslate"><span class="pre">XS.min_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.number_of_coords"><code class="docutils literal notranslate"><span class="pre">XS.number_of_coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.number_of_mannings_points"><code class="docutils literal notranslate"><span class="pre">XS.number_of_mannings_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.number_of_station_elevation_points"><code class="docutils literal notranslate"><span class="pre">XS.number_of_station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.overtop_elevation"><code class="docutils literal notranslate"><span class="pre">XS.overtop_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.reach_lengths"><code class="docutils literal notranslate"><span class="pre">XS.reach_lengths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.reach_lengths_populated"><code class="docutils literal notranslate"><span class="pre">XS.reach_lengths_populated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.right_bank_elevation"><code class="docutils literal notranslate"><span class="pre">XS.right_bank_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.right_bank_station"><code class="docutils literal notranslate"><span class="pre">XS.right_bank_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.right_max_elevation"><code class="docutils literal notranslate"><span class="pre">XS.right_max_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.right_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.right_reach_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.right_reach_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.right_reach_length_ratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.river_station"><code class="docutils literal notranslate"><span class="pre">XS.river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.river_station_str"><code class="docutils literal notranslate"><span class="pre">XS.river_station_str</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.set_bridge_xs"><code class="docutils literal notranslate"><span class="pre">XS.set_bridge_xs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.set_computed_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.set_computed_reach_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.set_computed_reach_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.set_computed_reach_length_ratio()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.set_thalweg_drop"><code class="docutils literal notranslate"><span class="pre">XS.set_thalweg_drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.skew"><code class="docutils literal notranslate"><span class="pre">XS.skew</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.split_xs_header"><code class="docutils literal notranslate"><span class="pre">XS.split_xs_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.station_elevation_df"><code class="docutils literal notranslate"><span class="pre">XS.station_elevation_df</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.station_elevation_point_density"><code class="docutils literal notranslate"><span class="pre">XS.station_elevation_point_density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.station_elevation_points"><code class="docutils literal notranslate"><span class="pre">XS.station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.station_length"><code class="docutils literal notranslate"><span class="pre">XS.station_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.thalweg"><code class="docutils literal notranslate"><span class="pre">XS.thalweg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.unit_conversion"><code class="docutils literal notranslate"><span class="pre">XS.unit_conversion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.xs_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.xs_length_ratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.data_model.XS.xs_max_elevation"><code class="docutils literal notranslate"><span class="pre">XS.xs_max_elevation</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.errors">ripple1d.errors module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.BadConflation"><code class="docutils literal notranslate"><span class="pre">BadConflation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.CouldNotFindAnyPlansError"><code class="docutils literal notranslate"><span class="pre">CouldNotFindAnyPlansError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.CouldNotIdentifyPrimaryPlanError"><code class="docutils literal notranslate"><span class="pre">CouldNotIdentifyPrimaryPlanError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.DepthGridNotFoundError"><code class="docutils literal notranslate"><span class="pre">DepthGridNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.FlowTitleAlreadyExistsError"><code class="docutils literal notranslate"><span class="pre">FlowTitleAlreadyExistsError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.HECRASVersionNotInstalledError"><code class="docutils literal notranslate"><span class="pre">HECRASVersionNotInstalledError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.InvalidNetworkPath"><code class="docutils literal notranslate"><span class="pre">InvalidNetworkPath</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.InvalidStructureDataError"><code class="docutils literal notranslate"><span class="pre">InvalidStructureDataError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.ModelNotFoundError"><code class="docutils literal notranslate"><span class="pre">ModelNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NoCRSInferredError"><code class="docutils literal notranslate"><span class="pre">NoCRSInferredError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NoCrossSectionLayerError"><code class="docutils literal notranslate"><span class="pre">NoCrossSectionLayerError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NoDefaultEPSGError"><code class="docutils literal notranslate"><span class="pre">NoDefaultEPSGError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NoFlowFileSpecifiedError"><code class="docutils literal notranslate"><span class="pre">NoFlowFileSpecifiedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NoGeometryFileSpecifiedError"><code class="docutils literal notranslate"><span class="pre">NoGeometryFileSpecifiedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NoRiverLayerError"><code class="docutils literal notranslate"><span class="pre">NoRiverLayerError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NotAPrjFile"><code class="docutils literal notranslate"><span class="pre">NotAPrjFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NotGeoreferencedError"><code class="docutils literal notranslate"><span class="pre">NotGeoreferencedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.NullTerrainError"><code class="docutils literal notranslate"><span class="pre">NullTerrainError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.PlanNameNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlanNameNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.PlanTitleAlreadyExistsError"><code class="docutils literal notranslate"><span class="pre">PlanTitleAlreadyExistsError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.ProjectionNotFoundError"><code class="docutils literal notranslate"><span class="pre">ProjectionNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.RASComputeError"><code class="docutils literal notranslate"><span class="pre">RASComputeError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.RASComputeMeshError"><code class="docutils literal notranslate"><span class="pre">RASComputeMeshError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.RASComputeTimeoutError"><code class="docutils literal notranslate"><span class="pre">RASComputeTimeoutError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.RASGeometryError"><code class="docutils literal notranslate"><span class="pre">RASGeometryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.RASStoreAllMapsError"><code class="docutils literal notranslate"><span class="pre">RASStoreAllMapsError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.RasTerrainFailure"><code class="docutils literal notranslate"><span class="pre">RasTerrainFailure</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.SingleXSModel"><code class="docutils literal notranslate"><span class="pre">SingleXSModel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.ToManyPlansError"><code class="docutils literal notranslate"><span class="pre">ToManyPlansError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.UnitsError"><code class="docutils literal notranslate"><span class="pre">UnitsError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.UnknownVerticalUnits"><code class="docutils literal notranslate"><span class="pre">UnknownVerticalUnits</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.errors.UnkownCRSUnitsError"><code class="docutils literal notranslate"><span class="pre">UnkownCRSUnitsError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.ras">ripple1d.ras module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText"><code class="docutils literal notranslate"><span class="pre">RasFlowText</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.description"><code class="docutils literal notranslate"><span class="pre">RasFlowText.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.flow_change_locations"><code class="docutils literal notranslate"><span class="pre">RasFlowText.flow_change_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.from_str"><code class="docutils literal notranslate"><span class="pre">RasFlowText.from_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.n_flow_change_locations"><code class="docutils literal notranslate"><span class="pre">RasFlowText.n_flow_change_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.n_profiles"><code class="docutils literal notranslate"><span class="pre">RasFlowText.n_profiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.profile_names"><code class="docutils literal notranslate"><span class="pre">RasFlowText.profile_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.title"><code class="docutils literal notranslate"><span class="pre">RasFlowText.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.version"><code class="docutils literal notranslate"><span class="pre">RasFlowText.version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.write_discharges"><code class="docutils literal notranslate"><span class="pre">RasFlowText.write_discharges()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.write_ds_known_wse"><code class="docutils literal notranslate"><span class="pre">RasFlowText.write_ds_known_wse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.write_ds_normal_depth"><code class="docutils literal notranslate"><span class="pre">RasFlowText.write_ds_normal_depth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasFlowText.write_headers"><code class="docutils literal notranslate"><span class="pre">RasFlowText.write_headers()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText"><code class="docutils literal notranslate"><span class="pre">RasGeomText</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.cross_sections"><code class="docutils literal notranslate"><span class="pre">RasGeomText.cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.determine_lateral_structure_xs"><code class="docutils literal notranslate"><span class="pre">RasGeomText.determine_lateral_structure_xs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.fix_htab_errors"><code class="docutils literal notranslate"><span class="pre">RasGeomText.fix_htab_errors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.from_gpkg"><code class="docutils literal notranslate"><span class="pre">RasGeomText.from_gpkg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.from_str"><code class="docutils literal notranslate"><span class="pre">RasGeomText.from_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.junction_gdf"><code class="docutils literal notranslate"><span class="pre">RasGeomText.junction_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.junctions"><code class="docutils literal notranslate"><span class="pre">RasGeomText.junctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.n_cross_sections"><code class="docutils literal notranslate"><span class="pre">RasGeomText.n_cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.n_junctions"><code class="docutils literal notranslate"><span class="pre">RasGeomText.n_junctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.n_reaches"><code class="docutils literal notranslate"><span class="pre">RasGeomText.n_reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.n_rivers"><code class="docutils literal notranslate"><span class="pre">RasGeomText.n_rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.n_structures"><code class="docutils literal notranslate"><span class="pre">RasGeomText.n_structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.reach_gdf"><code class="docutils literal notranslate"><span class="pre">RasGeomText.reach_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.reaches"><code class="docutils literal notranslate"><span class="pre">RasGeomText.reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.rivers"><code class="docutils literal notranslate"><span class="pre">RasGeomText.rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.structures"><code class="docutils literal notranslate"><span class="pre">RasGeomText.structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.structures_gdf"><code class="docutils literal notranslate"><span class="pre">RasGeomText.structures_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.title"><code class="docutils literal notranslate"><span class="pre">RasGeomText.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.to_gpkg"><code class="docutils literal notranslate"><span class="pre">RasGeomText.to_gpkg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.version"><code class="docutils literal notranslate"><span class="pre">RasGeomText.version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasGeomText.xs_gdf"><code class="docutils literal notranslate"><span class="pre">RasGeomText.xs_gdf</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager"><code class="docutils literal notranslate"><span class="pre">RasManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.current_plan"><code class="docutils literal notranslate"><span class="pre">RasManager.current_plan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.from_gpkg"><code class="docutils literal notranslate"><span class="pre">RasManager.from_gpkg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.get_flows"><code class="docutils literal notranslate"><span class="pre">RasManager.get_flows()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.get_geoms"><code class="docutils literal notranslate"><span class="pre">RasManager.get_geoms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.get_plans"><code class="docutils literal notranslate"><span class="pre">RasManager.get_plans()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.kwses_run"><code class="docutils literal notranslate"><span class="pre">RasManager.kwses_run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.new_geom_from_gpkg"><code class="docutils literal notranslate"><span class="pre">RasManager.new_geom_from_gpkg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.normal_depth_run"><code class="docutils literal notranslate"><span class="pre">RasManager.normal_depth_run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.projection_file"><code class="docutils literal notranslate"><span class="pre">RasManager.projection_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.update_rasmapper_for_mapping"><code class="docutils literal notranslate"><span class="pre">RasManager.update_rasmapper_for_mapping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasManager.write_new_plan_text_file"><code class="docutils literal notranslate"><span class="pre">RasManager.write_new_plan_text_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap"><code class="docutils literal notranslate"><span class="pre">RasMap</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.text_file"><code class="docutils literal notranslate"><span class="pre">RasMap.text_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.contents"><code class="docutils literal notranslate"><span class="pre">RasMap.contents</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.version"><code class="docutils literal notranslate"><span class="pre">RasMap.version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.add_plan_layer"><code class="docutils literal notranslate"><span class="pre">RasMap.add_plan_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.add_result_layers"><code class="docutils literal notranslate"><span class="pre">RasMap.add_result_layers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.add_terrain"><code class="docutils literal notranslate"><span class="pre">RasMap.add_terrain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.new_rasmap_content"><code class="docutils literal notranslate"><span class="pre">RasMap.new_rasmap_content()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.read_contents"><code class="docutils literal notranslate"><span class="pre">RasMap.read_contents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.update_crs"><code class="docutils literal notranslate"><span class="pre">RasMap.update_crs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasMap.write"><code class="docutils literal notranslate"><span class="pre">RasMap.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText"><code class="docutils literal notranslate"><span class="pre">RasPlanText</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.flow"><code class="docutils literal notranslate"><span class="pre">RasPlanText.flow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.from_str"><code class="docutils literal notranslate"><span class="pre">RasPlanText.from_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.geom"><code class="docutils literal notranslate"><span class="pre">RasPlanText.geom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.new_plan_contents"><code class="docutils literal notranslate"><span class="pre">RasPlanText.new_plan_contents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.new_plan_from_existing"><code class="docutils literal notranslate"><span class="pre">RasPlanText.new_plan_from_existing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.plan_geom_extension"><code class="docutils literal notranslate"><span class="pre">RasPlanText.plan_geom_extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.plan_geom_file"><code class="docutils literal notranslate"><span class="pre">RasPlanText.plan_geom_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.plan_steady_extension"><code class="docutils literal notranslate"><span class="pre">RasPlanText.plan_steady_extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.plan_steady_file"><code class="docutils literal notranslate"><span class="pre">RasPlanText.plan_steady_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.plan_unsteady_extension"><code class="docutils literal notranslate"><span class="pre">RasPlanText.plan_unsteady_extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.plan_unsteady_flow_file"><code class="docutils literal notranslate"><span class="pre">RasPlanText.plan_unsteady_flow_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.read_plan_results"><code class="docutils literal notranslate"><span class="pre">RasPlanText.read_plan_results()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.title"><code class="docutils literal notranslate"><span class="pre">RasPlanText.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasPlanText.version"><code class="docutils literal notranslate"><span class="pre">RasPlanText.version</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject"><code class="docutils literal notranslate"><span class="pre">RasProject</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.current_plan"><code class="docutils literal notranslate"><span class="pre">RasProject.current_plan</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.from_str"><code class="docutils literal notranslate"><span class="pre">RasProject.from_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.geoms"><code class="docutils literal notranslate"><span class="pre">RasProject.geoms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.n_flows"><code class="docutils literal notranslate"><span class="pre">RasProject.n_flows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.n_geoms"><code class="docutils literal notranslate"><span class="pre">RasProject.n_geoms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.n_plans"><code class="docutils literal notranslate"><span class="pre">RasProject.n_plans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.plans"><code class="docutils literal notranslate"><span class="pre">RasProject.plans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.set_current_plan"><code class="docutils literal notranslate"><span class="pre">RasProject.set_current_plan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.steady_flows"><code class="docutils literal notranslate"><span class="pre">RasProject.steady_flows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.title"><code class="docutils literal notranslate"><span class="pre">RasProject.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.units"><code class="docutils literal notranslate"><span class="pre">RasProject.units</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasProject.unsteady_flows"><code class="docutils literal notranslate"><span class="pre">RasProject.unsteady_flows</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasTextFile"><code class="docutils literal notranslate"><span class="pre">RasTextFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasTextFile.file_extension"><code class="docutils literal notranslate"><span class="pre">RasTextFile.file_extension</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasTextFile.read_contents"><code class="docutils literal notranslate"><span class="pre">RasTextFile.read_contents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasTextFile.write_contents"><code class="docutils literal notranslate"><span class="pre">RasTextFile.write_contents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasTextFile.write_updated_contents"><code class="docutils literal notranslate"><span class="pre">RasTextFile.write_updated_contents()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasUnsteadyText"><code class="docutils literal notranslate"><span class="pre">RasUnsteadyText</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasUnsteadyText.from_str"><code class="docutils literal notranslate"><span class="pre">RasUnsteadyText.from_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasUnsteadyText.title"><code class="docutils literal notranslate"><span class="pre">RasUnsteadyText.title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ras.RasUnsteadyText.version"><code class="docutils literal notranslate"><span class="pre">RasUnsteadyText.version</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.check_crs"><code class="docutils literal notranslate"><span class="pre">check_crs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.check_version_installed"><code class="docutils literal notranslate"><span class="pre">check_version_installed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.check_windows"><code class="docutils literal notranslate"><span class="pre">check_windows()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.combine_root_extension"><code class="docutils literal notranslate"><span class="pre">combine_root_extension()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.create_terrain"><code class="docutils literal notranslate"><span class="pre">create_terrain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.get_new_extension_number"><code class="docutils literal notranslate"><span class="pre">get_new_extension_number()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ras.search_for_ras_crs"><code class="docutils literal notranslate"><span class="pre">search_for_ras_crs()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.rasmap">ripple1d.rasmap module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.ripple1d_logger">ripple1d.ripple1d_logger module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ripple1d_logger.RippleLogFormatter"><code class="docutils literal notranslate"><span class="pre">RippleLogFormatter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.html#ripple1d.ripple1d_logger.RippleLogFormatter.format"><code class="docutils literal notranslate"><span class="pre">RippleLogFormatter.format()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ripple1d_logger.configure_logging"><code class="docutils literal notranslate"><span class="pre">configure_logging()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.html#ripple1d.ripple1d_logger.initialize_server_logger"><code class="docutils literal notranslate"><span class="pre">initialize_server_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d.version">ripple1d.version module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.html#module-ripple1d">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../api_reference.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API Reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ripple1d.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ripple1d package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/modules.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Dewberry.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

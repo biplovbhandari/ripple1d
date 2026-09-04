@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Technical Summary &#8212; ripple1d  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2cc7f54a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tech_summary';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frequently Asked Questions" href="faq.html" />
+    <link rel="prev" title="Ripple1D" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><a class="navbar-brand logo" href="index.html">
+    <span class="logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: bold; font-size: 24px; color: var(--pst-color-secondary);">
+        ripple1d
+      </span>
+  </a></div>
+    
+      <div class="navbar-item">0.11.0</div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Technical Summary</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="technical-summary">
+<h1>Technical Summary<a class="headerlink" href="#technical-summary" title="Link to this heading">#</a></h1>
+<p>The following steps outline a typical workflow for setting up a HEC-RAS model
+for use in FIM and scenario production.</p>
+<section id="model-identification-and-data-extraction">
+<h2>1 - Model identification and data extraction<a class="headerlink" href="#model-identification-and-data-extraction" title="Link to this heading">#</a></h2>
+<p>(relevant endpoints: <a class="reference internal" href="endpoints/ras_to_gpkg.html"><span class="doc">ras_to_gpkg</span></a>)</p>
+<p>When ripple1d is presented with a HEC-RAS project folder, it scans the
+directory for a complete set of HEC-RAS project files. If a valid set is found,
+ripple1d then exports the spatial extents of the cross-sections, river
+centerline, structures, and junctions (along with their associated metadata) to
+a geopackage file.</p>
+</section>
+<section id="model-and-nwm-network-conflation">
+<h2>2 - Model and NWM network conflation<a class="headerlink" href="#model-and-nwm-network-conflation" title="Link to this heading">#</a></h2>
+<p>(relevant endpoints: <a class="reference internal" href="endpoints/conflate_model.html"><span class="doc">conflate_model</span></a>,
+<a class="reference internal" href="endpoints/compute_conflation_metrics.html"><span class="doc">compute_conflation_metrics</span></a>)</p>
+<a class="reference internal image-reference" href="_images/source_w_nwm.png"><img alt="HEC-RAS source model and National Water Model network" class="align-center" src="_images/source_w_nwm.png" width="400" />
+</a>
+<p>The upstream and downstream limits of HEC-RAS models rarely align with those of
+NWM reaches. Conflating in ripple1d is the process of associating sections of
+HEC-RAS models with NWM reaches. To make this association, ripple1d selects NWM
+reaches near the upstream and downstream boundaries of the HEC-RAS model and
+traverses the NWM network between them, marking all reaches encounters. For
+each of those NWM reaches, the utility identifies an upstream cross-section as
+the HEC-RAS cross-section that intersects the reach closest to its upstream
+end. It identifies a downstream cross-section as the HEC-RAS cross-section
+<strong>directly downstream</strong> of the HEC-RAS cross-section that intersects the reach
+closest to the downstream end.  All cross-sections between the upstream and
+downstream cross-sections are marked as associated with the NWM reach.</p>
+<a class="reference internal image-reference" href="_images/sub_models.png"><img alt="Breaking source model into sub models" class="align-center" src="_images/sub_models.png" width="400" />
+</a>
+<p>As a part of the conflation process, ripple1d records a set of metrics that may
+be used to assess how well the HEC-RAS model and NWM reaches agree. These
+metrics are saved in a JSON file within the HEC-RAS model directory, and
+definitions for each of the JSON fields are provided below.</p>
+<ul class="simple">
+<li><p><strong>Cross-sectional metrics.</strong>  These metrics quantify the degree of alignment
+between the NWM reach centerline and the HEC-RAS model.  The metrics below
+are measured at each HEC-RAS cross-section and summary statistics are
+reported in the conflation metrics output.</p>
+<ul>
+<li><p><strong>centerline_offset</strong> measures the straightline distance between RAS centerline
+and NWM reach line</p></li>
+<li><p><strong>thalweg_offset</strong> measures the straightline distance between lowest point
+along each RAS section and NWM reach line</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/xs_metrics.png"><img alt="Cross-section conflation metrics" class="align-center" src="_images/xs_metrics.png" width="400" />
+</a>
+<ul class="simple">
+<li><p><strong>Length metrics.</strong> These metrics assess centerline length differences between
+HEC-RAS and the NWM reaches.</p>
+<ul>
+<li><p><strong>ras</strong> is the distance along the RAS centerline between upstream and
+downstream cross-section</p></li>
+<li><p><strong>network</strong> is the distance along the NWM reach between upstream and
+downstream cross-section</p></li>
+<li><p><strong>network_to_ras_ratio</strong> is the network length divided by ras length</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/length_metrics.png"><img alt="Length conflation metrics" class="align-center" src="_images/length_metrics.png" width="400" />
+</a>
+<ul class="simple">
+<li><p><strong>Coverage metrics.</strong> These metrics quantify the portion of the NWM reach
+between the upstream and downstream cross-section.</p>
+<ul>
+<li><p><strong>start</strong> is the ratio of NWM reach length that occurs u/s of the upstream
+cross-section</p></li>
+<li><p><strong>end</strong> is the ratio of NWM reach length that occurs u/s of the downstream
+cross-section</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/coverage_metrics.png"><img alt="Coverage conflation metrics" class="align-center" src="_images/coverage_metrics.png" width="400" />
+</a>
+</section>
+<section id="sub-model-creation">
+<h2>3 - Sub model creation<a class="headerlink" href="#sub-model-creation" title="Link to this heading">#</a></h2>
+<p>(relevant endpoints: <a class="reference internal" href="endpoints/extract_submodel.html"><span class="doc">extract_submodel</span></a>,
+<a class="reference internal" href="endpoints/create_ras_terrain.html"><span class="doc">create_ras_terrain</span></a>)</p>
+<p>Once NWM reaches have been associated with relevant parts of the HEC-RAS model,
+a new HEC-RAS sub model specific to each NWM reach will be created.  Rippl1d
+copies geometry between source HEC-RAS model and submodel so that the submodel
+produces water surface elevation predictions consistent with the original
+engineer-certified model.  For mapping inundation extents, however, ripple1d
+downloads newer terrain to reflect existing conditions.  You can use terrain
+from any virtual raster source, but by default, ripple1d will download a <a class="reference external" href="https://data.usgs.gov/datacatalog/data/USGS:3a81321b-c153-416f-98b7-cc8e5f0e17c3">1/3
+arcsecond DEM from USGS</a></p>
+<p>As part of terrain generation, a suite of metrics are generated to quantify the
+agreement of the newly generated DEM terrain and the source model cross-section
+geometry.  Metrics are first generated for each cross-section at a set of water
+surface elevations ranging from the section invert to the lower of the two
+source model section endpoints.  All metrics (except for residual summary
+statistics) are aggregated to the cross-section level by averaging across all
+measured stages.  Another set of shape metrics as well as residual summary
+statistics are computed for the whole cross-section.  All cross-section metrics
+(except for residual summary statistics) are aggregated to the model level by
+averaging across all cross-sections.</p>
+<p><strong>Example Cross-Sections and Their Metrics</strong></p>
+<p><strong>Perfectly Aligned</strong></p>
+<a class="reference internal image-reference" href="_images/1.png"><img alt="Perfectly aligned data" class="align-center" src="_images/1.png" width="1000" />
+</a>
+<p><strong>Noisy</strong></p>
+<a class="reference internal image-reference" href="_images/2.png"><img alt="Noisy data" class="align-center" src="_images/2.png" width="1000" />
+</a>
+<p><strong>Vertically Offset</strong></p>
+<a class="reference internal image-reference" href="_images/3.png"><img alt="Vertically offset data" class="align-center" src="_images/3.png" width="1000" />
+</a>
+<p><strong>Horizontally Offset</strong></p>
+<a class="reference internal image-reference" href="_images/4.png"><img alt="Horizontally offset data" class="align-center" src="_images/4.png" width="1000" />
+</a>
+<p><strong>Squeezed</strong></p>
+<a class="reference internal image-reference" href="_images/5.png"><img alt="Squeezed data" class="align-center" src="_images/5.png" width="1000" />
+</a>
+<p><strong>Truncated</strong></p>
+<a class="reference internal image-reference" href="_images/6.png"><img alt="Truncated data" class="align-center" src="_images/6.png" width="1000" />
+</a>
+<p><strong>Low Fidelity</strong></p>
+<a class="reference internal image-reference" href="_images/7.png"><img alt="Low-fidelity data" class="align-center" src="_images/7.png" width="1000" />
+</a>
+<p><strong>Complete Misalignment</strong></p>
+<a class="reference internal image-reference" href="_images/8.png"><img alt="Completely misaligned data" class="align-center" src="_images/8.png" width="1000" />
+</a>
+<p><strong>Metric Descriptions and Interpretations</strong></p>
+<ul class="simple">
+<li><p><strong>Residual Summary Statistics</strong> These statistics summarize the difference between source model and DEM elevations at each cross-section vertex.  These metrics can be used to assess the magnitude of difference between the two sections, however, since they are not scaled, acceptable ranges will vary from river to river.  (Note: normalized RMSE is RMSE divided by the interquartile range and attempts to be a scaled error metric)</p></li>
+<li><p><strong>Inundation Overlap</strong> The intersection of the wetted top widths divided by the union of the wetted top widths (closer to 1 is better).  This metric can be used to determine spatially explicit agreement of inundation.  A good example is shown in the horizontally offset example above.</p></li>
+<li><p><strong>Top-Width Agreement</strong>  Calculated as one minus the symmetric mean absolute percentage error (sMAPE) of the source model wetted top-width and the DEM wetted top-width (closer to 1 is better).  This metric is a non-spatially explicit version of inundation overlap.  A good example is shown in the horizontally offset example above as well as the squeezed example.</p></li>
+<li><p><strong>Flow Area Overlap</strong> The intersection of the flow areas divided by the union of the flow areas (closer to 1 is better).  This metric can be used to determine spatially explicit agreement of the cross-section area.  A good example is shown in the horizontally offset example above.</p></li>
+<li><p><strong>Flow Area Agreement</strong>  Calculated as one minus the sMAPE of the source model flow area and the DEM flow area (closer to 1 is better).  This metric is a non-spatially explicit version of flow area overlap.  A good example is shown in the horizontally offset example above as well as the squeezed example.</p></li>
+<li><p><strong>Hydraulic Radius Agreement</strong> Calculated as one minus the sMAPE of the source model hydraulic radius and the DEM hydarulic radius (closer to 1 is better).  This metric captures some of how well the hydarulic characteristics of the sections agree.</p></li>
+<li><p><strong>Correlation</strong> Pearson’s correlation between the source model and DEM cross-sections (closer to 1 is better).  This metric captures how well the shape of the two sections match.</p></li>
+<li><p><strong>Max Cross-Correlation</strong> The maximum Pearson’s correlation between the source model and DEM cross-sections across all horizontal shifts of the DEM section (closer to 1 is better).  This metric captures how well the shape of the two sections match, however, it is insensitive to horizontal shifts in elevations.  Compare to correlation in the horizontal shift example above.</p></li>
+<li><p><strong>Spectral Correlation</strong> Spectral correlation between source model and DEM cross-sections, as defined by the HydroErr library (<a class="github reference external" href="https://github.com/BYU-Hydroinformatics/HydroErr/blob/42a84f3e006044f450edc7393ed54d59f27ef35b/HydroErr/HydroErr.py#L3615">BYU-Hydroinformatics/HydroErr</a>).  Furthermore the metric has been transformed to range 0-1 and so that values closer to 1 are better.  This metric captures how well the shape of the two sections match.</p></li>
+<li><p><strong>Spectral Angle</strong> Spectral angle between source model and DEM cross-sections, as defined by the HydroErr library (<a class="github reference external" href="https://github.com/BYU-Hydroinformatics/HydroErr/blob/42a84f3e006044f450edc7393ed54d59f27ef35b/HydroErr/HydroErr.py#L3538">BYU-Hydroinformatics/HydroErr</a>).  Furthermore the metric has been transformed to range 0-1 and so that values closer to 1 are better.  This metric captures how well the shape of the two sections match.</p></li>
+<li><p><strong>R-Squared</strong> Coefficient of determination between the source model and DEM elevation series (closer to 1 is better).  This metric captures how well the shape of the two sections match.</p></li>
+<li><p><strong>Thalweg Elevation Difference</strong> Source model invert minus the DEM invert/  Values closer to 0 are better, negative values reflect a higher DEM invert, and positive values reflect a higher source model invert.  Since this metric is not scaled, acceptable ranges will vary from river to river.</p></li>
+</ul>
+</section>
+<section id="scenario-development-and-fim-pre-processing">
+<h2>4 - Scenario development and FIM pre-processing<a class="headerlink" href="#scenario-development-and-fim-pre-processing" title="Link to this heading">#</a></h2>
+<p>(relevant endpoints:
+<a class="reference internal" href="endpoints/create_model_run_normal_depth.html"><span class="doc">create_model_run_normal_depth</span></a>,
+<a class="reference internal" href="endpoints/run_incremental_normal_depth.html"><span class="doc">run_incremental_normal_depth</span></a>,
+<a class="reference internal" href="endpoints/run_known_wse.html"><span class="doc">run_known_wse</span></a>,
+<a class="reference internal" href="endpoints/create_fim_lib.html"><span class="doc">create_fim_lib</span></a>)</p>
+<p>Once submodel geometry has been set up, you can run various discharges through
+the model and record the results.  Ripple1d has several tools to develop
+scenarios for a NWM reach.</p>
+<ul class="simple">
+<li><p><strong>Initial Normal Depth Run.</strong> Discharges ranging from 0.9 times the reach
+high flow threshold to 1.2 times the reach 1% AEP discharge will be incrementally run
+through the reach submodel, and their associated flow depths at each
+cross-section are recorded.  If the source model min flow is lower than 0.9
+times the high flow threshold or the source model max flow is higher than 1.2 times the
+1% AEP discharge, those flow bounds will be used instead</p></li>
+<li><p><strong>Regularized Normal Depth Run.</strong>  After the initial depth-discharge curve
+has been established, ripple1d will attempt to generate a new depth-discharge
+curve at regular depth intervals.  Discharges determined by interpolating a
+regular depth increment along the initial depth-discharge curve will be
+incrementally run through the model, and the new curve will be recorded.</p></li>
+<li><p><strong>Known Water Surface Elevation Run.</strong>  An advantage of HEC-RAS over
+lower-complexity FIM methods is its ability to consider downstream hydraulic
+conditions.  ripple1d pre-processes scenarios for a range of conditions by
+iterating the downstream boundary condition over a range of water surface
+elevations.</p></li>
+</ul>
+<p>Ripple1d generates HEC-RAS inundation depth grids for each of the known water
+surface elevation runs.  These grids are cached along with their associated
+discharges and downstream conditions so that reach-scale FIM may be retrieved
+as soon as a reach forecast is released.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ripple1D</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="faq.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Frequently Asked Questions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-identification-and-data-extraction">1 - Model identification and data extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-and-nwm-network-conflation">2 - Model and NWM network conflation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sub-model-creation">3 - Sub model creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-development-and-fim-pre-processing">4 - Scenario development and FIM pre-processing</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/tech_summary.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Dewberry.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

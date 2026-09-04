@@ -1,0 +1,61 @@
+ripple1d.hecstac.common package
+===============================
+
+Submodules
+----------
+
+ripple1d.hecstac.common.asset\_factory module
+---------------------------------------------
+
+.. automodule:: ripple1d.hecstac.common.asset_factory
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.common.base\_io module
+---------------------------------------
+
+.. automodule:: ripple1d.hecstac.common.base_io
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.common.consts module
+-------------------------------------
+
+.. automodule:: ripple1d.hecstac.common.consts
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.common.geometry module
+---------------------------------------
+
+.. automodule:: ripple1d.hecstac.common.geometry
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.common.path\_manager module
+--------------------------------------------
+
+.. automodule:: ripple1d.hecstac.common.path_manager
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.hecstac.common.s3\_utils module
+----------------------------------------
+
+.. automodule:: ripple1d.hecstac.common.s3_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.hecstac.common
+   :members:
+   :show-inheritance:
+   :undoc-members:

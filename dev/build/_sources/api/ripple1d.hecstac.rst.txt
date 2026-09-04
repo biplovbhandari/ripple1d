@@ -1,0 +1,30 @@
+ripple1d.hecstac package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   ripple1d.hecstac.common
+   ripple1d.hecstac.ras
+
+Submodules
+----------
+
+ripple1d.hecstac.ras\_to\_gpkg module
+-------------------------------------
+
+.. automodule:: ripple1d.hecstac.ras_to_gpkg
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.hecstac
+   :members:
+   :show-inheritance:
+   :undoc-members:

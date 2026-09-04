@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ripple1d.hecstac.common package &#8212; ripple1d  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2cc7f54a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ripple1d.hecstac.common';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ripple1d.hecstac.ras package" href="ripple1d.hecstac.ras.html" />
+    <link rel="prev" title="ripple1d.hecstac package" href="ripple1d.hecstac.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><a class="navbar-brand logo" href="../index.html">
+    <span class="logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: bold; font-size: 24px; color: var(--pst-color-secondary);">
+        ripple1d
+      </span>
+  </a></div>
+    
+      <div class="navbar-item">0.11.0</div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">ripple1d</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ripple1d.html">ripple1d package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.api.html">ripple1d.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.conflate.html">ripple1d.conflate package</a></li>
+<li class="toctree-l3 current active has-children"><a class="reference internal" href="ripple1d.hecstac.html">ripple1d.hecstac package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l4 current active"><a class="current reference internal" href="#">ripple1d.hecstac.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html">ripple1d.hecstac.ras package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.ops.html">ripple1d.ops package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.utils.html">ripple1d.utils package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api_reference.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">ripple1d</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="ripple1d.html" class="nav-link">ripple1d package</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="ripple1d.hecstac.html" class="nav-link">ripple1d.hecstac package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ripple1d.hecstac.common package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ripple1d-hecstac-common-package">
+<h1>ripple1d.hecstac.common package<a class="headerlink" href="#ripple1d-hecstac-common-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-ripple1d.hecstac.common.asset_factory">
+<span id="ripple1d-hecstac-common-asset-factory-module"></span><h2>ripple1d.hecstac.common.asset_factory module<a class="headerlink" href="#module-ripple1d.hecstac.common.asset_factory" title="Link to this heading">#</a></h2>
+<p>Create instances of assets.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.AssetFactory">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.asset_factory.</span></span><span class="sig-name descname"><span class="pre">AssetFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extension_to_asset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.AssetFactory" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Factory for creating HEC asset instances based on file extensions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.AssetFactory.asset_from_dict">
+<span class="sig-name descname"><span class="pre">asset_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.AssetFactory.asset_from_dict" title="Link to this definition">#</a></dt>
+<dd><p>Create HEC asset given a base Asset and a map of file extensions dict.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.asset_factory.</span></span><span class="sig-name descname"><span class="pre">GenericAsset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Asset</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code>]</p>
+<p>Provides a base structure for assets.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset.crs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">crs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">CRS</span></span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.crs" title="Link to this definition">#</a></dt>
+<dd><p>Get the authority code for the model CRS.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset.extra_fields">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">extra_fields</span></span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.extra_fields" title="Link to this definition">#</a></dt>
+<dd><p>Return extra fields.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset.file">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">file</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">T</span></span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.file" title="Link to this definition">#</a></dt>
+<dd><p>Return cached file or instantiate new.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset.name_from_suffix">
+<span class="sig-name descname"><span class="pre">name_from_suffix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.name_from_suffix" title="Link to this definition">#</a></dt>
+<dd><p>Generate a name by appending a suffix to the file stem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset.regex_parse_str">
+<span class="sig-name descname"><span class="pre">regex_parse_str</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.regex_parse_str" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.asset_factory.GenericAsset.roles">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">roles</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.roles" title="Link to this definition">#</a></dt>
+<dd><p>Return roles with enforced values.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.hecstac.common.base_io">
+<span id="ripple1d-hecstac-common-base-io-module"></span><h2>ripple1d.hecstac.common.base_io module<a class="headerlink" href="#module-ripple1d.hecstac.common.base_io" title="Link to this heading">#</a></h2>
+<p>IO module to simplify s3 and local file handling.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.base_io.ModelFileReader">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.base_io.</span></span><span class="sig-name descname"><span class="pre">ModelFileReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.base_io.ModelFileReader" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to read model files from either the local file system or an S3 bucket.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.base_io.ModelFileReaderError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.base_io.</span></span><span class="sig-name descname"><span class="pre">ModelFileReaderError</span></span><a class="headerlink" href="#ripple1d.hecstac.common.base_io.ModelFileReaderError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Return Model read error.</p>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.hecstac.common.consts">
+<span id="ripple1d-hecstac-common-consts-module"></span><h2>ripple1d.hecstac.common.consts module<a class="headerlink" href="#module-ripple1d.hecstac.common.consts" title="Link to this heading">#</a></h2>
+<p>Common constants for HECSTAC.</p>
+</section>
+<section id="module-ripple1d.hecstac.common.geometry">
+<span id="ripple1d-hecstac-common-geometry-module"></span><h2>ripple1d.hecstac.common.geometry module<a class="headerlink" href="#module-ripple1d.hecstac.common.geometry" title="Link to this heading">#</a></h2>
+<p>Geometry utils.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.geometry.reproject_to_wgs84">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.geometry.</span></span><span class="sig-name descname"><span class="pre">reproject_to_wgs84</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.geometry.reproject_to_wgs84" title="Link to this definition">#</a></dt>
+<dd><p>Convert geometry CRS to EPSG:4326 for stac item geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.hecstac.common.path_manager">
+<span id="ripple1d-hecstac-common-path-manager-module"></span><h2>ripple1d.hecstac.common.path_manager module<a class="headerlink" href="#module-ripple1d.hecstac.common.path_manager" title="Link to this heading">#</a></h2>
+<p>Path manager.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.path_manager.LocalPathManager">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.path_manager.</span></span><span class="sig-name descname"><span class="pre">LocalPathManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_root_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.path_manager.LocalPathManager" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Builds consistent paths for STAC items and collections assuming a top level local catalog.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.path_manager.LocalPathManager.derived_item_asset">
+<span class="sig-name descname"><span class="pre">derived_item_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.derived_item_asset" title="Link to this definition">#</a></dt>
+<dd><p>Derive item asset path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.path_manager.LocalPathManager.item_dir">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">item_dir</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.item_dir" title="Link to this definition">#</a></dt>
+<dd><p>Duplicate of model_root, added for clarity in the calling code.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.path_manager.LocalPathManager.item_path">
+<span class="sig-name descname"><span class="pre">item_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.item_path" title="Link to this definition">#</a></dt>
+<dd><p>Item path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.path_manager.LocalPathManager.model_parent_dir">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">model_parent_dir</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.model_parent_dir" title="Link to this definition">#</a></dt>
+<dd><p>Model parent directory.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.path_manager.LocalPathManager.model_root_dir">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">model_root_dir</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.model_root_dir" title="Link to this definition">#</a></dt>
+<dd><p>Model root directory.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.hecstac.common.s3_utils">
+<span id="ripple1d-hecstac-common-s3-utils-module"></span><h2>ripple1d.hecstac.common.s3_utils module<a class="headerlink" href="#module-ripple1d.hecstac.common.s3_utils" title="Link to this heading">#</a></h2>
+<p>Utilities for S3.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.s3_utils.make_uri_public">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.s3_utils.</span></span><span class="sig-name descname"><span class="pre">make_uri_public</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.s3_utils.make_uri_public" title="Link to this definition">#</a></dt>
+<dd><p>Convert from an AWS S3 URI to an https url.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.s3_utils.parse_s3_url">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.s3_utils.</span></span><span class="sig-name descname"><span class="pre">parse_s3_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s3_url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.s3_utils.parse_s3_url" title="Link to this definition">#</a></dt>
+<dd><p>Extract the bucket name and path from an S3 URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s3_url</strong> (<em>str</em>) – The S3 URL (e.g., ‘s3://my-bucket/path/to/object.txt’).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple: (bucket_name, path)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.s3_utils.save_bytes_s3">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.s3_utils.</span></span><span class="sig-name descname"><span class="pre">save_bytes_s3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.s3_utils.save_bytes_s3" title="Link to this definition">#</a></dt>
+<dd><p>Upload BytesIO to S3.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.hecstac.common.s3_utils.save_file_s3">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.common.s3_utils.</span></span><span class="sig-name descname"><span class="pre">save_file_s3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">local_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.common.s3_utils.save_file_s3" title="Link to this definition">#</a></dt>
+<dd><p>Upload BytesIO to S3.</p>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.hecstac.common">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ripple1d.hecstac.common" title="Link to this heading">#</a></h2>
+<p>Common scripts.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ripple1d.hecstac.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ripple1d.hecstac package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ripple1d.hecstac.ras.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ripple1d.hecstac.ras package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common.asset_factory">ripple1d.hecstac.common.asset_factory module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.AssetFactory"><code class="docutils literal notranslate"><span class="pre">AssetFactory</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.AssetFactory.asset_from_dict"><code class="docutils literal notranslate"><span class="pre">AssetFactory.asset_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset"><code class="docutils literal notranslate"><span class="pre">GenericAsset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.crs"><code class="docutils literal notranslate"><span class="pre">GenericAsset.crs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">GenericAsset.extra_fields</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.file"><code class="docutils literal notranslate"><span class="pre">GenericAsset.file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.name_from_suffix"><code class="docutils literal notranslate"><span class="pre">GenericAsset.name_from_suffix()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">GenericAsset.regex_parse_str</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.asset_factory.GenericAsset.roles"><code class="docutils literal notranslate"><span class="pre">GenericAsset.roles</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common.base_io">ripple1d.hecstac.common.base_io module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.base_io.ModelFileReader"><code class="docutils literal notranslate"><span class="pre">ModelFileReader</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.base_io.ModelFileReaderError"><code class="docutils literal notranslate"><span class="pre">ModelFileReaderError</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common.consts">ripple1d.hecstac.common.consts module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common.geometry">ripple1d.hecstac.common.geometry module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.geometry.reproject_to_wgs84"><code class="docutils literal notranslate"><span class="pre">reproject_to_wgs84()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common.path_manager">ripple1d.hecstac.common.path_manager module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.path_manager.LocalPathManager"><code class="docutils literal notranslate"><span class="pre">LocalPathManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.derived_item_asset"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.derived_item_asset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.item_dir"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.item_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.item_path"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.item_path()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.model_parent_dir"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.model_parent_dir</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.path_manager.LocalPathManager.model_root_dir"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.model_root_dir</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common.s3_utils">ripple1d.hecstac.common.s3_utils module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.s3_utils.make_uri_public"><code class="docutils literal notranslate"><span class="pre">make_uri_public()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.s3_utils.parse_s3_url"><code class="docutils literal notranslate"><span class="pre">parse_s3_url()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.s3_utils.save_bytes_s3"><code class="docutils literal notranslate"><span class="pre">save_bytes_s3()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.common.s3_utils.save_file_s3"><code class="docutils literal notranslate"><span class="pre">save_file_s3()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.common">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/ripple1d.hecstac.common.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Dewberry.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+ripple1d.conflate package
+=========================
+
+Submodules
+----------
+
+ripple1d.conflate.rasfim module
+-------------------------------
+
+.. automodule:: ripple1d.conflate.rasfim
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.conflate
+   :members:
+   :show-inheritance:
+   :undoc-members:

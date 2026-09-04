@@ -1,0 +1,2174 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ripple1d.ops package &#8212; ripple1d  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2cc7f54a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ripple1d.ops';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ripple1d.utils package" href="ripple1d.utils.html" />
+    <link rel="prev" title="ripple1d.hecstac.ras package" href="ripple1d.hecstac.ras.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><a class="navbar-brand logo" href="../index.html">
+    <span class="logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: bold; font-size: 24px; color: var(--pst-color-secondary);">
+        ripple1d
+      </span>
+  </a></div>
+    
+      <div class="navbar-item">0.11.0</div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">ripple1d</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ripple1d.html">ripple1d package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.api.html">ripple1d.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.conflate.html">ripple1d.conflate package</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="ripple1d.hecstac.html">ripple1d.hecstac package</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html">ripple1d.hecstac.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html">ripple1d.hecstac.ras package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">ripple1d.ops package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.utils.html">ripple1d.utils package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api_reference.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">ripple1d</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="ripple1d.html" class="nav-link">ripple1d package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ripple1d.ops package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ripple1d-ops-package">
+<h1>ripple1d.ops package<a class="headerlink" href="#ripple1d-ops-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-ripple1d.ops.endpoints">
+<span id="ripple1d-ops-endpoints-module"></span><h2>ripple1d.ops.endpoints module<a class="headerlink" href="#module-ripple1d.ops.endpoints" title="Link to this heading">#</a></h2>
+<p>Endpoint utilites for executing ripple processes using subprocess calls.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.endpoints.execute_endpoint">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.endpoints.</span></span><span class="sig-name descname"><span class="pre">execute_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.endpoints.execute_endpoint" title="Link to this definition">#</a></dt>
+<dd><p>Execute the specified function.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.endpoints.initialize_process_logger">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.endpoints.</span></span><span class="sig-name descname"><span class="pre">initialize_process_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.endpoints.initialize_process_logger" title="Link to this definition">#</a></dt>
+<dd><p>Configure logging for ripple1d.</p>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops.fim_lib">
+<span id="ripple1d-ops-fim-lib-module"></span><h2>ripple1d.ops.fim_lib module<a class="headerlink" href="#module-ripple1d.ops.fim_lib" title="Link to this heading">#</a></h2>
+<p>Create FIM library.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.fim_lib.create_fim_lib">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.fim_lib.</span></span><span class="sig-name descname"><span class="pre">create_fim_lib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cleanup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ras_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'631'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5070</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.fim_lib.create_fim_lib" title="Link to this definition">#</a></dt>
+<dd><p>Create a new FIM library for a NWM id.</p>
+<p>Export depth rasters and computed flow/stage scenarios from HEC-RAS to
+rasters and a sqlite database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to the directory containing a sub model geopackage</p></li>
+<li><p><strong>plans</strong> (<em>list</em>) – suffixes of plans to create fim library for.</p></li>
+<li><p><strong>library_directory</strong> (<em>str</em>) – No function</p></li>
+<li><p><strong>cleanup</strong> (<em>bool</em>) – whether to delete the source depth grids once they’ve been processed</p></li>
+<li><p><strong>ras_version</strong> (<em>str</em><em>, </em><em>optional</em>) – which version of HEC-RAS to use, by default “631”</p></li>
+<li><p><strong>cog</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to generate COGs for output rasters (overviews at levels
+[4, 8, 16]), by default False</p></li>
+<li><p><strong>resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – horizontal resolution to resample output raster to, by default 3</p></li>
+<li><p><strong>resolution_units</strong> (<em>str</em><em>, </em><em>optional</em>) – unit for resolution, by default “Meters”</p></li>
+<li><p><strong>dest_crs</strong> (<em>str</em><em>, </em><em>optional</em>) – Destination crs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary with paths to output rasters and scenario database</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.fim_lib.create_scenarios_db">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.fim_lib.</span></span><span class="sig-name descname"><span class="pre">create_scenarios_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ras_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'631'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scenarios'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.fim_lib.create_scenarios_db" title="Link to this definition">#</a></dt>
+<dd><p>Create a new scenario database for a NWM id.</p>
+<p>Export computed flow/stage scenarios from HEC-RAS to
+rasters and a sqlite database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to the directory containing a sub model geopackage</p></li>
+<li><p><strong>plans</strong> (<em>list</em>) – suffixes of plans to create fim library for.</p></li>
+<li><p><strong>ras_version</strong> (<em>str</em><em>, </em><em>optional</em>) – which version of HEC-RAS to use, by default “631”</p></li>
+<li><p><strong>table_name</strong> (<em>str</em><em>, </em><em>optional</em>) – name for the table holding the computed scenarios in the output
+database, by default “scenarios”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary with paths to output scenario database</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.fim_lib.find_missing_grids">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.fim_lib.</span></span><span class="sig-name descname"><span class="pre">find_missing_grids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.fim_lib.find_missing_grids" title="Link to this definition">#</a></dt>
+<dd><p>Find missing depth grids.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.fim_lib.post_process_depth_grids">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.fim_lib.</span></span><span class="sig-name descname"><span class="pre">post_process_depth_grids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accept_missing_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest_crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5070</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.fim_lib.post_process_depth_grids" title="Link to this definition">#</a></dt>
+<dd><p>Clip depth grids based on their associated NWM branch and respective cross sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops.metrics">
+<span id="ripple1d-ops-metrics-module"></span><h2>ripple1d.ops.metrics module<a class="headerlink" href="#module-ripple1d.ops.metrics" title="Link to this heading">#</a></h2>
+<p>Conflation Metrics.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.ops.metrics.</span></span><span class="sig-name descname"><span class="pre">ConflationMetrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">river_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hull_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_reach</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_reach_plus_ds_reach</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Calculate metrics for a cross section.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.clean_length">
+<span class="sig-name descname"><span class="pre">clean_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meters_to_feet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.clean_length" title="Link to this definition">#</a></dt>
+<dd><p>Clean the length.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.compute_coverage_metrics">
+<span class="sig-name descname"><span class="pre">compute_coverage_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs_gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.compute_coverage_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the coverage metrics for a set of cross sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.compute_station">
+<span class="sig-name descname"><span class="pre">compute_station</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">river</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.compute_station" title="Link to this definition">#</a></dt>
+<dd><p>Compute the station for a river reach.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.eclipsed_reaches">
+<span class="sig-name descname"><span class="pre">eclipsed_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_reaches</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.eclipsed_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the overlap between the network reach and the cross sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.length_metrics">
+<span class="sig-name descname"><span class="pre">length_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs_gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.length_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the reach length between cross sections along the ras river line and the network reach.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.overlapped_reaches">
+<span class="sig-name descname"><span class="pre">overlapped_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_reaches</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.overlapped_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the overlap between the network reach and the cross sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.populate_station_elevation">
+<span class="sig-name descname"><span class="pre">populate_station_elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.populate_station_elevation" title="Link to this definition">#</a></dt>
+<dd><p>Populate the station elevation for a cross section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.populate_thalweg_station">
+<span class="sig-name descname"><span class="pre">populate_thalweg_station</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.populate_thalweg_station" title="Link to this definition">#</a></dt>
+<dd><p>Populate the thalweg station for a cross section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.river_line">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">river_line</span></span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.river_line" title="Link to this definition">#</a></dt>
+<dd><p>Get the geomtry for the river centerline.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.thalweg_metrics">
+<span class="sig-name descname"><span class="pre">thalweg_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs_gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.thalweg_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the distance between the thalweg point and the network intersection point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.ConflationMetrics.us_ds_xs">
+<span class="sig-name descname"><span class="pre">us_ds_xs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs_gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.ConflationMetrics.us_ds_xs" title="Link to this definition">#</a></dt>
+<dd><p>Get the most upstream and downstream cross sections.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.combine_reaches">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.metrics.</span></span><span class="sig-name descname"><span class="pre">combine_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network_reaches</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.combine_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Combine network reaches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">LineString</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.compute_conflation_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_conflation_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_model_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_network</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.compute_conflation_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Compute metrics for a network reach.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_model_directory</strong> (<em>str</em>) – The path to the directory containing HEC-RAS project, plan, geometry,
+and flow files.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – The name of the source HEC-RAS model.</p></li>
+<li><p><strong>source_network</strong> (<em>dict</em>) – <p>Information on the network to conflate</p>
+<ul>
+<li><dl class="simple">
+<dt><strong>file_name</strong> (str):</dt><dd><p>path/to/nwm_network.parquet (required)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>type</strong> (str):</dt><dd><p>must be ‘nwm_hydrofabric’ (required)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>version</strong> (str):</dt><dd><p>optional version number to log</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing metrics describing model network match</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The compute_conflation_metrics endpoint uses the information gathered in
+conflation to summarize how well a NWM reach and HEC-RAS model section
+align.  The metrics are broken down into three categories: xs, lengths, and
+coverage.</p>
+<ul class="simple">
+<li><p><strong>xs.</strong>  These metrics quantify the degree of alignment between the NWM
+reach centerline and the HEC-RAS model.  The metrics below are measured
+at HEC-RAS cross-section and summary statistics are reported in the
+conflation metrics output.</p>
+<ul>
+<li><p>centerline_offset measures the straightline distance between RAS
+centerline and NWM reach line</p></li>
+<li><p>thalweg_offset measures the straightline distance between lowest point
+along each RAS section and NWM reach line</p></li>
+</ul>
+</li>
+<li><p><strong>lengths.</strong> These metrics assess centerline length differences between
+HEC-RAS and the NWM reaches.</p>
+<ul>
+<li><p>ras is the distance along the RAS centerline between upstream and
+downstream cross-section</p></li>
+<li><p>network is the distance along the NWM reach between upstream and
+downstream cross-section</p></li>
+<li><p>network_to_ras_ratio is the network length divided by ras length</p></li>
+</ul>
+</li>
+<li><p><strong>coverage.</strong> These metrics quantify the portion of the NWM reach between
+the upstream and downstream cross-section.</p>
+<ul>
+<li><p>start is the ratio of NWM reach length that occurs u/s of the upstream
+cross-section</p></li>
+<li><p>end is the ratio of NWM reach length that occurs u/s of the downstream
+cross-section</p></li>
+</ul>
+</li>
+</ul>
+<p>compute_conflation_metrics also reports overlapped reaches and eclipsed
+reaches.  Overlapped_reaches is a list of reaches that are intersected by
+the most d/s cross-section of this model.  Eclipsed_reaches is a list of
+NWM reaches that are contained within the concave hull of the
+cross-sections.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.metrics.get_eclipsed_reaches">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.metrics.</span></span><span class="sig-name descname"><span class="pre">get_eclipsed_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conflation_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.metrics.get_eclipsed_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Walk the network to find all eclipsed reaches until the next non-eclipsed reach.</p>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops.ras_conflate">
+<span id="ripple1d-ops-ras-conflate-module"></span><h2>ripple1d.ops.ras_conflate module<a class="headerlink" href="#module-ripple1d.ops.ras_conflate" title="Link to this heading">#</a></h2>
+<p>Conflate HEC-RAS Model.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.clean_conflation">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">clean_conflation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conflation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.clean_conflation" title="Link to this definition">#</a></dt>
+<dd><p>Remove any straggler NWM reaches with matching u/s and d/s sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.conflate_model">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">conflate_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_model_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_metrics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_flow_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_flow_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.conflate_model" title="Link to this definition">#</a></dt>
+<dd><p>Conflate a HEC-RAS model with NWM reaches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_model_directory</strong> (<em>str</em>) – The path to the directory containing HEC-RAS project, plan, geometry,
+and flow files.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – The name of the HEC-RAS model.</p></li>
+<li><p><strong>source_network</strong> (<em>dict</em>) – <p>Information on the network to conflate</p>
+<ul>
+<li><dl class="simple">
+<dt><strong>file_name</strong> (str):</dt><dd><p>path/to/nwm_network.parquet (required)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>type</strong> (str):</dt><dd><p>must be ‘nwm_hydrofabric’ (required)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>version</strong> (str):</dt><dd><p>optional version number to log</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+<li><p><strong>compute_metrics</strong> (<em>bool</em>) – Boolean indicating if conflation metrics should be computed.</p></li>
+<li><p><strong>min_flow_multiplier</strong> (<em>float</em>) – Number that will be multiplied by the NWM “high flow threshold” to
+define the low_flow value in the conflation json.</p></li>
+<li><p><strong>max_flow_multiplier</strong> (<em>float</em>) – Number that will be multiplied by the NWM 100-year flow to define the
+high_flow value in the conflation json.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Path to the .conflation.json file generated</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyError</strong> – Raises when source_network dict does not contain a file_name value</p></li>
+<li><p><strong>ValueError</strong> – Raises when source_network type is not nwm_hydrofabric</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The spatial extents of HEC-RAS river reaches and National Water model (NWM)
+reaches are not aligned. The conflate_model endpoint resolves these
+differences by associating HEC-RAS models and model components (e.g.
+cross-sections) with the NWM reaches they overlap.</p>
+<ol class="arabic simple">
+<li><p>Generate a concave hull (bounding geometry) around the HEC-RAS source
+model cross-sections</p></li>
+<li><p>Extract NWM reaches intersecting the hull</p></li>
+<li><p>For each HEC-RAS river reach within the source model,</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Locate the NWM reaches nearest to the most upstream and most
+downstream cross-sections</p></li>
+<li><p>Extract all intermediate NWM reaches by walking the network from
+upstream to downstream</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>For each NWM reach extracted,</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Locate the HEC-RAS cross-sections that intersect the reach</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Discard cross-sections that are not drawn right to left looking
+downstream</p></li>
+<li><p>If no cross-sections intersect the reach, mark the reach as
+“eclipsed”</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Mark the HEC-RAS cross-section closest to the upstream end of the
+reach as the “us_xs ”</p></li>
+<li><p>Identify the HEC-RAS cross-section that is closest to the downstream
+end of the reach, and then mark the next HEC-RAS cross-section
+downstream of it as the “ds_xs”</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>If the “ds_xs” would be a HEC-RAS junction, mark the first
+cross-section downstream of the junction as “ds_xs”</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>If “ds_xs” and “us_xs” are the same, mark the reach as eclipsed</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Generate a map of the conflated reaches and calculate conflation metrics</p></li>
+</ol>
+<p>Additionally, high and low flows are generated for each reach to bound the
+scenarios generated in later steps. The low flow is 0.9 times the high flow
+threshold listed for the reach in the NWM network. The high flow is the
+1.2 times the 100 year flow from the NWM network.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.conflate_single_nwm_reach">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">conflate_single_nwm_reach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nwm_reach_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.conflate_single_nwm_reach" title="Link to this definition">#</a></dt>
+<dd><p>Conflate a HEC-RAS model with a specific NWM reach.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.find_eclipsed_reaches">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">find_eclipsed_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.find_eclipsed_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Update the conflation dictionary to add NWM reaches between HEC-RAS sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.fix_junctions">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">fix_junctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.fix_junctions" title="Link to this definition">#</a></dt>
+<dd><p>Update conflation such that confluences match between NWM and HEC-RAS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.generate_metadata">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">generate_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rfc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.generate_metadata" title="Link to this definition">#</a></dt>
+<dd><p>Log metadata about how conflation was generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.get_linked_reaches">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">get_linked_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reaches</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.get_linked_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Return list of NWM IDs that share cross-sections (u/s, d/s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.get_nwm_reaches">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">get_nwm_reaches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">river_reach_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rfc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.get_nwm_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Find a valid path of nwm reaches across a HEC-RAS river_reach_name (if one exists).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.href_to_vsis">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">href_to_vsis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">href</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bucket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.href_to_vsis" title="Link to this definition">#</a></dt>
+<dd><p>Convert public aws href to a virtual ref for gdal read.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_conflate.s3_public_href">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_conflate.</span></span><span class="sig-name descname"><span class="pre">s3_public_href</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_conflate.s3_public_href" title="Link to this definition">#</a></dt>
+<dd><p>Convert bucket and key to public href.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops.ras_run">
+<span id="ripple1d-ops-ras-run-module"></span><h2>ripple1d.ops.ras_run module<a class="headerlink" href="#module-ripple1d.ops.ras_run" title="Link to this heading">#</a></h2>
+<p>Run HEC-RAS models.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.create_flow_depth_array">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">create_flow_depth_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.create_flow_depth_array" title="Link to this definition">#</a></dt>
+<dd><p>Interpolate flow values to a new depth array with a specified increment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">array</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.create_flow_wse_scenarios_matrix">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">create_flow_wse_scenarios_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reach_flows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_elevation_curve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_elevation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thalweg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.create_flow_wse_scenarios_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Sweep each flow over its own [floor, ceiling] known-WSE envelope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>reach_flows</strong> (<em>pd.Series</em>) – Discharges from the most downstream cross section from the normal depth runs
+for current reach.</p></li>
+<li><p><strong>min_elevation_curve</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Tailwater lower-bound curve as <code class="docutils literal notranslate"><span class="pre">[discharge,</span> <span class="pre">wse]</span></code> pairs.</p></li>
+<li><p><strong>max_elevation</strong> (<em>float</em>) – Ceiling elevation shared by every flow.</p></li>
+<li><p><strong>depth_increment</strong> (<em>float</em>) – Elevation step between the floor and the ceiling.</p></li>
+<li><p><strong>thalweg</strong> (<em>float</em>) – Most downstream cross-section thalweg, used to convert WSE to depth.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Parallel <code class="docutils literal notranslate"><span class="pre">(depths,</span> <span class="pre">flows,</span> <span class="pre">wses)</span></code> lists, one entry per (flow, wse) profile.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The grid is anchored by 0 (so <code class="docutils literal notranslate"><span class="pre">Δz=1</span></code> gives whole feet, <code class="docutils literal notranslate"><span class="pre">Δz=0.5</span></code> half feet, <code class="docutils literal notranslate"><span class="pre">Δz=2</span></code>
+even feet), and every discharge therefore shares one grid regardless of where its tailwater
+falls. Both the shared ceiling (<code class="docutils literal notranslate"><span class="pre">max_elevation</span></code>) and each discharge’s floor are rounded to
+the nearest grid line.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.create_model_run_normal_depth">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">create_model_run_normal_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_suffix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_discharges_for_initial_normal_depth_runs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ras_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'631'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.create_model_run_normal_depth" title="Link to this definition">#</a></dt>
+<dd><p>Write and compute initial normal depth runs to develop initial scenarios.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to the directory containing a sub model geopackage</p></li>
+<li><p><strong>plan_suffix</strong> (<em>str</em>) – characters to append to the end of the plan name, by default “_ind”</p></li>
+<li><p><strong>num_of_discharges_for_initial_normal_depth_runs</strong> (<em>int</em><em>, </em><em>optional</em>) – number of discharges to run, evenly spaced between low and high flow
+limits, by default 10</p></li>
+<li><p><strong>ras_version</strong> (<em>str</em><em>, </em><em>optional</em>) – which version of HEC-RAS to use, by default “631”</p></li>
+<li><p><strong>show_ras</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to run HEC-RAS headless or not, by default False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of flow file data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – raised when .conflation.json file not found in submodel_directory</p></li>
+<li><p><strong>FileNotFoundError</strong> – raised when geopackage file not found in submodel_directory</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>create_model_run_normal_depth is intended to create an initial
+stage-discharge rating curve for the HEC-RAS submodel. Analysis flows are
+evenly spaced between the min and max discharge for the reach that were
+established by running conflate_model.  The downstream boundary condition
+for these runs are set to normal depth using the NWM reach slope for the
+submodel’s final downstream cross section (falls back to DEFAULT_ND_SLOPE if
+unavailable). The conflation step bounds the value to [MIN_ND_SLOPE, MAX_ND_SLOPE].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.determine_flow_increments">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">determine_flow_increments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">river</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reach</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nwm_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.determine_flow_increments" title="Link to this definition">#</a></dt>
+<dd><p>Determine flow increments corresponding to 0.5 ft depth increments using the normal-depth-run results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">array</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.establish_order_of_nwm_ids">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">establish_order_of_nwm_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conflation_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.establish_order_of_nwm_ids" title="Link to this definition">#</a></dt>
+<dd><p>Establish the order of NWM IDs based on the cross section IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.get_flow_depth_arrays">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">get_flow_depth_arrays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">river</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reach</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">river_station</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thalweg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.get_flow_depth_arrays" title="Link to this definition">#</a></dt>
+<dd><p>Create new flow, depth,wse arrays from plan results.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.get_kwse_from_ds_model">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">get_kwse_from_ds_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_nwm_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_nwm_ras_project_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.get_kwse_from_ds_model" title="Link to this definition">#</a></dt>
+<dd><p>Get the kwse values from the downstream model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.run_incremental_normal_depth">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">run_incremental_normal_depth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_suffix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ras_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'631'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_increment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_depth_grids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.run_incremental_normal_depth" title="Link to this definition">#</a></dt>
+<dd><p>Write and compute incremental normal depth runs to develop scenarios and depth grids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to the directory containing a sub model geopackage</p></li>
+<li><p><strong>plan_suffix</strong> (<em>str</em>) – characters to append to the end of the plan name, by default “_nd”</p></li>
+<li><p><strong>ras_version</strong> (<em>str</em><em>, </em><em>optional</em>) – which version of HEC-RAS to use, by default “631”</p></li>
+<li><p><strong>depth_increment</strong> (<em>float</em><em>, </em><em>optional</em>) – stage increment to use for developing the stage-discharge rating curve,
+by default 0.5</p></li>
+<li><p><strong>write_depth_grids</strong> (<em>str</em><em>, </em><em>optional</em>) – whether to generate depth rasters after each model run, by default True</p></li>
+<li><p><strong>show_ras</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to run HEC-RAS headless or not, by default False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of flow file data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – raised when .conflation.json file not found in submodel_directory</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>run_incremental_normal_depth is intended to resample a stage-discharge
+rating curve generated with create_model_run_normal_depth to a consistent
+stage increment. Min and max stages for the curve are taken from the sub
+model plan with suffix “_ind”.  A set of evenly spaced stages are selected
+between the min and max, and discharge values are estimated with linear
+interpolation. The final set of estimated discharges are then run through
+the model with a normal depth downstream boundary condition using the NWM
+reach slope for the submodel’s final downstream cross section (falls back to
+DEFAULT_ND_SLOPE if unavailable). The conflation step bounds the value to
+[MIN_ND_SLOPE, MAX_ND_SLOPE].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.run_known_wse">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">run_known_wse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plan_suffix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_elevation_curve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_elevation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_increment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ras_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'631'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_depth_grids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.run_known_wse" title="Link to this definition">#</a></dt>
+<dd><p>Write and compute known water surface elevation runs to develop scenarios and depth grids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to the directory containing a sub model geopackage</p></li>
+<li><p><strong>plan_suffix</strong> (<em>str</em>) – characters to append to the end of the plan name, by default “_kwse”</p></li>
+<li><p><strong>min_elevation_curve</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Tailwater min elevation curve as <code class="docutils literal notranslate"><span class="pre">[discharge,</span> <span class="pre">wse]</span></code> pairs. Each flow’s floor
+elevation is looked up from this curve (see Notes).</p></li>
+<li><p><strong>max_elevation</strong> (<em>float</em>) – Ceiling elevation: the shared upper bound of the downstream boundary</p></li>
+<li><p><strong>depth_increment</strong> (<em>float</em>) – depth to increment stages between the floor and the ceiling, must be one of
+ALLOWED_DEPTH_INCREMENTS = (0.5, 1, 2, 5, 10)</p></li>
+<li><p><strong>ras_version</strong> (<em>str</em><em>, </em><em>optional</em>) – which version of HEC-RAS to use, by default “631”</p></li>
+<li><p><strong>write_depth_grids</strong> (<em>str</em><em>, </em><em>optional</em>) – whether to generate depth rasters after each model run, by default True</p></li>
+<li><p><strong>show_ras</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to run HEC-RAS headless or not, by default False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>mapping of the kwse plan name to the known water surface elevations used,
+and the HEC-RAS process id under “pid”</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – raised when .conflation.json file not found in submodel_directory</p></li>
+<li><p><strong>ValueError</strong> – raised when min_elevation_curve or max_elevation is missing</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>run_known_wse creates a catalog of scenarios conditioned on
+downstream water surface elevation. Discharges are selected from the HEC-RAS
+plan with suffix “_nd” generated with run_incremental_normal_depth. Each
+discharge is executed over its own range, at depth_increment steps.</p>
+<p>The floor for a discharge is looked up from min_elevation_curve data point:
+the wse of the greatest tabulated discharge that is lower or equal to the flow.
+Flows below the lowest tabulated discharge clamp to the lowest floor; flows at
+or above the highest hold the highest floor.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_run.stepwise_floor_lookup">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_run.</span></span><span class="sig-name descname"><span class="pre">stepwise_floor_lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_run.stepwise_floor_lookup" title="Link to this definition">#</a></dt>
+<dd><p>Return the floor WSE for a flow using previous-value (last-known) lookup.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>flow</strong> (<em>float</em>) – Discharge to look up.</p></li>
+<li><p><strong>curve</strong> (<em>list</em><em>[</em><em>list</em><em>[</em><em>float</em><em>]</em><em>]</em>) – Tailwater lower-bound curve as <code class="docutils literal notranslate"><span class="pre">[discharge,</span> <span class="pre">wse]</span></code> pairs. The floor is the
+wse of the greatest tabulated discharge that is &lt;= flow. Flows below the
+lowest tabulated discharge clamp to the lowest floor; flows at or above the
+highest discharge hold the highest floor.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The floor WSE for the flow.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops.ras_terrain">
+<span id="ripple1d-ops-ras-terrain-module"></span><h2>ripple1d.ops.ras_terrain module<a class="headerlink" href="#module-ripple1d.ops.ras_terrain" title="Link to this heading">#</a></h2>
+<p>Create HEC-RAS Terrains.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.add_intersection_pts">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">add_intersection_pts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section_pts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.add_intersection_pts" title="Link to this definition">#</a></dt>
+<dd><p>Add points to XS where WSE hits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.compute_terrain_agreement_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">compute_terrain_agreement_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizontal_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_ramp_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.compute_terrain_agreement_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Compute a suite of agreement metrics between source model XS data and mapping DEM.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.correlation">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.correlation" title="Link to this definition">#</a></dt>
+<dd><p>Calculate Pearson’s correlation of two series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.create_ras_terrain">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">create_ras_terrain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_source_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/13/TIFF/USGS_Seamless_DEM_13.vrt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertical_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'db'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_ramp_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_ignore_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.create_ras_terrain" title="Link to this definition">#</a></dt>
+<dd><p>Create a RAS terrain file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to the directory containing a submodel geopackage</p></li>
+<li><p><strong>terrain_source_url</strong> (<em>str</em><em>, </em><em>optional</em>) – URL to a vrt or other raster with topographic data, by default
+MAP_DEM_UNCLIPPED_SRC_URL</p></li>
+<li><p><strong>vertical_units</strong> (<em>str</em><em>, </em><em>optional</em>) – label for the vertical units of the source terrain (ex. Meters), by
+default MAP_DEM_VERT_UNITS</p></li>
+<li><p><strong>resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – horizontal resolution that terrain will be projected to, by default
+None</p></li>
+<li><p><strong>resolution_units</strong> (<em>str</em><em>, </em><em>optional</em>) – unit for resolution parameter, by default None</p></li>
+<li><p><strong>terrain_agreement_resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – maximum distance allowed between the vertices used to calculate terrain
+agreement metrics (in units of resolution_units), by default 3</p></li>
+<li><p><strong>terrain_agreement_format</strong> (<em>str</em><em>, </em><em>optional</em>) – whether to save the terrain agreement report as a json or a sqlite
+database, by default “db”</p></li>
+<li><p><strong>terrain_agreement_el_repeats</strong> (<em>int</em><em>, </em><em>optional</em>) – how many times to repeat an elevation increment before ramping to the
+next elevation increment, by default 5</p></li>
+<li><p><strong>terrain_agreement_el_ramp_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – adjusts rate at which elevation increments increase after the designated
+number of repeats, by default 2.  The series of increments to be
+repeated is defined as inc_i = (ramp_rate^i)*initial_value.  A ramp rate
+of 2 will yield increments of 0.5, 1, 2, 4, 8, etc.  With a repeate
+value of 5, the series of increments will be 0.5, 0.5, 0.5, 0.5, 0.5,
+1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, etc.  That
+increment series will calculate agreement metrics at depths of 0.5, 1.0,
+1.5, 2.0, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 9.5, 11.5, 13.5, 15.5, 17.5,
+21.5, etc.</p></li>
+<li><p><strong>terrain_agreement_el_init</strong> (<em>float</em><em>, </em><em>optional</em>) – initial value for terrain agreement elevation increments, by default 0.5</p></li>
+<li><p><strong>terrain_agreement_ignore_error</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to raise or log+ignore any errors encountered in the compute_terrain_agreement_metrics function.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>descriptive string detailing where terrain was saved</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Raised when resolution arg has been provided but resolution_units arg
+    has not been provided</p></li>
+<li><p><strong>ValueError</strong> – Raised when resolution_units are not Feet or Meters</p></li>
+<li><p><strong>FileNotFoundError</strong> – Raised when no geopackage file is found in submodel_directory</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The create_ras_terrain endpoint downloads a digital elevation model (DEM)
+for the modeled area and exports it to a HEC-RAS terrain file.  DEM data
+may be sourced from any virtual raster source, but the default source is
+the <a class="reference external" href="https://www.sciencebase.gov/catalog/item/4f70aa9fe4b058caae3f8de5">USGS 3DEP 1/3 arcsecond dataset</a>.  By
+default, terrain data is clipped to a 1,000-foot buffer around a concave
+hull of the submodel cross-sections, however, the buffer distance may be
+adjusted.  If resolution data is passed to the endpoint, the terrain raster
+will be resampled to that resolution.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.cross_correlation">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">cross_correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.cross_correlation" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the maximum cross-correlation between two time series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.export_agreement_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">export_agreement_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'db'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.export_agreement_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Save the terrain agreement metrics to a json or db.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.flow_area_agreement">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">flow_area_agreement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.flow_area_agreement" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the agreement of the wetted top widths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.flow_area_overlap">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">flow_area_overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.flow_area_overlap" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the percent of unioned flow area that agree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.geom_agreement_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">geom_agreement_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_ramp_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.geom_agreement_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Compute a suite of agreement metrics between source model XS data and a sampled DEM.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.get_flow_area">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">get_flow_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_elevation_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.get_flow_area" title="Link to this definition">#</a></dt>
+<dd><p>Derive wetted-top-width for a given stage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.get_geometry_mask">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">get_geometry_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf_xs_conc_hull</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">MAP_DEM_UNCLIPPED_SRC_URL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.get_geometry_mask" title="Link to this definition">#</a></dt>
+<dd><p>Get a geometry mask for the DEM based on the cross sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoDataFrame</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.get_hydraulic_radius">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">get_hydraulic_radius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_elevation_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.get_hydraulic_radius" title="Link to this definition">#</a></dt>
+<dd><p>Derive wetted-perimeter for a given stage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.get_wetted_perimeter">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">get_wetted_perimeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_elevation_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.get_wetted_perimeter" title="Link to this definition">#</a></dt>
+<dd><p>Derive wetted-perimeter for a given stage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.get_wetted_top_width">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">get_wetted_top_width</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_elevation_series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.get_wetted_top_width" title="Link to this definition">#</a></dt>
+<dd><p>Derive wetted-top-width for a given stage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.get_wses">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">get_wses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_ramp_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.get_wses" title="Link to this definition">#</a></dt>
+<dd><p>Derive grid of water surface elevations from minimum el to lowest cross-section endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.hydraulic_radius_agreement">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">hydraulic_radius_agreement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.hydraulic_radius_agreement" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the agreement of the hydraulic radii.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.interpolater">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">interpolater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.interpolater" title="Link to this definition">#</a></dt>
+<dd><p>Interpolate faster than shapely linestring.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.inundation_agreement">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">inundation_agreement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.inundation_agreement" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the percent of the cross-section with agreeing wet/dry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.r_squared">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">r_squared</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.r_squared" title="Link to this definition">#</a></dt>
+<dd><p>Calculate R-squared for two series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.residual_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">residual_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">residuals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.residual_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Summary statistics on residuals between two arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.round_values">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">round_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.round_values" title="Link to this definition">#</a></dt>
+<dd><p>Round values to keep precision consistent (recursive).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.sample_terrain">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">sample_terrain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizontal_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.sample_terrain" title="Link to this definition">#</a></dt>
+<dd><p>Add DEM station_elevations to cross-sections.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.smape_series">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">smape_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.smape_series" title="Link to this definition">#</a></dt>
+<dd><p>Return the symmetric mean absolute percentage errror of two series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.smape_single">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">smape_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.smape_single" title="Link to this definition">#</a></dt>
+<dd><p>Return the symmetric mean absolute percentage errror of two values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.spectral_angle">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">spectral_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.spectral_angle" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the spectral angle of two vectors.</p>
+<p>Following the approach of <a class="github reference external" href="https://github.com/BYU-Hydroinformatics/HydroErr/blob/42a84f3e006044f450edc7393ed54d59f27ef35b/HydroErr/HydroErr.py#L3541">BYU-Hydroinformatics/HydroErr</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.spectral_correlation">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">spectral_correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.spectral_correlation" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the spectral angle of two vectors.</p>
+<p>Following the approach of <a class="github reference external" href="https://github.com/BYU-Hydroinformatics/HydroErr/blob/42a84f3e006044f450edc7393ed54d59f27ef35b/HydroErr/HydroErr.py#L3541">BYU-Hydroinformatics/HydroErr</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.ss">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">ss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.ss" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the sum of squares.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.summarize_dict">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">summarize_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.summarize_dict" title="Link to this definition">#</a></dt>
+<dd><p>Aggregate metrics from a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.thalweg_elevation_difference">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">thalweg_elevation_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.thalweg_elevation_difference" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the elevation difference between the thalweg (low point) of two series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.top_width_agreement">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">top_width_agreement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_el</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.top_width_agreement" title="Link to this definition">#</a></dt>
+<dd><p>Calculate the agreement of the wetted top widths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.variable_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">variable_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_xs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_xs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_ramp_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.variable_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Calculate metrics for WSE values every half foot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.write_projection_file">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">write_projection_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.write_projection_file" title="Link to this definition">#</a></dt>
+<dd><p>Write a projection file for the terrain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.wse_intersection_pts">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">wse_intersection_pts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">section_pts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.wse_intersection_pts" title="Link to this definition">#</a></dt>
+<dd><p>Find where the cross-section terrain intersects the water-surface elevation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.ras_terrain.xs_agreement_metrics">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.ras_terrain.</span></span><span class="sig-name descname"><span class="pre">xs_agreement_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_ramp_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terrain_agreement_el_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.ras_terrain.xs_agreement_metrics" title="Link to this definition">#</a></dt>
+<dd><p>Compute a suite of agreement metrics between source model XS data and mapping DEM.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops.subset_gpkg">
+<span id="ripple1d-ops-subset-gpkg-module"></span><h2>ripple1d.ops.subset_gpkg module<a class="headerlink" href="#module-ripple1d.ops.subset_gpkg" title="Link to this heading">#</a></h2>
+<p>Subset a geopackage based on clonfation with NWM hydrofabric.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">ripple1d.ops.subset_gpkg.</span></span><span class="sig-name descname"><span class="pre">RippleGeopackageSubsetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_gpkg_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflation_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_project_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nwm_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_flow_multiplier_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_flow_multiplier_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_ras_flows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nwm_flows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Subset a geopackage based on conflation with NWM hydrofabric.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.conflation_parameters">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">conflation_parameters</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.conflation_parameters" title="Link to this definition">#</a></dt>
+<dd><p>Extract conflation parameters from the conflation json.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.copy_metadata_to_ripple1d_gpkg">
+<span class="sig-name descname"><span class="pre">copy_metadata_to_ripple1d_gpkg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.copy_metadata_to_ripple1d_gpkg" title="Link to this definition">#</a></dt>
+<dd><p>Copy metadata table from source geopackage to ripple1d geopackage.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.correct_ras_data">
+<span class="sig-name descname"><span class="pre">correct_ras_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.correct_ras_data" title="Link to this definition">#</a></dt>
+<dd><p>Make ras_data names consistent with river_station.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.crs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">crs</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.crs" title="Link to this definition">#</a></dt>
+<dd><p>Extract the CRS from the cross sections.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_reach">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ds_reach</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_reach" title="Link to this definition">#</a></dt>
+<dd><p>Extract downstream reach from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ds_river</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river" title="Link to this definition">#</a></dt>
+<dd><p>Extract downstream river from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river_reach">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ds_river_reach</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river_reach" title="Link to this definition">#</a></dt>
+<dd><p>Extract downstream river_reach from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river_reach_rs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ds_river_reach_rs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river_reach_rs" title="Link to this definition">#</a></dt>
+<dd><p>Extract downstream river_reach_rs from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_rs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ds_rs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_rs" title="Link to this definition">#</a></dt>
+<dd><p>Extract downstream river station from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.max_flow">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">max_flow</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.max_flow" title="Link to this definition">#</a></dt>
+<dd><p>Extract the max flow from the cross sections.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.min_flow">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">min_flow</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.min_flow" title="Link to this definition">#</a></dt>
+<dd><p>Extract the min flow from the cross sections.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.nwm_reach_model">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">nwm_reach_model</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="ripple1d.html#ripple1d.data_model.NwmReachModel" title="ripple1d.data_model.NwmReachModel"><span class="pre">NwmReachModel</span></a></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.nwm_reach_model" title="Link to this definition">#</a></dt>
+<dd><p>Return the new NWM reach model object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.reach_distance_modifiers">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">reach_distance_modifiers</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.reach_distance_modifiers" title="Link to this definition">#</a></dt>
+<dd><p>Get a dictionary of reach station offsets due to junction lengths.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.rename_river_reach">
+<span class="sig-name descname"><span class="pre">rename_river_reach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.rename_river_reach" title="Link to this definition">#</a></dt>
+<dd><p>Rename river, reach, and river_reach columns after the nwm reach id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoDataFrame</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple1d_parameters">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple1d_parameters</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple1d_parameters" title="Link to this definition">#</a></dt>
+<dd><p>Extract ripple1d parameters from the conflation json.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_ds_xs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_ds_xs</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_ds_xs" title="Link to this definition">#</a></dt>
+<dd><p>The most downstream cross section for the ripple model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_gpkg_file">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_gpkg_file</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_gpkg_file" title="Link to this definition">#</a></dt>
+<dd><p>Return the path to the new geopackage.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_river">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_river</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_river" title="Link to this definition">#</a></dt>
+<dd><p>Subset river geometry based on NWM reach.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_structure">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_structure</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_structure" title="Link to this definition">#</a></dt>
+<dd><p>Subset structures based on NWM reach.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_us_xs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_us_xs</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_us_xs" title="Link to this definition">#</a></dt>
+<dd><p>The most upstream cross section for the ripple model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_xs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_xs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_xs" title="Link to this definition">#</a></dt>
+<dd><p>Subset cross sections based on NWM reach.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_xs_concave_hull">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ripple_xs_concave_hull</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_xs_concave_hull" title="Link to this definition">#</a></dt>
+<dd><p>Get the concave hull of the cross sections.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_hulls">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">source_hulls</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_hulls" title="Link to this definition">#</a></dt>
+<dd><p>Extract cross sections from the source geopackage.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_junction">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">source_junction</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_junction" title="Link to this definition">#</a></dt>
+<dd><p>Extract junctions from the source geopackage.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_model_metadata">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">source_model_metadata</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_model_metadata" title="Link to this definition">#</a></dt>
+<dd><p>Metadata from the source model.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_river">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">source_river</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_river" title="Link to this definition">#</a></dt>
+<dd><p>Extract river geometry from the source geopackage.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_structure">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">source_structure</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_structure" title="Link to this definition">#</a></dt>
+<dd><p>Extract structures from the source geopackage.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_xs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">source_xs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_xs" title="Link to this definition">#</a></dt>
+<dd><p>Extract cross sections from the source geopackage.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.split_source_hull">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">split_source_hull</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.split_source_hull" title="Link to this definition">#</a></dt>
+<dd><p>Split the concave hull of the source model using the upstream and downstream cross sections of the submodel.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_gdfs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">subset_gdfs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_gdfs" title="Link to this definition">#</a></dt>
+<dd><p>Subset the cross sections, structues, and river geometry for a given NWM reach.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_reaches">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">subset_reaches</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_reaches" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of river_reach values on path from u/s to d/s XS.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_river">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">subset_river</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_river" title="Link to this definition">#</a></dt>
+<dd><p>Trim source centerline to u/s and d/s limits and add all intermediate reaches.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_structures">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">subset_structures</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_structures" title="Link to this definition">#</a></dt>
+<dd><p>Trim source structures to u/s and d/s limits and add all intermediate reaches.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_xs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">subset_xs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">GeoDataFrame</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_xs" title="Link to this definition">#</a></dt>
+<dd><p>Trim source XS to u/s and d/s limits and add all intermediate reaches.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.trim_reach">
+<span class="sig-name descname"><span class="pre">trim_reach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sections</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.trim_reach" title="Link to this definition">#</a></dt>
+<dd><p>Trim a XS gdf to the u/s and d/s limits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoDataFrame</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_ds_reach_lengths">
+<span class="sig-name descname"><span class="pre">update_ds_reach_lengths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_ds_reach_lengths" title="Link to this definition">#</a></dt>
+<dd><p>Update ras data by increasing downstream distance at sections above a junction crossing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_ripple1d_parameters">
+<span class="sig-name descname"><span class="pre">update_ripple1d_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rsd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_ripple1d_parameters" title="Link to this definition">#</a></dt>
+<dd><p>Update ripple1d_parameters with results of subsetting.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_structure_names">
+<span class="sig-name descname"><span class="pre">update_structure_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_structure_names" title="Link to this definition">#</a></dt>
+<dd><p>Update structure IDs to align with sections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoDataFrame</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_xs_names">
+<span class="sig-name descname"><span class="pre">update_xs_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sections</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_xs_names" title="Link to this definition">#</a></dt>
+<dd><p>Update section IDs to auto-incremented.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GeoDataFrame</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_reach">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">us_reach</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_reach" title="Link to this definition">#</a></dt>
+<dd><p>Extract upstream reach from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">us_river</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river" title="Link to this definition">#</a></dt>
+<dd><p>Extract upstream river from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river_reach">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">us_river_reach</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river_reach" title="Link to this definition">#</a></dt>
+<dd><p>Extract upstream river_reach from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river_reach_rs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">us_river_reach_rs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river_reach_rs" title="Link to this definition">#</a></dt>
+<dd><p>Extract upstream river_reach_rs from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_rs">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">us_rs</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_rs" title="Link to this definition">#</a></dt>
+<dd><p>Extract upstream river station from conflation parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.write_ripple1d_parameters">
+<span class="sig-name descname"><span class="pre">write_ripple1d_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ripple1d_parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.write_ripple1d_parameters" title="Link to this definition">#</a></dt>
+<dd><p>Write ripple1d parameters to json file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.write_ripple_gpkg">
+<span class="sig-name descname"><span class="pre">write_ripple_gpkg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.write_ripple_gpkg" title="Link to this definition">#</a></dt>
+<dd><p>Write the subsetted geopackage to the destination project directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.xs_distance_modifiers">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">xs_distance_modifiers</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.xs_distance_modifiers" title="Link to this definition">#</a></dt>
+<dd><p>Get a dictionary mapping the lowest cross-section along a reach to the junction distance below it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.ops.subset_gpkg.extract_submodel">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.ops.subset_gpkg.</span></span><span class="sig-name descname"><span class="pre">extract_submodel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_model_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodel_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nwm_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_flow_multiplier_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_flow_multiplier_ras</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_ras_flows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_nwm_flows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.ops.subset_gpkg.extract_submodel" title="Link to this definition">#</a></dt>
+<dd><p>Use ripple conflation data to create a new GPKG from an existing ras geopackage.</p>
+<p>Create a new geopackage with information for a specific NWM reach.  The new geopackage contains layer for the river centerline, cross-sections, and structures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_model_directory</strong> (<em>str</em>) – The path to the directory containing HEC-RAS project, plan, geometry, and flow files.</p></li>
+<li><p><strong>submodel_directory</strong> (<em>str</em>) – The path to export submodel HEC-RAS files to.</p></li>
+<li><p><strong>nwm_id</strong> (<em>int</em>) – The id of the NWM reach to create a submodel for</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – The name of the HEC-RAS model.</p></li>
+<li><p><strong>min_flow_multiplier_ras</strong> (<em>float</em>) – Number that will be multiplied by the RAS min modeled flow. Default is 1</p></li>
+<li><p><strong>max_flow_multiplier_ras</strong> (<em>float</em>) – Number that will be multiplied by the RAS max modeled flow. Default is 1</p></li>
+<li><p><strong>ignore_ras_flows</strong> (<em>bool</em>) – Whether to ignore HEC-RAS min and max flow when defining flow ranges. Default is False</p></li>
+<li><p><strong>ignore_nwm_flows</strong> (<em>bool</em>) – Whether to ignore NWM min and max flow when defining flow ranges. Default is False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Metadata for the submodel</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – Raised when no geopackage is found in the source model directory</p></li>
+<li><p><strong>FileNotFoundError</strong> – Raised when no .conflation.json is found in the source model directory</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.ops">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ripple1d.ops" title="Link to this heading">#</a></h2>
+<p>Initialize ops.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ripple1d.hecstac.ras.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ripple1d.hecstac.ras package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ripple1d.utils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ripple1d.utils package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.endpoints">ripple1d.ops.endpoints module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.endpoints.execute_endpoint"><code class="docutils literal notranslate"><span class="pre">execute_endpoint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.endpoints.initialize_process_logger"><code class="docutils literal notranslate"><span class="pre">initialize_process_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.fim_lib">ripple1d.ops.fim_lib module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.fim_lib.create_fim_lib"><code class="docutils literal notranslate"><span class="pre">create_fim_lib()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.fim_lib.create_scenarios_db"><code class="docutils literal notranslate"><span class="pre">create_scenarios_db()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.fim_lib.find_missing_grids"><code class="docutils literal notranslate"><span class="pre">find_missing_grids()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.fim_lib.post_process_depth_grids"><code class="docutils literal notranslate"><span class="pre">post_process_depth_grids()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.metrics">ripple1d.ops.metrics module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.clean_length"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.clean_length()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.compute_coverage_metrics"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.compute_coverage_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.compute_station"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.compute_station()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.eclipsed_reaches"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.eclipsed_reaches()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.length_metrics"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.length_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.overlapped_reaches"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.overlapped_reaches()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.populate_station_elevation"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.populate_station_elevation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.populate_thalweg_station"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.populate_thalweg_station()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.river_line"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.river_line</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.thalweg_metrics"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.thalweg_metrics()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.ConflationMetrics.us_ds_xs"><code class="docutils literal notranslate"><span class="pre">ConflationMetrics.us_ds_xs()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.combine_reaches"><code class="docutils literal notranslate"><span class="pre">combine_reaches()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.compute_conflation_metrics"><code class="docutils literal notranslate"><span class="pre">compute_conflation_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.metrics.get_eclipsed_reaches"><code class="docutils literal notranslate"><span class="pre">get_eclipsed_reaches()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.ras_conflate">ripple1d.ops.ras_conflate module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.clean_conflation"><code class="docutils literal notranslate"><span class="pre">clean_conflation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.conflate_model"><code class="docutils literal notranslate"><span class="pre">conflate_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.conflate_single_nwm_reach"><code class="docutils literal notranslate"><span class="pre">conflate_single_nwm_reach()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.find_eclipsed_reaches"><code class="docutils literal notranslate"><span class="pre">find_eclipsed_reaches()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.fix_junctions"><code class="docutils literal notranslate"><span class="pre">fix_junctions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.generate_metadata"><code class="docutils literal notranslate"><span class="pre">generate_metadata()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.get_linked_reaches"><code class="docutils literal notranslate"><span class="pre">get_linked_reaches()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.get_nwm_reaches"><code class="docutils literal notranslate"><span class="pre">get_nwm_reaches()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.href_to_vsis"><code class="docutils literal notranslate"><span class="pre">href_to_vsis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_conflate.s3_public_href"><code class="docutils literal notranslate"><span class="pre">s3_public_href()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.ras_run">ripple1d.ops.ras_run module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.create_flow_depth_array"><code class="docutils literal notranslate"><span class="pre">create_flow_depth_array()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.create_flow_wse_scenarios_matrix"><code class="docutils literal notranslate"><span class="pre">create_flow_wse_scenarios_matrix()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.create_model_run_normal_depth"><code class="docutils literal notranslate"><span class="pre">create_model_run_normal_depth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.determine_flow_increments"><code class="docutils literal notranslate"><span class="pre">determine_flow_increments()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.establish_order_of_nwm_ids"><code class="docutils literal notranslate"><span class="pre">establish_order_of_nwm_ids()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.get_flow_depth_arrays"><code class="docutils literal notranslate"><span class="pre">get_flow_depth_arrays()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.get_kwse_from_ds_model"><code class="docutils literal notranslate"><span class="pre">get_kwse_from_ds_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.run_incremental_normal_depth"><code class="docutils literal notranslate"><span class="pre">run_incremental_normal_depth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.run_known_wse"><code class="docutils literal notranslate"><span class="pre">run_known_wse()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_run.stepwise_floor_lookup"><code class="docutils literal notranslate"><span class="pre">stepwise_floor_lookup()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.ras_terrain">ripple1d.ops.ras_terrain module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.add_intersection_pts"><code class="docutils literal notranslate"><span class="pre">add_intersection_pts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.compute_terrain_agreement_metrics"><code class="docutils literal notranslate"><span class="pre">compute_terrain_agreement_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.correlation"><code class="docutils literal notranslate"><span class="pre">correlation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.create_ras_terrain"><code class="docutils literal notranslate"><span class="pre">create_ras_terrain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.cross_correlation"><code class="docutils literal notranslate"><span class="pre">cross_correlation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.export_agreement_metrics"><code class="docutils literal notranslate"><span class="pre">export_agreement_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.flow_area_agreement"><code class="docutils literal notranslate"><span class="pre">flow_area_agreement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.flow_area_overlap"><code class="docutils literal notranslate"><span class="pre">flow_area_overlap()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.geom_agreement_metrics"><code class="docutils literal notranslate"><span class="pre">geom_agreement_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.get_flow_area"><code class="docutils literal notranslate"><span class="pre">get_flow_area()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.get_geometry_mask"><code class="docutils literal notranslate"><span class="pre">get_geometry_mask()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.get_hydraulic_radius"><code class="docutils literal notranslate"><span class="pre">get_hydraulic_radius()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.get_wetted_perimeter"><code class="docutils literal notranslate"><span class="pre">get_wetted_perimeter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.get_wetted_top_width"><code class="docutils literal notranslate"><span class="pre">get_wetted_top_width()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.get_wses"><code class="docutils literal notranslate"><span class="pre">get_wses()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.hydraulic_radius_agreement"><code class="docutils literal notranslate"><span class="pre">hydraulic_radius_agreement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.interpolater"><code class="docutils literal notranslate"><span class="pre">interpolater()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.inundation_agreement"><code class="docutils literal notranslate"><span class="pre">inundation_agreement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.r_squared"><code class="docutils literal notranslate"><span class="pre">r_squared()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.residual_metrics"><code class="docutils literal notranslate"><span class="pre">residual_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.round_values"><code class="docutils literal notranslate"><span class="pre">round_values()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.sample_terrain"><code class="docutils literal notranslate"><span class="pre">sample_terrain()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.smape_series"><code class="docutils literal notranslate"><span class="pre">smape_series()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.smape_single"><code class="docutils literal notranslate"><span class="pre">smape_single()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.spectral_angle"><code class="docutils literal notranslate"><span class="pre">spectral_angle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.spectral_correlation"><code class="docutils literal notranslate"><span class="pre">spectral_correlation()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.ss"><code class="docutils literal notranslate"><span class="pre">ss()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.summarize_dict"><code class="docutils literal notranslate"><span class="pre">summarize_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.thalweg_elevation_difference"><code class="docutils literal notranslate"><span class="pre">thalweg_elevation_difference()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.top_width_agreement"><code class="docutils literal notranslate"><span class="pre">top_width_agreement()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.variable_metrics"><code class="docutils literal notranslate"><span class="pre">variable_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.write_projection_file"><code class="docutils literal notranslate"><span class="pre">write_projection_file()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.wse_intersection_pts"><code class="docutils literal notranslate"><span class="pre">wse_intersection_pts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.ras_terrain.xs_agreement_metrics"><code class="docutils literal notranslate"><span class="pre">xs_agreement_metrics()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops.subset_gpkg">ripple1d.ops.subset_gpkg module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.conflation_parameters"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.conflation_parameters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.copy_metadata_to_ripple1d_gpkg"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.copy_metadata_to_ripple1d_gpkg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.correct_ras_data"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.correct_ras_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.crs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.crs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_reach"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ds_reach</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ds_river</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river_reach"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ds_river_reach</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_river_reach_rs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ds_river_reach_rs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ds_rs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ds_rs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.max_flow"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.max_flow</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.min_flow"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.min_flow</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.nwm_reach_model"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.nwm_reach_model</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.reach_distance_modifiers"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.reach_distance_modifiers</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.rename_river_reach"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.rename_river_reach()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple1d_parameters"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple1d_parameters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_ds_xs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_ds_xs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_gpkg_file"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_gpkg_file</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_river"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_river</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_structure"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_structure</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_us_xs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_us_xs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_xs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_xs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.ripple_xs_concave_hull"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.ripple_xs_concave_hull</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_hulls"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.source_hulls</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_junction"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.source_junction</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_model_metadata"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.source_model_metadata</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_river"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.source_river</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_structure"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.source_structure</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.source_xs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.source_xs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.split_source_hull"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.split_source_hull</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_gdfs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.subset_gdfs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_reaches"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.subset_reaches</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_river"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.subset_river</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_structures"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.subset_structures</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.subset_xs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.subset_xs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.trim_reach"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.trim_reach()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_ds_reach_lengths"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.update_ds_reach_lengths()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_ripple1d_parameters"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.update_ripple1d_parameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_structure_names"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.update_structure_names()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.update_xs_names"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.update_xs_names()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_reach"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.us_reach</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.us_river</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river_reach"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.us_river_reach</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_river_reach_rs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.us_river_reach_rs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.us_rs"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.us_rs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.write_ripple1d_parameters"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.write_ripple1d_parameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.write_ripple_gpkg"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.write_ripple_gpkg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.RippleGeopackageSubsetter.xs_distance_modifiers"><code class="docutils literal notranslate"><span class="pre">RippleGeopackageSubsetter.xs_distance_modifiers</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.ops.subset_gpkg.extract_submodel"><code class="docutils literal notranslate"><span class="pre">extract_submodel()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.ops">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/ripple1d.ops.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Dewberry.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

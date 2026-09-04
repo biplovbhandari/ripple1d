@@ -1,0 +1,61 @@
+ripple1d.api package
+====================
+
+Submodules
+----------
+
+ripple1d.api.app module
+-----------------------
+
+.. automodule:: ripple1d.api.app
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.api.log module
+-----------------------
+
+.. automodule:: ripple1d.api.log
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.api.manager module
+---------------------------
+
+.. automodule:: ripple1d.api.manager
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.api.run\_api\_test module
+----------------------------------
+
+.. automodule:: ripple1d.api.run_api_test
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.api.tasks module
+-------------------------
+
+.. automodule:: ripple1d.api.tasks
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.api.utils module
+-------------------------
+
+.. automodule:: ripple1d.api.utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.api
+   :members:
+   :show-inheritance:
+   :undoc-members:

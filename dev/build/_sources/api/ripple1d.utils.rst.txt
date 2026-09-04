@@ -1,0 +1,61 @@
+ripple1d.utils package
+======================
+
+Submodules
+----------
+
+ripple1d.utils.dg\_utils module
+-------------------------------
+
+.. automodule:: ripple1d.utils.dg_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.utils.gpkg\_utils module
+---------------------------------
+
+.. automodule:: ripple1d.utils.gpkg_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.utils.ripple\_utils module
+-----------------------------------
+
+.. automodule:: ripple1d.utils.ripple_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.utils.s3\_utils module
+-------------------------------
+
+.. automodule:: ripple1d.utils.s3_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.utils.sqlite\_utils module
+-----------------------------------
+
+.. automodule:: ripple1d.utils.sqlite_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+ripple1d.utils.stac\_utils module
+---------------------------------
+
+.. automodule:: ripple1d.utils.stac_utils
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: ripple1d.utils
+   :members:
+   :show-inheritance:
+   :undoc-members:

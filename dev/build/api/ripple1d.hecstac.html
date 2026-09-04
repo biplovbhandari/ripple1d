@@ -1,0 +1,1189 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ripple1d.hecstac package &#8212; ripple1d  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2cc7f54a" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ripple1d.hecstac';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ripple1d.hecstac.common package" href="ripple1d.hecstac.common.html" />
+    <link rel="prev" title="ripple1d.conflate package" href="ripple1d.conflate.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.11.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item"><a class="navbar-brand logo" href="../index.html">
+    <span class="logo" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: bold; font-size: 24px; color: var(--pst-color-secondary);">
+        ripple1d
+      </span>
+  </a></div>
+    
+      <div class="navbar-item">0.11.0</div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tech_summary.html">
+    Technical Summary
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    FAQ
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../postman.html">
+    Postman Collection
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../change_log.html">
+    Change Log
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">ripple1d</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="ripple1d.html">ripple1d package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.api.html">ripple1d.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.conflate.html">ripple1d.conflate package</a></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">ripple1d.hecstac package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html">ripple1d.hecstac.common package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html">ripple1d.hecstac.ras package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.ops.html">ripple1d.ops package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.utils.html">ripple1d.utils package</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api_reference.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="modules.html" class="nav-link">ripple1d</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="ripple1d.html" class="nav-link">ripple1d package</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ripple1d.hecstac package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ripple1d-hecstac-package">
+<h1>ripple1d.hecstac package<a class="headerlink" href="#ripple1d-hecstac-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ripple1d.hecstac.common.html">ripple1d.hecstac.common package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common.asset_factory">ripple1d.hecstac.common.asset_factory module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.AssetFactory"><code class="docutils literal notranslate"><span class="pre">AssetFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.AssetFactory.asset_from_dict"><code class="docutils literal notranslate"><span class="pre">AssetFactory.asset_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset"><code class="docutils literal notranslate"><span class="pre">GenericAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset.crs"><code class="docutils literal notranslate"><span class="pre">GenericAsset.crs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">GenericAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset.file"><code class="docutils literal notranslate"><span class="pre">GenericAsset.file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset.name_from_suffix"><code class="docutils literal notranslate"><span class="pre">GenericAsset.name_from_suffix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">GenericAsset.regex_parse_str</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.asset_factory.GenericAsset.roles"><code class="docutils literal notranslate"><span class="pre">GenericAsset.roles</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common.base_io">ripple1d.hecstac.common.base_io module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.base_io.ModelFileReader"><code class="docutils literal notranslate"><span class="pre">ModelFileReader</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.base_io.ModelFileReaderError"><code class="docutils literal notranslate"><span class="pre">ModelFileReaderError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common.consts">ripple1d.hecstac.common.consts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common.geometry">ripple1d.hecstac.common.geometry module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.geometry.reproject_to_wgs84"><code class="docutils literal notranslate"><span class="pre">reproject_to_wgs84()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common.path_manager">ripple1d.hecstac.common.path_manager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.path_manager.LocalPathManager"><code class="docutils literal notranslate"><span class="pre">LocalPathManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.path_manager.LocalPathManager.derived_item_asset"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.derived_item_asset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.path_manager.LocalPathManager.item_dir"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.item_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.path_manager.LocalPathManager.item_path"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.item_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.path_manager.LocalPathManager.model_parent_dir"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.model_parent_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.path_manager.LocalPathManager.model_root_dir"><code class="docutils literal notranslate"><span class="pre">LocalPathManager.model_root_dir</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common.s3_utils">ripple1d.hecstac.common.s3_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.s3_utils.make_uri_public"><code class="docutils literal notranslate"><span class="pre">make_uri_public()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.s3_utils.parse_s3_url"><code class="docutils literal notranslate"><span class="pre">parse_s3_url()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.s3_utils.save_bytes_s3"><code class="docutils literal notranslate"><span class="pre">save_bytes_s3()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.common.html#ripple1d.hecstac.common.s3_utils.save_file_s3"><code class="docutils literal notranslate"><span class="pre">save_file_s3()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.common.html#module-ripple1d.hecstac.common">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ripple1d.hecstac.ras.html">ripple1d.hecstac.ras package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras.assets">ripple1d.hecstac.ras.assets module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.BinaryLogAsset"><code class="docutils literal notranslate"><span class="pre">BinaryLogAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.BinaryLogAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">BinaryLogAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.BoundaryConditionAsset"><code class="docutils literal notranslate"><span class="pre">BoundaryConditionAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.BoundaryConditionAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">BoundaryConditionAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ColorScalesAsset"><code class="docutils literal notranslate"><span class="pre">ColorScalesAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ColorScalesAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">ColorScalesAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ComputationalLevelOutputAsset"><code class="docutils literal notranslate"><span class="pre">ComputationalLevelOutputAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ComputationalLevelOutputAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">ComputationalLevelOutputAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ComputationalMessageAsset"><code class="docutils literal notranslate"><span class="pre">ComputationalMessageAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ComputationalMessageAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">ComputationalMessageAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.DSSAsset"><code class="docutils literal notranslate"><span class="pre">DSSAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.DSSAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">DSSAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometricPreprocessorAsset"><code class="docutils literal notranslate"><span class="pre">GeometricPreprocessorAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometricPreprocessorAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">GeometricPreprocessorAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset"><code class="docutils literal notranslate"><span class="pre">GeometryAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.PROPERTIES_WITH_GDF"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.PROPERTIES_WITH_GDF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.geometry"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.geometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.geometry_wgs84"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.geometry_wgs84</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.geopackage"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.geopackage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.has_1d"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.has_1d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.has_2d"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.has_2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.regex_parse_str</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryAsset.thumbnail"><code class="docutils literal notranslate"><span class="pre">GeometryAsset.thumbnail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.bc_lines_spatial"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.bc_lines_spatial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.geometry"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.geometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.geometry_wgs84"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.geometry_wgs84</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.has_1d"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.has_1d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.has_2d"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.has_2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.model_perimeter"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.model_perimeter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.reference_line_names"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.reference_line_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.reference_lines_spatial"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.reference_lines_spatial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.reference_points_spatial"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.reference_points_spatial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.regex_parse_str</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.GeometryHdfAsset.thumbnail"><code class="docutils literal notranslate"><span class="pre">GeometryHdfAsset.thumbnail()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.HydraulicDesignAsset"><code class="docutils literal notranslate"><span class="pre">HydraulicDesignAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.HydraulicDesignAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">HydraulicDesignAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.InitialConditionsFileAsset"><code class="docutils literal notranslate"><span class="pre">InitialConditionsFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.InitialConditionsFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">InitialConditionsFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.LogAsset"><code class="docutils literal notranslate"><span class="pre">LogAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.LogAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">LogAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.MiscTextFileAsset"><code class="docutils literal notranslate"><span class="pre">MiscTextFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.MiscTextFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">MiscTextFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.MiscXMLFileAsset"><code class="docutils literal notranslate"><span class="pre">MiscXMLFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.MiscXMLFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">MiscXMLFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.OutputFileAsset"><code class="docutils literal notranslate"><span class="pre">OutputFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.OutputFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">OutputFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanAsset"><code class="docutils literal notranslate"><span class="pre">PlanAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">PlanAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">PlanAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanHdfAsset"><code class="docutils literal notranslate"><span class="pre">PlanHdfAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanHdfAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">PlanHdfAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanHdfAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">PlanHdfAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanRestartFileAsset"><code class="docutils literal notranslate"><span class="pre">PlanRestartFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PlanRestartFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">PlanRestartFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PrjAsset"><code class="docutils literal notranslate"><span class="pre">PrjAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PrjAsset.from_dict"><code class="docutils literal notranslate"><span class="pre">PrjAsset.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.PrjAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">PrjAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ProjectAsset"><code class="docutils literal notranslate"><span class="pre">ProjectAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ProjectAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">ProjectAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ProjectAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">ProjectAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ProjectionAsset"><code class="docutils literal notranslate"><span class="pre">ProjectionAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ProjectionAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">ProjectionAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.ProjectionAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">ProjectionAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.QuasiUnsteadyFlowAsset"><code class="docutils literal notranslate"><span class="pre">QuasiUnsteadyFlowAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.QuasiUnsteadyFlowAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">QuasiUnsteadyFlowAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.QuasiUnsteadyFlowAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">QuasiUnsteadyFlowAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RasMapperBackupFileAsset"><code class="docutils literal notranslate"><span class="pre">RasMapperBackupFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RasMapperBackupFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">RasMapperBackupFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RasMapperFileAsset"><code class="docutils literal notranslate"><span class="pre">RasMapperFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RasMapperFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">RasMapperFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RasMapperOriginalFileAsset"><code class="docutils literal notranslate"><span class="pre">RasMapperOriginalFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RasMapperOriginalFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">RasMapperOriginalFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RestartAsset"><code class="docutils literal notranslate"><span class="pre">RestartAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RestartAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">RestartAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RunFileAsset"><code class="docutils literal notranslate"><span class="pre">RunFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.RunFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">RunFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SedimentDataAsset"><code class="docutils literal notranslate"><span class="pre">SedimentDataAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SedimentDataAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">SedimentDataAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SedimentOutputAsset"><code class="docutils literal notranslate"><span class="pre">SedimentOutputAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SedimentOutputAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">SedimentOutputAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SedimentTransportCapacityAsset"><code class="docutils literal notranslate"><span class="pre">SedimentTransportCapacityAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SedimentTransportCapacityAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">SedimentTransportCapacityAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SiamInputAsset"><code class="docutils literal notranslate"><span class="pre">SiamInputAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SiamInputAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">SiamInputAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SiamOutputAsset"><code class="docutils literal notranslate"><span class="pre">SiamOutputAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SiamOutputAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">SiamOutputAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SteadyFlowAsset"><code class="docutils literal notranslate"><span class="pre">SteadyFlowAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SteadyFlowAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">SteadyFlowAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.SteadyFlowAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">SteadyFlowAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowAsset"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowHdfAsset"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowHdfAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowHdfAsset.extra_fields"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowHdfAsset.extra_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowHdfAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowHdfAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowLogAsset"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowLogAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyFlowLogAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowLogAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyRunFileAsset"><code class="docutils literal notranslate"><span class="pre">UnsteadyRunFileAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.UnsteadyRunFileAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">UnsteadyRunFileAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.WaterQualityAsset"><code class="docutils literal notranslate"><span class="pre">WaterQualityAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.WaterQualityAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">WaterQualityAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.WaterQualityLogAsset"><code class="docutils literal notranslate"><span class="pre">WaterQualityLogAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.WaterQualityLogAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">WaterQualityLogAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.WaterQualityRestartAsset"><code class="docutils literal notranslate"><span class="pre">WaterQualityRestartAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.WaterQualityRestartAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">WaterQualityRestartAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.XSOutputAsset"><code class="docutils literal notranslate"><span class="pre">XSOutputAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.XSOutputAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">XSOutputAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.XSOutputHeaderAsset"><code class="docutils literal notranslate"><span class="pre">XSOutputHeaderAsset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.assets.XSOutputHeaderAsset.regex_parse_str"><code class="docutils literal notranslate"><span class="pre">XSOutputHeaderAsset.regex_parse_str</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras.consts">ripple1d.hecstac.ras.consts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras.errors">ripple1d.hecstac.ras.errors module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.errors.GeometryAssetInvalidCRSError"><code class="docutils literal notranslate"><span class="pre">GeometryAssetInvalidCRSError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.errors.GeometryAssetMissingCRSError"><code class="docutils literal notranslate"><span class="pre">GeometryAssetMissingCRSError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.errors.Invalid1DGeometryError"><code class="docutils literal notranslate"><span class="pre">Invalid1DGeometryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.errors.InvalidStructureDataError"><code class="docutils literal notranslate"><span class="pre">InvalidStructureDataError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras.item">ripple1d.hecstac.ras.item module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem"><code class="docutils literal notranslate"><span class="pre">RASModelItem</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.HECSTAC_VERSION_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.HECSTAC_VERSION_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.MODEL_GAGES_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.MODEL_GAGES_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.MODEL_UNITS_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.MODEL_UNITS_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.PROJECT_DESCRIPTION_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.PROJECT_DESCRIPTION_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.PROJECT_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.PROJECT_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.PROJECT_STATUS_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.PROJECT_STATUS_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.PROJECT_TITLE_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.PROJECT_TITLE_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.PROJECT_VERSION_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.PROJECT_VERSION_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.RAS_DATETIME_SOURCE_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.RAS_DATETIME_SOURCE_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.RAS_HAS_1D_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.RAS_HAS_1D_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.RAS_HAS_2D_KEY"><code class="docutils literal notranslate"><span class="pre">RASModelItem.RAS_HAS_2D_KEY</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.add_asset"><code class="docutils literal notranslate"><span class="pre">RASModelItem.add_asset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.add_geospatial_assets"><code class="docutils literal notranslate"><span class="pre">RASModelItem.add_geospatial_assets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.add_model_geopackages"><code class="docutils literal notranslate"><span class="pre">RASModelItem.add_model_geopackages()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.add_model_thumbnails"><code class="docutils literal notranslate"><span class="pre">RASModelItem.add_model_thumbnails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.bbox"><code class="docutils literal notranslate"><span class="pre">RASModelItem.bbox</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.crs"><code class="docutils literal notranslate"><span class="pre">RASModelItem.crs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.factory"><code class="docutils literal notranslate"><span class="pre">RASModelItem.factory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.from_dict"><code class="docutils literal notranslate"><span class="pre">RASModelItem.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.from_prj"><code class="docutils literal notranslate"><span class="pre">RASModelItem.from_prj()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.geometry"><code class="docutils literal notranslate"><span class="pre">RASModelItem.geometry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.geometry_assets"><code class="docutils literal notranslate"><span class="pre">RASModelItem.geometry_assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.gpkg_metadata"><code class="docutils literal notranslate"><span class="pre">RASModelItem.gpkg_metadata</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.has_1d"><code class="docutils literal notranslate"><span class="pre">RASModelItem.has_1d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.has_2d"><code class="docutils literal notranslate"><span class="pre">RASModelItem.has_2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.model_datetime"><code class="docutils literal notranslate"><span class="pre">RASModelItem.model_datetime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.pf"><code class="docutils literal notranslate"><span class="pre">RASModelItem.pf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.plan_assets"><code class="docutils literal notranslate"><span class="pre">RASModelItem.plan_assets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.pm"><code class="docutils literal notranslate"><span class="pre">RASModelItem.pm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.project_asset"><code class="docutils literal notranslate"><span class="pre">RASModelItem.project_asset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.project_version"><code class="docutils literal notranslate"><span class="pre">RASModelItem.project_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.to_dict"><code class="docutils literal notranslate"><span class="pre">RASModelItem.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.to_file"><code class="docutils literal notranslate"><span class="pre">RASModelItem.to_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.item.RASModelItem.update_properties"><code class="docutils literal notranslate"><span class="pre">RASModelItem.update_properties()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras.parser">ripple1d.hecstac.ras.parser module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.CachedFile"><code class="docutils literal notranslate"><span class="pre">CachedFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Connection"><code class="docutils literal notranslate"><span class="pre">Connection</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.FlowChangeLocation"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.FlowChangeLocation.flows"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.flows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.FlowChangeLocation.profile_names"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.profile_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.FlowChangeLocation.reach"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.reach</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.FlowChangeLocation.river"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.river</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.FlowChangeLocation.rs"><code class="docutils literal notranslate"><span class="pre">FlowChangeLocation.rs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile"><code class="docutils literal notranslate"><span class="pre">GeometryFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.clean_polygons"><code class="docutils literal notranslate"><span class="pre">GeometryFile.clean_polygons()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.concave_hull"><code class="docutils literal notranslate"><span class="pre">GeometryFile.concave_hull</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.concave_hull_gdf"><code class="docutils literal notranslate"><span class="pre">GeometryFile.concave_hull_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.connections"><code class="docutils literal notranslate"><span class="pre">GeometryFile.connections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.cross_sections"><code class="docutils literal notranslate"><span class="pre">GeometryFile.cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.determine_junction_xs"><code class="docutils literal notranslate"><span class="pre">GeometryFile.determine_junction_xs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.determine_lateral_structure_xs"><code class="docutils literal notranslate"><span class="pre">GeometryFile.determine_lateral_structure_xs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.determine_xs_order"><code class="docutils literal notranslate"><span class="pre">GeometryFile.determine_xs_order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.file_version"><code class="docutils literal notranslate"><span class="pre">GeometryFile.file_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.geom_title"><code class="docutils literal notranslate"><span class="pre">GeometryFile.geom_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.geom_version"><code class="docutils literal notranslate"><span class="pre">GeometryFile.geom_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.geometry_time"><code class="docutils literal notranslate"><span class="pre">GeometryFile.geometry_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.get_subtype_gdf"><code class="docutils literal notranslate"><span class="pre">GeometryFile.get_subtype_gdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.has_1d"><code class="docutils literal notranslate"><span class="pre">GeometryFile.has_1d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.has_2d"><code class="docutils literal notranslate"><span class="pre">GeometryFile.has_2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.ic_point_names"><code class="docutils literal notranslate"><span class="pre">GeometryFile.ic_point_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.iter_labeled_gdfs"><code class="docutils literal notranslate"><span class="pre">GeometryFile.iter_labeled_gdfs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.junction_gdf"><code class="docutils literal notranslate"><span class="pre">GeometryFile.junction_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.junction_hull"><code class="docutils literal notranslate"><span class="pre">GeometryFile.junction_hull()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.junctions"><code class="docutils literal notranslate"><span class="pre">GeometryFile.junctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.reach_gdf"><code class="docutils literal notranslate"><span class="pre">GeometryFile.reach_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.reaches"><code class="docutils literal notranslate"><span class="pre">GeometryFile.reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.ref_line_names"><code class="docutils literal notranslate"><span class="pre">GeometryFile.ref_line_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.ref_point_names"><code class="docutils literal notranslate"><span class="pre">GeometryFile.ref_point_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.remove_holes"><code class="docutils literal notranslate"><span class="pre">GeometryFile.remove_holes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.rivers"><code class="docutils literal notranslate"><span class="pre">GeometryFile.rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.storage_areas"><code class="docutils literal notranslate"><span class="pre">GeometryFile.storage_areas</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.structures"><code class="docutils literal notranslate"><span class="pre">GeometryFile.structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.structures_gdf"><code class="docutils literal notranslate"><span class="pre">GeometryFile.structures_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.to_gpkg"><code class="docutils literal notranslate"><span class="pre">GeometryFile.to_gpkg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.unpack_geoms"><code class="docutils literal notranslate"><span class="pre">GeometryFile.unpack_geoms()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryFile.xs_gdf"><code class="docutils literal notranslate"><span class="pre">GeometryFile.xs_gdf</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryHDFFile"><code class="docutils literal notranslate"><span class="pre">GeometryHDFFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryHDFFile.cross_sections"><code class="docutils literal notranslate"><span class="pre">GeometryHDFFile.cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryHDFFile.hdf_object"><code class="docutils literal notranslate"><span class="pre">GeometryHDFFile.hdf_object</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryHDFFile.projection"><code class="docutils literal notranslate"><span class="pre">GeometryHDFFile.projection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryHDFFile.reference_lines"><code class="docutils literal notranslate"><span class="pre">GeometryHDFFile.reference_lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.GeometryHDFFile.reference_points"><code class="docutils literal notranslate"><span class="pre">GeometryHDFFile.reference_points</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction"><code class="docutils literal notranslate"><span class="pre">Junction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.downstream_reaches"><code class="docutils literal notranslate"><span class="pre">Junction.downstream_reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.downstream_rivers"><code class="docutils literal notranslate"><span class="pre">Junction.downstream_rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.gdf"><code class="docutils literal notranslate"><span class="pre">Junction.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.junction_lengths"><code class="docutils literal notranslate"><span class="pre">Junction.junction_lengths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.point"><code class="docutils literal notranslate"><span class="pre">Junction.point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.split_lines"><code class="docutils literal notranslate"><span class="pre">Junction.split_lines()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.upstream_reaches"><code class="docutils literal notranslate"><span class="pre">Junction.upstream_reaches</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.upstream_rivers"><code class="docutils literal notranslate"><span class="pre">Junction.upstream_rivers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.x"><code class="docutils literal notranslate"><span class="pre">Junction.x</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Junction.y"><code class="docutils literal notranslate"><span class="pre">Junction.y</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile"><code class="docutils literal notranslate"><span class="pre">PlanFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.breach_locations"><code class="docutils literal notranslate"><span class="pre">PlanFile.breach_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.flow_file"><code class="docutils literal notranslate"><span class="pre">PlanFile.flow_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.geometry_file"><code class="docutils literal notranslate"><span class="pre">PlanFile.geometry_file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.is_encroached"><code class="docutils literal notranslate"><span class="pre">PlanFile.is_encroached</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.plan_title"><code class="docutils literal notranslate"><span class="pre">PlanFile.plan_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.plan_version"><code class="docutils literal notranslate"><span class="pre">PlanFile.plan_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanFile.short_identifier"><code class="docutils literal notranslate"><span class="pre">PlanFile.short_identifier</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.hdf_object"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.hdf_object</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_data_type"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_data_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_dss_filename"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_dss_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_dss_pathname"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_dss_pathname</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_mode"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_raster_cellsize"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_raster_cellsize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_source"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.meteorology_units"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.meteorology_units</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_base_output_interval"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_base_output_interval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_computation_time_step_base"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_computation_time_step_base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_flow_filename"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_flow_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_geometry_filename"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_geometry_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_plan_filename"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_plan_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_plan_name"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_plan_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_project_filename"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_project_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_project_title"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_project_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_simulation_end_time"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_simulation_end_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_information_simulation_start_time"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_information_simulation_start_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_gate_flow_submergence_decay_exponent"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_gate_flow_submergence_decay_exponent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_is_stablity_factor"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_is_stablity_factor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_ls_stablity_factor"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_ls_stablity_factor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_maximum_number_of_time_slices"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_maximum_number_of_time_slices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_maxiter"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_maxiter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_minimum_time_step_for_slicinghours"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_minimum_time_step_for_slicinghours</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_number_of_warmup_steps"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_number_of_warmup_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_warmup_time_step_hours"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_warmup_time_step_hours</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d2d_weir_flow_submergence_decay_exponent"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d2d_weir_flow_submergence_decay_exponent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_flow_tolerance"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_flow_tolerance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_maximum_iterations"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_maximum_iterations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_maximum_iterations_without_improvement"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_maximum_iterations_without_improvement</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_maximum_water_surface_error_to_abort"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_maximum_water_surface_error_to_abort</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_storage_area_elevation_tolerance"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_storage_area_elevation_tolerance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_theta"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_theta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_theta_warmup"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_theta_warmup</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_1d_water_surface_elevation_tolerance"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_1d_water_surface_elevation_tolerance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_2d_equation_set"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_2d_equation_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_2d_names"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_2d_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_2d_volume_tolerance"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_2d_volume_tolerance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanHDFFile.plan_parameters_2d_water_surface_tolerance"><code class="docutils literal notranslate"><span class="pre">PlanHDFFile.plan_parameters_2d_water_surface_tolerance</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.bc_lines"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.bc_lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.breaklines"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.breaklines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.bridges_culverts"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.bridges_culverts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.connections"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.connections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.geometry_time"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.geometry_time</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.geometry_version"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.geometry_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.inline_structures"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.inline_structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.landcover_date_last_modified"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.landcover_date_last_modified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.landcover_filename"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.landcover_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.landcover_layername"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.landcover_layername</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.lateral_structures"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.lateral_structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.mesh_areas"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.mesh_areas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.mesh_cells"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.mesh_cells</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.rasmapperlibdll_date"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.rasmapperlibdll_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.si_units"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.si_units</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.terrain_file_date"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.terrain_file_date</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.terrain_filename"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.terrain_filename</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.terrain_layername"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.terrain_layername</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.two_d_flow_cell_average_size"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.two_d_flow_cell_average_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.two_d_flow_cell_maximum_index"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.two_d_flow_cell_maximum_index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.two_d_flow_cell_maximum_size"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.two_d_flow_cell_maximum_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.PlanOrGeomHDFFile.two_d_flow_cell_minimum_size"><code class="docutils literal notranslate"><span class="pre">PlanOrGeomHDFFile.two_d_flow_cell_minimum_size</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile"><code class="docutils literal notranslate"><span class="pre">ProjectFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.geometry_files"><code class="docutils literal notranslate"><span class="pre">ProjectFile.geometry_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.plan_current"><code class="docutils literal notranslate"><span class="pre">ProjectFile.plan_current</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.plan_files"><code class="docutils literal notranslate"><span class="pre">ProjectFile.plan_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.project_description"><code class="docutils literal notranslate"><span class="pre">ProjectFile.project_description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.project_status"><code class="docutils literal notranslate"><span class="pre">ProjectFile.project_status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.project_title"><code class="docutils literal notranslate"><span class="pre">ProjectFile.project_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.project_units"><code class="docutils literal notranslate"><span class="pre">ProjectFile.project_units</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.quasi_unsteady_flow_files"><code class="docutils literal notranslate"><span class="pre">ProjectFile.quasi_unsteady_flow_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.ras_version"><code class="docutils literal notranslate"><span class="pre">ProjectFile.ras_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.steady_flow_files"><code class="docutils literal notranslate"><span class="pre">ProjectFile.steady_flow_files</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.ProjectFile.unsteady_flow_files"><code class="docutils literal notranslate"><span class="pre">ProjectFile.unsteady_flow_files</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.QuasiUnsteadyFlowFile"><code class="docutils literal notranslate"><span class="pre">QuasiUnsteadyFlowFile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.RASHDFFile"><code class="docutils literal notranslate"><span class="pre">RASHDFFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.RASHDFFile.file_version"><code class="docutils literal notranslate"><span class="pre">RASHDFFile.file_version</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.RASHDFFile.hdf_object"><code class="docutils literal notranslate"><span class="pre">RASHDFFile.hdf_object</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.RASHDFFile.units_system"><code class="docutils literal notranslate"><span class="pre">RASHDFFile.units_system</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach"><code class="docutils literal notranslate"><span class="pre">Reach</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.compute_multi_xs_variables"><code class="docutils literal notranslate"><span class="pre">Reach.compute_multi_xs_variables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.coords"><code class="docutils literal notranslate"><span class="pre">Reach.coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.cross_sections"><code class="docutils literal notranslate"><span class="pre">Reach.cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.ds_xs"><code class="docutils literal notranslate"><span class="pre">Reach.ds_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.gdf"><code class="docutils literal notranslate"><span class="pre">Reach.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.geom"><code class="docutils literal notranslate"><span class="pre">Reach.geom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.number_of_coords"><code class="docutils literal notranslate"><span class="pre">Reach.number_of_coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.number_of_cross_sections"><code class="docutils literal notranslate"><span class="pre">Reach.number_of_cross_sections</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.reach_nodes"><code class="docutils literal notranslate"><span class="pre">Reach.reach_nodes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.structures"><code class="docutils literal notranslate"><span class="pre">Reach.structures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.structures_gdf"><code class="docutils literal notranslate"><span class="pre">Reach.structures_gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.us_xs"><code class="docutils literal notranslate"><span class="pre">Reach.us_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Reach.xs_gdf"><code class="docutils literal notranslate"><span class="pre">Reach.xs_gdf</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.River"><code class="docutils literal notranslate"><span class="pre">River</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.SteadyFlowFile"><code class="docutils literal notranslate"><span class="pre">SteadyFlowFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.SteadyFlowFile.flow_change_locations"><code class="docutils literal notranslate"><span class="pre">SteadyFlowFile.flow_change_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.SteadyFlowFile.flow_title"><code class="docutils literal notranslate"><span class="pre">SteadyFlowFile.flow_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.SteadyFlowFile.n_flow_change_locations"><code class="docutils literal notranslate"><span class="pre">SteadyFlowFile.n_flow_change_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.SteadyFlowFile.n_profiles"><code class="docutils literal notranslate"><span class="pre">SteadyFlowFile.n_profiles</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.SteadyFlowFile.profile_names"><code class="docutils literal notranslate"><span class="pre">SteadyFlowFile.profile_names</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StorageArea"><code class="docutils literal notranslate"><span class="pre">StorageArea</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure"><code class="docutils literal notranslate"><span class="pre">Structure</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.distance"><code class="docutils literal notranslate"><span class="pre">Structure.distance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.distance_to_us_xs"><code class="docutils literal notranslate"><span class="pre">Structure.distance_to_us_xs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.gdf"><code class="docutils literal notranslate"><span class="pre">Structure.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.number_of_station_elevation_points"><code class="docutils literal notranslate"><span class="pre">Structure.number_of_station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.river_station"><code class="docutils literal notranslate"><span class="pre">Structure.river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.split_structure_header"><code class="docutils literal notranslate"><span class="pre">Structure.split_structure_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.station_elevation_points"><code class="docutils literal notranslate"><span class="pre">Structure.station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.structure_data"><code class="docutils literal notranslate"><span class="pre">Structure.structure_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.tail_water_reach"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_reach</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.tail_water_river"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_river</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.tail_water_river_station"><code class="docutils literal notranslate"><span class="pre">Structure.tail_water_river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.tw_distance"><code class="docutils literal notranslate"><span class="pre">Structure.tw_distance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.type"><code class="docutils literal notranslate"><span class="pre">Structure.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.type_int"><code class="docutils literal notranslate"><span class="pre">Structure.type_int</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.weir_length"><code class="docutils literal notranslate"><span class="pre">Structure.weir_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.Structure.width"><code class="docutils literal notranslate"><span class="pre">Structure.width</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType"><code class="docutils literal notranslate"><span class="pre">StructureType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType.BRIDGE"><code class="docutils literal notranslate"><span class="pre">StructureType.BRIDGE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType.CULVERT"><code class="docutils literal notranslate"><span class="pre">StructureType.CULVERT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType.INLINE_STRUCTURE"><code class="docutils literal notranslate"><span class="pre">StructureType.INLINE_STRUCTURE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType.LATERAL_STRUCTURE"><code class="docutils literal notranslate"><span class="pre">StructureType.LATERAL_STRUCTURE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType.MULTIPLE_OPENING"><code class="docutils literal notranslate"><span class="pre">StructureType.MULTIPLE_OPENING</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.StructureType.XS"><code class="docutils literal notranslate"><span class="pre">StructureType.XS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.UnsteadyFlowFile"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowFile</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.UnsteadyFlowFile.boundary_locations"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowFile.boundary_locations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.UnsteadyFlowFile.flow_title"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowFile.flow_title</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.UnsteadyFlowFile.precip_bc"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowFile.precip_bc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.UnsteadyFlowFile.reference_lines"><code class="docutils literal notranslate"><span class="pre">UnsteadyFlowFile.reference_lines</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS"><code class="docutils literal notranslate"><span class="pre">XS</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.bank_stations"><code class="docutils literal notranslate"><span class="pre">XS.bank_stations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.banks_encompass_channel"><code class="docutils literal notranslate"><span class="pre">XS.banks_encompass_channel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.centerline_intersection_point"><code class="docutils literal notranslate"><span class="pre">XS.centerline_intersection_point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.centerline_intersection_station"><code class="docutils literal notranslate"><span class="pre">XS.centerline_intersection_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.channel_depth"><code class="docutils literal notranslate"><span class="pre">XS.channel_depth</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.channel_obstruction"><code class="docutils literal notranslate"><span class="pre">XS.channel_obstruction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.channel_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.channel_reach_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.channel_width"><code class="docutils literal notranslate"><span class="pre">XS.channel_width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.computed_river_station"><code class="docutils literal notranslate"><span class="pre">XS.computed_river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.contraction_coefficient"><code class="docutils literal notranslate"><span class="pre">XS.contraction_coefficient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.coords"><code class="docutils literal notranslate"><span class="pre">XS.coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.correct_cross_section_direction"><code class="docutils literal notranslate"><span class="pre">XS.correct_cross_section_direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.cross_section_intersects_reach"><code class="docutils literal notranslate"><span class="pre">XS.cross_section_intersects_reach</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.cutline_length"><code class="docutils literal notranslate"><span class="pre">XS.cutline_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.expansion_coefficient"><code class="docutils literal notranslate"><span class="pre">XS.expansion_coefficient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.first_station"><code class="docutils literal notranslate"><span class="pre">XS.first_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.gdf"><code class="docutils literal notranslate"><span class="pre">XS.gdf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.gdf_data_dict"><code class="docutils literal notranslate"><span class="pre">XS.gdf_data_dict</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.geom"><code class="docutils literal notranslate"><span class="pre">XS.geom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.get_flow_area"><code class="docutils literal notranslate"><span class="pre">XS.get_flow_area()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.get_mannings_discharge"><code class="docutils literal notranslate"><span class="pre">XS.get_mannings_discharge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.get_wetted_perimeter"><code class="docutils literal notranslate"><span class="pre">XS.get_wetted_perimeter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.has_blocks"><code class="docutils literal notranslate"><span class="pre">XS.has_blocks</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.has_ineffectives"><code class="docutils literal notranslate"><span class="pre">XS.has_ineffectives</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.has_levees"><code class="docutils literal notranslate"><span class="pre">XS.has_levees</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.horizontal_varying_mannings"><code class="docutils literal notranslate"><span class="pre">XS.horizontal_varying_mannings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.htab_min_elevation"><code class="docutils literal notranslate"><span class="pre">XS.htab_min_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.htab_min_increment"><code class="docutils literal notranslate"><span class="pre">XS.htab_min_increment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.htab_points"><code class="docutils literal notranslate"><span class="pre">XS.htab_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.intersects_reach_once"><code class="docutils literal notranslate"><span class="pre">XS.intersects_reach_once</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.is_interpolated"><code class="docutils literal notranslate"><span class="pre">XS.is_interpolated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.last_station"><code class="docutils literal notranslate"><span class="pre">XS.last_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.left_bank_elevation"><code class="docutils literal notranslate"><span class="pre">XS.left_bank_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.left_bank_station"><code class="docutils literal notranslate"><span class="pre">XS.left_bank_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.left_max_elevation"><code class="docutils literal notranslate"><span class="pre">XS.left_max_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.left_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.left_reach_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.left_reach_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.left_reach_length_ratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.mannings"><code class="docutils literal notranslate"><span class="pre">XS.mannings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.mannings_code"><code class="docutils literal notranslate"><span class="pre">XS.mannings_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.max_n"><code class="docutils literal notranslate"><span class="pre">XS.max_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.min_elevation"><code class="docutils literal notranslate"><span class="pre">XS.min_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.min_elevation_in_channel"><code class="docutils literal notranslate"><span class="pre">XS.min_elevation_in_channel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.min_n"><code class="docutils literal notranslate"><span class="pre">XS.min_n</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.n_subdivisions"><code class="docutils literal notranslate"><span class="pre">XS.n_subdivisions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.number_of_coords"><code class="docutils literal notranslate"><span class="pre">XS.number_of_coords</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.number_of_mannings_points"><code class="docutils literal notranslate"><span class="pre">XS.number_of_mannings_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.number_of_station_elevation_points"><code class="docutils literal notranslate"><span class="pre">XS.number_of_station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.overtop_elevation"><code class="docutils literal notranslate"><span class="pre">XS.overtop_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.reach_geom"><code class="docutils literal notranslate"><span class="pre">XS.reach_geom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.reach_lengths"><code class="docutils literal notranslate"><span class="pre">XS.reach_lengths</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.reach_lengths_populated"><code class="docutils literal notranslate"><span class="pre">XS.reach_lengths_populated</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.right_bank_elevation"><code class="docutils literal notranslate"><span class="pre">XS.right_bank_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.right_bank_station"><code class="docutils literal notranslate"><span class="pre">XS.right_bank_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.right_max_elevation"><code class="docutils literal notranslate"><span class="pre">XS.right_max_elevation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.right_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.right_reach_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.right_reach_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.right_reach_length_ratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.river_station"><code class="docutils literal notranslate"><span class="pre">XS.river_station</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.river_station_str"><code class="docutils literal notranslate"><span class="pre">XS.river_station_str</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.set_bridge_xs"><code class="docutils literal notranslate"><span class="pre">XS.set_bridge_xs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.set_computed_reach_length"><code class="docutils literal notranslate"><span class="pre">XS.set_computed_reach_length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.set_computed_reach_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.set_computed_reach_length_ratio()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.set_thalweg_drop"><code class="docutils literal notranslate"><span class="pre">XS.set_thalweg_drop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.skew"><code class="docutils literal notranslate"><span class="pre">XS.skew</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.split_xs_header"><code class="docutils literal notranslate"><span class="pre">XS.split_xs_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.station_elevation_df"><code class="docutils literal notranslate"><span class="pre">XS.station_elevation_df</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.station_elevation_point_density"><code class="docutils literal notranslate"><span class="pre">XS.station_elevation_point_density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.station_elevation_points"><code class="docutils literal notranslate"><span class="pre">XS.station_elevation_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.station_length"><code class="docutils literal notranslate"><span class="pre">XS.station_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.subdivision_type"><code class="docutils literal notranslate"><span class="pre">XS.subdivision_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.subdivisions"><code class="docutils literal notranslate"><span class="pre">XS.subdivisions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.thalweg"><code class="docutils literal notranslate"><span class="pre">XS.thalweg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.wse_intersection_pts"><code class="docutils literal notranslate"><span class="pre">XS.wse_intersection_pts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.xs_length_ratio"><code class="docutils literal notranslate"><span class="pre">XS.xs_length_ratio</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.XS.xs_max_elevation"><code class="docutils literal notranslate"><span class="pre">XS.xs_max_elevation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.parser.name_from_suffix"><code class="docutils literal notranslate"><span class="pre">name_from_suffix()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras.utils">ripple1d.hecstac.ras.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.RequireGeos"><code class="docutils literal notranslate"><span class="pre">RequireGeos</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.check_xs_direction"><code class="docutils literal notranslate"><span class="pre">check_xs_direction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.data_pairs_from_text_block"><code class="docutils literal notranslate"><span class="pre">data_pairs_from_text_block()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.data_triplets_from_text_block"><code class="docutils literal notranslate"><span class="pre">data_triplets_from_text_block()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.delimited_pairs_to_lists"><code class="docutils literal notranslate"><span class="pre">delimited_pairs_to_lists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.export_thumbnail"><code class="docutils literal notranslate"><span class="pre">export_thumbnail()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.find_model_files"><code class="docutils literal notranslate"><span class="pre">find_model_files()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.handle_spaces"><code class="docutils literal notranslate"><span class="pre">handle_spaces()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.handle_spaces_arround_equals"><code class="docutils literal notranslate"><span class="pre">handle_spaces_arround_equals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.is_ras_prj"><code class="docutils literal notranslate"><span class="pre">is_ras_prj()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.multithreading_enabled"><code class="docutils literal notranslate"><span class="pre">multithreading_enabled()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.reverse"><code class="docutils literal notranslate"><span class="pre">reverse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.search_contents"><code class="docutils literal notranslate"><span class="pre">search_contents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.text_block_from_start_end_str"><code class="docutils literal notranslate"><span class="pre">text_block_from_start_end_str()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.text_block_from_start_str_length"><code class="docutils literal notranslate"><span class="pre">text_block_from_start_str_length()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.text_block_from_start_str_to_empty_line"><code class="docutils literal notranslate"><span class="pre">text_block_from_start_str_to_empty_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ripple1d.hecstac.ras.html#ripple1d.hecstac.ras.utils.validate_point"><code class="docutils literal notranslate"><span class="pre">validate_point()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ripple1d.hecstac.ras.html#module-ripple1d.hecstac.ras">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-ripple1d.hecstac.ras_to_gpkg">
+<span id="ripple1d-hecstac-ras-to-gpkg-module"></span><h2>ripple1d.hecstac.ras_to_gpkg module<a class="headerlink" href="#module-ripple1d.hecstac.ras_to_gpkg" title="Link to this heading">#</a></h2>
+<p>Extract geospatial data from HEC-RAS files.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ripple1d.hecstac.ras_to_gpkg.gpkg_from_ras">
+<span class="sig-prename descclassname"><span class="pre">ripple1d.hecstac.ras_to_gpkg.</span></span><span class="sig-name descname"><span class="pre">gpkg_from_ras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_model_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ripple1d.hecstac.ras_to_gpkg.gpkg_from_ras" title="Link to this definition">#</a></dt>
+<dd><p>Write geometry and flow data to a geopackage locally.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_model_directory</strong> (<em>str</em>) – The path to the directory containing HEC-RAS project, plan, geometry,
+and flow files.</p></li>
+<li><p><strong>crs</strong> (<em>str</em>) – This crs of the source model. This can be any string interpretable by the pyproj CRS function
+(<a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/crs/crs.html">https://pyproj4.github.io/pyproj/stable/api/crs/crs.html</a>)</p></li>
+<li><p><strong>metadata</strong> (<em>dict</em>) – A dictionary of miscellaneous metadata that will be appended to the
+non-spatial metadata table in the final geopackage.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FileNotFoundError</strong> – Raises when no rar project (.prj) file is found</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The gpkg_from_ras endpoint extracts data contained within the HEC-RAS
+geometry and flow files and exports them to a geopackage file.  When the
+directory containing a HEC-RAS project is submitted, ripple1d will scan the
+directory for the following files</p>
+<ul class="simple">
+<li><p><strong>Project file (.prj)</strong> ripple1d scans the directory for .prj files and identifies any that are HEC-RAS project files (<em>Note: if more than one valid project file is identified, one will be arbitrarily selected</em>).</p></li>
+<li><p><strong>Plan file (.p0x)</strong> ripple1d scans the project file for a list of plans and determine whether the plans contain encroachments. Since encroachments are often indicative of a floodway run as opposed to an existing condition run, the first listed plan without any encroachments is selected as the primary plan.</p></li>
+<li><p><strong>Flow file (.f0x)</strong> ripple1d checks to see if the flow file listed in the primary plan exists.  If no flow file is specified within the primary plan, or if the specified flow file does not exist, ripple1d will search the directory for any valid steady flow files in the directory and select an arbitrary one.  If no steady flow file is found, geopackage creation will continue with no flow metadata being recorded.</p></li>
+<li><p><strong>Geometry file (.g0x)</strong> ripple1d checks to see if the geometry file listed in the primary plan exists.  If no geometry file is specified within the primary plan, or if the specified geometry file does not exist , ripple1d will search the directory for any valid geometry files in the directory and select an arbitrary one.</p></li>
+</ul>
+<p>Once a set of HEC-RAS files are identified, ripple1d will extract
+cross-sectional geometry, reach centerlines, junction points, and structure
+extents and save them as individual layers within a geopackage.  Ripple1d
+creates an additional non-spatial table within the geopackage for metadata
+such as HEC-RAS version, project units, etc.  The geopackage will be saved
+to the project directory with the same base name as the HEC-RAS project
+file.</p>
+</dd></dl>
+
+</section>
+<section id="module-ripple1d.hecstac">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ripple1d.hecstac" title="Link to this heading">#</a></h2>
+<p>Stable port of hecstac (<a class="github reference external" href="https://github.com/fema-ffrd/hecstac/">fema-ffrd/hecstac</a>).</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ripple1d.conflate.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ripple1d.conflate package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ripple1d.hecstac.common.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ripple1d.hecstac.common package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac.ras_to_gpkg">ripple1d.hecstac.ras_to_gpkg module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ripple1d.hecstac.ras_to_gpkg.gpkg_from_ras"><code class="docutils literal notranslate"><span class="pre">gpkg_from_ras()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-ripple1d.hecstac">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/ripple1d.hecstac.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Dewberry.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
