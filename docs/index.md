@@ -1,7 +1,7 @@
 # Ripple1D
 
 !!! note
-    This version is tagged as **testing**. Features and APIs are subject to change.
+    This project is currently in **beta**. Features and APIs are subject to change.
 
 `ripple1d` is a Python utility that repurposes HEC-RAS models for use in the production of Flood Inundation Maps (FIMs) and scenario databases to support near-real-time flood forecasting within NOAA's National Water Model (NWM).
 

@@ -52,6 +52,7 @@ nav:
     - RAS to GPKG: endpoints/ras-to-gpkg.md
     - Run Incremental Normal Depth: endpoints/run-incremental-normal-depth.md
     - Run Known WSE: endpoints/run-known-wse.md
+    - Create Scenarios DB: endpoints/create-scenarios-db.md
 
 plugins:
   - search

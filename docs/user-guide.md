@@ -4,14 +4,15 @@ This section provides a high level overview for using ripple1d for production, i
 
 ## Installation
 
-`ripple1d` is registered with [PyPI](https://pypi.org/project/ripple1d) and can be installed simply using python's pip package installer.
-Assuming you have Python already installed and setup:
+`ripple1d` is installed from the [NGWPC GitHub repository](https://github.com/NGWPC/ripple1d) at a specific tagged version.
+It is highly recommended to create a python [virtual environment](https://docs.python.org/3/library/venv.html) first.
 
 ```powershell
-pip install ripple1d
+pip install git+https://github.com/NGWPC/ripple1d.git@v0.11.0
 ```
 
-Note that it is highly recommended to create a python [virtual environment](https://docs.python.org/3/library/venv.html) to install, test, and run ripple.
+Replace `v0.11.0` with the desired version tag.
+See [available tags](https://github.com/NGWPC/ripple1d/tags).
 
 ## Starting the server
 
@@ -56,6 +57,7 @@ The following endpoints reflect a typical workflow for ripple1d.
 - [create_model_run_normal_depth](endpoints/create-model-run-normal-depth.md)
 - [run_incremental_normal_depth](endpoints/run-incremental-normal-depth.md)
 - [run_known_wse](endpoints/run-known-wse.md)
+- [create_scenarios_db](endpoints/create-scenarios-db.md)
 - [create_fim_lib](endpoints/create-fim-lib.md)
 
 ## Example Endpoint Query

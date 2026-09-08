@@ -24,10 +24,10 @@ Utilities for repurposing HEC-RAS models for use in the production of Flood Inun
 
 ### Using pip
 
-Activate virtual environment as shown below and install the `ripple1d` package using `pip` using PowerShell:
+Activate virtual environment as shown below and install the `ripple1d` package using `pip` from GitHub using PowerShell:
 
 ```powershell
-    pip install ripple1d
+    pip install git+https://github.com/NGWPC/ripple1d.git@v0.11.0
 ```
 
 
