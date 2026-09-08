@@ -45,7 +45,7 @@ A healthy status indicates that ripple1d is running and waiting for jobs.
 
 ## Index of Endpoints
 
-Jobs can be submitted using Postman collections, python clients, curl, or any other software that can communicate via HTTP REST protocol.
+Jobs can be submitted using any HTTP client such as curl, python requests, or similar tools that can communicate via HTTP REST protocol.
 The following endpoints reflect a typical workflow for ripple1d.
 
 - [ras_to_gpkg](endpoints/ras-to-gpkg.md)
