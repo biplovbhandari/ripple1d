@@ -36,7 +36,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install docs dependencies
-        run: pip install --group docs
+        run: |
+          pip install --upgrade pip
+          pip install --group docs
 
       - name: Configure docs for current repository
         run: |
