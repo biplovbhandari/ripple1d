@@ -8,7 +8,7 @@ on:
       - docs/**
       - ripple1d/**
       - mkdocs.yml
-      - requirements-docs.txt
+      - pyproject.toml
     tags:
       - "v*"
   pull_request:
@@ -18,7 +18,7 @@ on:
       - docs/**
       - ripple1d/**
       - mkdocs.yml
-      - requirements-docs.txt
+      - pyproject.toml
 
 permissions:
   contents: write
@@ -36,7 +36,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install docs dependencies
-        run: pip install -r requirements-docs.txt
+        run: pip install --group docs
 
       - name: Configure docs for current repository
         run: |
