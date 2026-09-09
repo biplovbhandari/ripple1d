@@ -19,7 +19,6 @@ on:
       - ripple1d/**
       - mkdocs.yml
       - requirements-docs.txt
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -64,7 +63,3 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/v}
           mike deploy "$VERSION" latest --update-aliases --push
           mike set-default latest --push
-
-      - name: Deploy docs (manual trigger)
-        if: github.event_name == 'workflow_dispatch'
-        run: mike deploy dev --push
